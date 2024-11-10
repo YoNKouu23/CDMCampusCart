@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 64px;
+    background-color: white;
+
+}
+
+.logo {
+    width: 56px;
+    height: 56px;
+}
+
+.logoname {
+    color: #0A6D03;
+}
+
+.logosec {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 56px;
+}
+
+.menu a {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.icons {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+
+}
+
+.icons img {
+    height: 24px;
+    width: 24px;
+}
+
+
+.hero{
+    background-color: #0A6D03;
+    padding: 72px 64px;
+}
+
+
+.content{
+    background-color: white;
+    display: flex;
+    position: relative;
+    border-radius: 10px;
+}
+.content h1 {
+    font-weight: bold;
+    font-size: 64px;
+}
+
+.content span {
+    color: #FCFE01;
+    text-shadow: 2px;
+}
+
+.content input {
+    background-color: #0A6D03;
+    padding: 12px;
+    border: none;
+    border-radius: 16px;
+    
+}
+
+.content button {
+    display: block;
+    padding: 12px;
+    border-radius: 16px;
+    border: 1px solid black;
+    width: 120px;
+    font-weight: 700;
+}
+
+.contentBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 79px 0px 79px 110px;
+}
+
+
+.illu {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
