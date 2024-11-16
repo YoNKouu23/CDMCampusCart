@@ -2,7 +2,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Roboto";
 }
+
 
 li {
     list-style: none;
@@ -62,7 +64,7 @@ header {
 }
 
 
-.hero{
+.hero {
     background-color: #0A6D03;
     padding: 72px 64px;
 }
@@ -77,27 +79,61 @@ header {
 .content h1 {
     font-weight: bold;
     font-size: 64px;
+    line-height: 60px;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #898989;
+    
+    
 }
 
 .content span {
     color: #FCFE01;
-    text-shadow: 2px;
+
 }
 
 .content input {
     background-color: #0A6D03;
-    padding: 12px;
-    border: none;
-    border-radius: 16px;
-    
+    width: 100%;
+    padding: 22px 28px;
+    box-sizing: border-box;
+    border-radius: 20px; 
 }
+
+.content ::placeholder {
+    color: white;
+}
+
+.search-container{
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+}
+
+
+
+.search-container .search-icon {
+    border-radius: 12px;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    width: 45px;
+    height: 45px;
+    pointer-events:fill;
+    padding: 12px;
+    cursor: pointer;
+
+}
+
+
 
 .content button {
     display: block;
     padding: 12px;
-    border-radius: 16px;
-    border: 1px solid black;
-    width: 120px;
+    border-radius: 20px;
+    border: 1.5px solid black;
+    width: 160px;
+    height: 43px;
     font-weight: 700;
 }
 
@@ -108,6 +144,12 @@ header {
     padding: 79px 0px 79px 110px;
 }
 
+.contentBlock img{
+    height: 15px;
+    width: 15px;
+    background-color: white;
+    position: relative;
+}
 
 .illu {
     position: absolute;
@@ -118,14 +160,225 @@ header {
 }
 
 
+.product {
+    background-color: #0A6D03;
+    padding: 0px 72px 64px;
+}
+
+#proname {
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.product span{
+    color: #FCFE01;
+    -webkit-text-stroke-width: 4px;
+    -webkit-text-stroke-color: #FCFE01;
+}
+.productSec {
+    background-color: white;
+    display: flex;
+    border-radius: 10px;
+    padding: 24px 64px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.productSec h3 {
+    color: #0A6D03;
+    text-align: center;
+
+}
+
+
+.productbox {
+    background: linear-gradient(#FCFE01,#0A6D03); 
+    opacity: 60%;
+    height: 400px;
+    margin: 20px;
+    border-top-left-radius: 100px;
+    border-bottom-right-radius: 50px;
+}
+
+.product button {
+    display: block;
+    padding: 12px;
+    border-radius: 16px;
+    border: 1px solid black;
+    width: 120px;
+    font-weight: 700;
+}
 
 
 
+.about {
+    background-color:  white;
+    padding: 72px 64px;
+}
+
+
+.contact {
+    background-color: #0A6D03;
+    padding: 72px 64px;
+
+}
+
+.contactsec {
+    background-color: white;
+    border-radius: 10px;
+    padding: 24px 64px;
+    display: flex;
+}
+
+.contact-details {
+    margin-left: 100px;
+    padding-left: 50px;
+}
+
+.contactsec img {
+    height: 50px;
+    width: 50px;
+}
+
+.contact h3 {
+    margin: 10px;
+    margin-bottom: px;
+    font-size: 36px;
+}
+
+.contact span {
+    font-size: 16px;
+    font-family: "Poppins";
+    font-weight: lighter;
+    margin-left: 20px;
+
+}
+
+.input-box {
+    margin-top: 20px;   
+    display: block; 
+    }
+
+.input-box input {
+    display: block;
+    padding: 14px;
+    border-radius: 16px;
+    width: 272px;
+}
+
+.input-box textarea {
+    border-radius: 16px;
+    margin-top: 10px;
+}
+
+
+.form button {
+    margin: 20px;
+    padding: 14px;
+    width: 272px;
+    border-radius: 16px;
+    margin-left: auto;
+    color: #FCFE01;
+    background-color: #0A6D03;
+    font-weight: bolder;
+    border: none;
+}
 
 
 
+.contact-illu {
+    margin-left: auto;
+
+}
 
 
+.illu-img img {
+    height: 400px;
+    width: 580px;
+}
 
+.flex-vector {
+  display: flex;
+  padding: 4px 0px;
+  gap: 12px
+}
+
+.contact-illu .vector {
+    width: 20px;
+    height: 20px;
+}
+
+.contact h1 {
+    font-size: 50px;
+}
+
+.contact #title {
+    margin-left: 4px;
+    font-size: 50px;
+    font-weight: bold;
+    color: #FCFE01;
+}
+
+#titlecol {
+    color: #0A6D03;
+}
+
+.footer-section {
+    padding: 64px 80px;
+    display: flex;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 20px;
+    color: #0A6D03;
+}
+
+.footer-logo h4 {
+    font-size: 16px;
+}
+
+.footer-logo span {
+    color: #FCFE01;
+}
+
+#para {
+    font-family: "Poppins";
+    font-size: 14px;
+    font-weight:300;
+}
+
+
+.footer-icons {
+    margin-top: 84px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+}
+
+.footer-links {
+    display: flex;
+    margin-left: 100px;
+    gap: 100px;
+}
+
+.footer-links span {
+    font-weight: bold;
+}
+
+.footer-credit p {
+    margin-left: 75px;
+    padding: 5px 0px;
+}
+
+.footer-credit hr {
+    width: 90%;
+    margin-left: 75px;
+    height: 2px;
+    background-color: black;
+}
 
 
