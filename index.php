@@ -37,13 +37,13 @@
             
             <div>
                 <h3>ORGANIZATION SHIRTS</h3>
-                <div class="productbox"><img src="./public/images/p.e.png" alt=""></div>
+                <div class="productbox1"><img src="./public/images/p.e.png" alt=""></div>
                 <button>EXPLORE NOW</button>
             </div>
             
             <div>
                 <h3>MERCHANDISE</h3>
-                <div class="productbox"><img src="./public/images/pin.png" alt=""></div>
+                <div class="productbox2"><img src="./public/images/pin.png" alt=""></div>
                 <button>EXPLORE NOW</button>
             </div>
         </div>
@@ -51,9 +51,159 @@
 
 
     <section class="about">
-        
-          
+        <div class="about-sec">
+            <div>
+                <h2><span>I</span>About Us</h2>
+            </div>
+            <div>
+                <pre>
+                    Welcome to CDM Campus Cart, your go-to online destination for all things 
+                                            related to student essentials! 
+                We’re here to make life easier for students by offering a comprehensive range of
+                             products tailored to each institute's unique needs.
+                </pre>
+            </div>
+        </div>
 
+        
+        <div class="about-content">
+                <div class="content-logo">
+                    <div class="logo-box"><img src="./public/images/itelogo.png" alt=""></div>
+                    <div class="logo-box1"><img src="./public/images/icslogo.png" alt=""></div>
+                    <div class="logo-box"><img src="./public/images/ioblogo.png" alt=""></div>
+                </div>
+
+                <div class="content-story">
+                    <h3>Our Story</h3>
+                    <pre>
+                        CDM Campus Cart is built by students, for students. 
+                        Our diverse team has come together to create an intuitive, easy-to-use 
+                        platform that meets the unique needs of campus life.
+                        From flowchart designers and UI creators to our front-end, back-end, and 
+                        documentation experts, each team member plays a crucial role in 
+                        delivering a smooth, reliable experience. 
+                        With CDM Campus Cart, you can expect quality, convenience, and support
+                        —all designed to make campus life easier. Welcome to your all-in-one 
+                        solution for uniforms, institute merchandise, and program essentials!
+                    </pre>
+                    <button>Meet the Team</button>
+                </div>
+        </div>
+
+        <div class="mission-content">
+            <div class="mission-box">   
+                <div>
+                    <h3>Our Mission</h3>
+                    <p>
+                    We aim to support students by providing high-quality uniforms, institute-specific merchandise, and program-related items. Our goal is to enhance student life with accessible, affordable, and stylish essentials.
+                    </p>
+                </div>
+                <div>
+                    <h3>What We Offer</h3>
+                    <p>From uniforms to exclusive institute merchandise, CDM Campus Cart brings you everything you need to represent your school with pride. Whether you’re looking for clothing, pins, or specialty items, we’ve got you covered</p>
+                </div>
+            </div>
+
+            <div class="mission-box1">
+                <h4>Why Choose Us?</h4>
+                <p>
+                    Our platform is designed with students in mind,
+                    bringing together a diverse selection of quality products for a seamless shopping experience. 
+                    With a user-friendly interface and dedicated customer support, 
+                    we strive to make your shopping easy and enjoyable
+                </p>
+            </div>
+
+        </div>
+
+        <div class="team-content">
+            <div>
+                <h1>Meet our <span>Team!</span></h1>
+            </div>
+
+            <div class="team-section">
+                <div class="team-card">
+                    <img src="./public/images/emman.jpg" alt="">
+                    <div class="team-info">
+                        <h3>Emmanuel Pornel</h3>
+                        <p>Project Manager</p>
+                    </div>   
+                </div>
+
+                <div class="team-card">
+                    <img src="./public/images/daniel.jpg" alt="">
+                    <div class="team-info">
+                        <h3>Daniel Atolle</h3>
+                        <p>Front-End Developer</p>
+                    </div>   
+                </div>
+
+                <div class="team-card">
+                    <img src="./public/images/emman.jpg" alt="">
+                    <div class="team-info">
+                        <h3>Emmanuel Pornel</h3>
+                        <p>Project Manager</p>
+                    </div>   
+                </div>
+
+                <div class="team-card">
+                    <img src="./public/images/emman.jpg" alt="">
+                    <div class="team-info">
+                        <h3>Emmanuel Pornel</h3>
+                        <p>Project Manager</p>
+                    </div>   
+                </div>
+
+                <div class="team-card">
+                    <img src="./public/images/emman.jpg" alt="">
+                    <div class="team-info">
+                        <h3>Emmanuel Pornel</h3>
+                        <p>Project Manager</p>
+                    </div>   
+                </div>
+
+                <div class="team-card">
+                    <img src="./public/images/emman.jpg" alt="">
+                    <div class="team-info">
+                        <h3>Emmanuel Pornel</h3>
+                        <p>Project Manager</p>
+                    </div>   
+
+                </div>
+                <div class="team-card">
+                    <img src="./public/images/emman.jpg" alt="">
+                    <div class="team-info">
+                        <h3>Emmanuel Pornel</h3>
+                        <p>Project Manager</p>
+                    </div>   
+                </div>
+
+                <div class="team-card">
+                    <img src="./public/images/emman.jpg" alt="">
+                    <div class="team-info">
+                        <h3>Emmanuel Pornel</h3>
+                        <p>Project Manager</p>
+                    </div>   
+                </div>
+
+                <div class="team-card">
+                    <img src="./public/images/emman.jpg" alt="">
+                    <div class="team-info">
+                        <h3>Emmanuel Pornel</h3>
+                        <p>Project Manager</p>
+                    </div>   
+                </div>
+
+                <div class="team-card">
+                    <img src="./public/images/emman.jpg" alt="">
+                    <div class="team-info">
+                        <h3>Emmanuel Pornel</h3>
+                        <p>Project Manager</p>
+                    </div>   
+                </div>
+            </div>
+
+        </div>
 
     </section>
 
@@ -180,7 +330,7 @@
                     <span>CART</span>    
                     
                     Account
-    
+                        
                     Manage Delivery
     
                     Orders

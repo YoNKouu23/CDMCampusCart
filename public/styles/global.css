@@ -76,6 +76,7 @@ header {
     position: relative;
     border-radius: 10px;
 }
+
 .content h1 {
     font-weight: bold;
     font-size: 64px;
@@ -103,7 +104,7 @@ header {
     color: white;
 }
 
-.search-container{
+.search-container {
     position: relative;
     width: 100%;
     max-width: 400px;
@@ -169,7 +170,7 @@ header {
     color: white;
     text-align: center;
     margin-bottom: 20px;
-}
+}   
 
 .product span{
     color: #FCFE01;
@@ -193,29 +194,244 @@ header {
 
 
 .productbox {
-    background: linear-gradient(#FCFE01,#0A6D03); 
-    opacity: 60%;
-    height: 400px;
+    background: linear-gradient(#FCFE01 ,#0A6D03); 
+    padding: 20px;
     margin: 20px;
     border-top-left-radius: 100px;
     border-bottom-right-radius: 50px;
 }
 
+.productbox1 {
+    background: linear-gradient(#FCFE01,#0A6D03); 
+    padding: 48px 20px;
+    margin: 20px;
+    border-top-left-radius: 100px;
+    border-bottom-right-radius: 50px;
+}
+
+.productbox1 {
+    background: linear-gradient(#FCFE01,#0A6D03); 
+    padding: 48px 20px;
+    margin: 20px;
+    border-top-left-radius: 100px;
+    border-bottom-right-radius: 50px;
+}
+
+.productbox2 {
+    background: linear-gradient(#FCFE01,#0A6D03); 
+    padding: 122px 20px;
+    margin: 20px;
+    border-top-left-radius: 100px;
+    border-bottom-right-radius: 50px;
+}
+
+
 .product button {
+    color: #0A6D03;
     display: block;
     padding: 12px;
     border-radius: 16px;
     border: 1px solid black;
     width: 120px;
     font-weight: 700;
+    margin-left: 25%;
 }
 
 
 
-.about {
-    background-color:  white;
-    padding: 72px 64px;
+.about-sec {
+    padding: 36px 0px;
+    background: linear-gradient( to right, #FCFE01 30%, white 30%, white);
+    display: flex;
+    align-items: center;
 }
+
+.about-sec span {
+    color: #FCFE01;
+    padding: 0 5px;
+    -webkit-text-stroke-width: 6px;
+    -webkit-text-stroke-color: #FCFE01;
+}
+
+.about-sec h2 {
+    display: inline-block;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    background-color: #0A6D03;
+    text-align: center;
+    line-height: 200px;
+    color: white;
+    margin-left: 336px;
+}
+
+.about-sec pre {
+    font-size: 20px;
+    line-height: 40px;
+    margin-top: 20px;
+}
+
+.about-content {
+    background-color: #0A6D03;
+
+}
+
+
+.logo-box {
+    background: linear-gradient(#0A6D03 ,#FCFE01);
+    padding: 64px 12px;
+    border-radius: 30px;    
+    box-shadow: 12px 12px 8px rgba(0, 0, 0, 0.2); 
+}
+
+.logo-box1 {
+    position: relative;
+    top: -64px;
+    background: linear-gradient(#0A6D03 ,#FCFE01);
+    padding: 64px 12px;
+    border-radius: 30px;    
+    box-shadow: 12px 12px 8px rgba(0, 0, 0, 0.2); 
+}
+
+.logo-box1 img {
+    width: 248px;
+    height: 200px;
+}
+
+.logo-box img {
+    width: 248px;
+    height: 200px;
+}
+
+.content-logo {
+    padding: 20px;
+    display: flex;
+    gap: 40px;
+    justify-content: center; 
+}
+
+.content-story {
+    margin: 12px 12px 100px 28%;
+    background-color: white;
+    border-radius: 30px;
+    display: inline-block;
+    padding: 12px 60px;
+    box-shadow: 12px 12px 8px rgba(0, 0, 0, 0.2); 
+   
+}
+
+.content-story h3 {
+    padding: 10px 0;
+    font-size: 40px;
+}
+
+.content-story pre {
+    margin-left: -82px;
+    text-align:left;
+    line-height: 36px;
+}
+
+.content-story button{
+    background-color: #0A6D03;
+    color: #FCFE01;
+    padding: 18px;
+    border-radius: 20px;
+}
+
+.mission-content {
+    background-color: white;
+
+}
+
+.mission-box {
+    position: relative;
+    background: linear-gradient(to right, #0A6D03, #FCFE01);
+    border-radius: 30px;
+    display: flex;
+    padding: 48px;
+    margin: 0px 75px;
+    top: -64px;
+    box-shadow: 12px 12px 8px rgba(0, 0, 0, 0.2); 
+}
+
+.mission-box h3 {
+    font-size: 32px;
+    padding: 12px 0px;
+}
+
+.mission-box1 {
+    text-align: center;
+    padding: 12px;
+    text-align: left;
+    margin: 0px 400px;
+    position: relative;
+    top: -38px;
+}
+
+.mission-box1 h4 {
+    text-align: center;
+    padding: 12px 0px;
+    font-size: 20px;
+}
+
+.mission-box1 p {
+    line-height: 37px;
+}
+
+
+.team-content {
+    text-align: center;
+    padding: 52px 20px;
+    background-color: #0A6D03;
+}
+
+.team-content h1 {
+    color: white;
+    font-size: 55px;
+}
+
+.team-content span {
+    color: #FCFE01;
+}
+
+.team-section {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 78px;
+    padding: 48px 120px;
+
+}
+
+.team-card {
+    background-color: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 12px 12px 8px rgba(0, 0, 0, 0.2); 
+    color: #333;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+}
+
+
+.team-card img {
+    width: 255px;
+    height: 255px;
+    border-radius: 20px;
+}
+
+.team-info {
+    padding: 20px;
+    text-align: left;
+}
+
+.team-info h3{
+    font-size: 16px;
+    padding: 0px 0px 12px;
+}
+
+
+
+
 
 
 .contact {
