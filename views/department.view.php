@@ -55,7 +55,7 @@
 
         <!-- Main Content -->
         <div class="main-content">
-            <img src="./img/logo1.png" alt="Logo" class="logo">
+            <img src="../public/img/logo1.png" alt="Logo" class="logo">
             <div class="search-bar">
                 <input type="text" placeholder="Search for products...">
                 <button><i class="fas fa-search"></i></button>
@@ -67,7 +67,7 @@
                 <div class="product-grid">
                     <div class="product-item">
                         <div class="product-card">
-                            <img src="./img/esp32.png" alt="Product 1 Image"> 
+                            <img src="../public//img/esp32.png" alt="Product 1 Image"> 
                         </div>
                         <h3>ESP 32</h3>
                         <button class="price-btn"  data-id="1" data-name="Esp32" data-price="200" data-image="./img/esp32.png" >₱200.00 | BEST SELLER</button>
@@ -75,7 +75,7 @@
                 
                     <div class="product-item">
                         <div class="product-card">
-                            <img src="./img/jumper.png"  alt="Product 1 Image"> 
+                            <img src="../public//img/jumper.png"  alt="Product 1 Image"> 
                         </div>
                         <h3>JUMPER WIRE</h3>
                         <button class="price-btn"  data-id="2" data-name="Jumper Wire (M to M)" data-price="250" data-image="./img/jumper.png">₱250.00 | BEST SELLER</button>
@@ -83,7 +83,7 @@
                 
                     <div class="product-item">
                         <div class="product-card">
-                            <img src="./img/battery.png" alt="Product 1 Image"> 
+                            <img src="../public//img/battery.png" alt="Product 1 Image"> 
                         </div>
                         <h3>9 VOLTS BATTERY CONNECTOR</h3>
                         <button class="price-btn"  data-id="3" data-name="Jumper Wire (F to F)" data-price="30 " data-image="./img/jumperff.png" >₱300.00 | BEST SELLER</button>
@@ -91,7 +91,7 @@
                 
                     <div class="product-item">
                         <div class="product-card">
-                            <img src="./img/ledlight.png" alt="Product 1 Image"> 
+                            <img src="../public//img/ledlight.png" alt="Product 1 Image"> 
                         </div>
                         <h3>LED LIGHTS</h3>
                         <button class="price-btn" data-product="Product 4" data-price="350" >₱350.00 | BEST SELLER</button>
@@ -99,7 +99,7 @@
                 
                     <div class="product-item">
                         <div class="product-card">
-                            <img src="./img/button.png" alt="Product 1 Image"> 
+                            <img src="../public//img/button.png" alt="Product 1 Image"> 
                         </div>
                         <h3>PUSH BUTTON</h3>
                         <button class="price-btn" data-product="Product 5" data-price="270">₱270.00 | BEST SELLER</button>
@@ -107,7 +107,7 @@
                 
                     <div class="product-item">
                         <div class="product-card">
-                            <img src="./img/resistor.png" alt="Product 1 Image">   
+                            <img src="../public//img/resistor.png" alt="Product 1 Image">   
                         </div>
                         <h3>220-OHM RESISTOR</h3>
                         <button class="price-btn" data-product="Product 6" data-price="290">₱290.00 | BEST SELLER</button>
@@ -115,7 +115,7 @@
 
                     <div class="product-item">
                         <div class="product-card">
-                            <img src="./img/tester.png" alt="Product 1 Image"> 
+                            <img src="../public//img/tester.png" alt="Product 1 Image"> 
                         </div>
                         <h3>NETWORK LAN TESTER</h3>
                         <button class="price-btn"  data-id="1" data-name="Esp32" data-price="200" data-image="./img/esp32.png" >₱200.00 | BEST SELLER</button>
@@ -123,7 +123,7 @@
                 
                     <div class="product-item">
                         <div class="product-card">
-                            <img src="./img/crimping.png"  alt="Product 1 Image"> 
+                            <img src="../public//img/crimping.png"  alt="Product 1 Image"> 
                         </div>
                         <h3>CRIMPING</h3>
                         <button class="price-btn"  data-id="2" data-name="Jumper Wire (M to M)" data-price="250" data-image="./img/jumper.png">₱250.00 | BEST SELLER</button>
@@ -131,7 +131,7 @@
                 
                     <div class="product-item">
                         <div class="product-card">
-                            <img src="./img/rj45connector.png" alt="Product 1 Image"> 
+                            <img src="../public//img/rj45connector.png" alt="Product 1 Image"> 
                         </div>
                         <h3>RJ45 CONNECTOR</h3>
                         <button class="price-btn"  data-id="3" data-name="Jumper Wire (F to F)" data-price="30 " data-image="./img/jumperff.png" >₱300.00 | BEST SELLER</button>
@@ -139,7 +139,7 @@
                 
                     <div class="product-item">
                         <div class="product-card">
-                            <img src="./img/tweezer.png" alt="Product 1 Image"> 
+                            <img src="../public//img/tweezer.png" alt="Product 1 Image"> 
                         </div>
                         <h3>ELBOW TWEEZER</h3>
                         <button class="price-btn" data-product="Product 4" data-price="350" >₱350.00 | BEST SELLER</button>
@@ -147,7 +147,7 @@
                 
                     <div class="product-item">
                         <div class="product-card">
-                            <img src="./img/rubberboots.png" alt="Product 1 Image"> 
+                            <img src="../public//img/rubberboots.png" alt="Product 1 Image"> 
                         </div>
                         <h3>RUBBER BOOTS</h3>
                         <button class="price-btn" data-product="Product 5" data-price="270">₱270.00 | BEST SELLER</button>
@@ -155,7 +155,7 @@
                 
                     <div class="product-item">
                         <div class="product-card">
-                            <img src="./img/cable.png" alt="Product 1 Image">   
+                            <img src="../public//img/cable.png" alt="Product 1 Image">   
                         </div>
                         <h3>UTP CABLE</h3>
                         <button class="price-btn" data-product="Product 6" data-price="290">₱290.00 | BEST SELLER</button>
@@ -171,7 +171,7 @@
                 <div class="product-grid">
                     <div class="product-item">
                         <div class="product-card">
-                            <img src="./img/esp32.png" alt="Product 1 Image"> 
+                            <img src="../public//img/esp32.png" alt="Product 1 Image"> 
                         </div>
                         <h3>Esp 32</h3>
                         <button class="price-btn">₱250.00 | BEST SELLER</button>
@@ -179,7 +179,7 @@
                 
                     <div class="product-item">
                         <div class="product-card">
-                            <img src="./img/jumper.png" alt="Product 1 Image"> 
+                            <img src="../public//img/jumper.png" alt="Product 1 Image"> 
                         </div>
                         <h3>Jumper Wire (M to M)</h3>
                         <button class="price-btn">₱250.00 | BEST SELLER</button>
@@ -187,7 +187,7 @@
                 
                     <div class="product-item">
                         <div class="product-card">
-                            <img src="./img/jumperff.png" alt="Product 1 Image"> 
+                            <img src="../public//img/jumperff.png" alt="Product 1 Image"> 
                         </div>
                         <h3>Jumper Wire (F to F)</h3>
                         <button class="price-btn">₱250.00 | BEST SELLER</button>
@@ -195,7 +195,7 @@
                 
                     <div class="product-item">
                         <div class="product-card">
-                            <img src="./img/jumperfm.png" alt="Product 1 Image"> 
+                            <img src="../public//img/jumperfm.png" alt="Product 1 Image"> 
                         </div>
                         <h3>Jumper Wire (F to M)</h3>
                         <button class="price-btn">₱250.00 | BEST SELLER</button>
@@ -203,7 +203,7 @@
                 
                     <div class="product-item">
                         <div class="product-card">
-                            <img src="./img/battery.png" alt="Product 1 Image"> 
+                            <img src="../public//img/battery.png" alt="Product 1 Image"> 
                         </div>
                         <h3>9 Volts Battery Snap Connector</h3>
                         <button class="price-btn">₱250.00 | BEST SELLER</button>
@@ -211,7 +211,7 @@
                 
                     <div class="product-item">
                         <div class="product-card">
-                            <img src="./img/ledlight.png" alt="Product 1 Image"> 
+                            <img src="../public//img/ledlight.png" alt="Product 1 Image"> 
                         </div>
                         <h3>Led Lights</h3>
                         <button class="price-btn">₱250.00 | BEST SELLER</button>
@@ -226,7 +226,7 @@
                 <div class="product-grid">
                     <div class="product-item">
                         <div class="product-card">
-                            <img src="./img/esp32.png" alt="Product 1 Image"> 
+                            <img src="../public//img/esp32.png" alt="Product 1 Image"> 
                         </div>
                         <h3>Esp 32</h3>
                         <button class="price-btn">₱250.00 | BEST SELLER</button>
@@ -234,7 +234,7 @@
                 
                     <div class="product-item">
                         <div class="product-card">
-                            <img src="./img/jumper.png" alt="Product 1 Image"> 
+                            <img src="../public//img/jumper.png" alt="Product 1 Image"> 
                         </div>
                         <h3>Jumper Wire (M to M)</h3>
                         <button class="price-btn">₱250.00 | BEST SELLER</button>
@@ -242,7 +242,7 @@
                 
                     <div class="product-item">
                         <div class="product-card">
-                            <img src="./img/jumperff.png" alt="Product 1 Image"> 
+                            <img src="../public//img/jumperff.png" alt="Product 1 Image"> 
                         </div>
                         <h3>Jumper Wire (F to F)</h3>
                         <button class="price-btn">₱250.00 | BEST SELLER</button>
@@ -250,7 +250,7 @@
                 
                     <div class="product-item">
                         <div class="product-card">
-                            <img src="./img/jumperfm.png" alt="Product 1 Image"> 
+                            <img src="../public//img/jumperfm.png" alt="Product 1 Image"> 
                         </div>
                         <h3>Jumper Wire (F to M)</h3>
                         <button class="price-btn">₱250.00 | BEST SELLER</button>
@@ -258,7 +258,7 @@
                 
                     <div class="product-item">
                         <div class="product-card">
-                            <img src="./img/battery.png" alt="Product 1 Image"> 
+                            <img src="../public//img/battery.png" alt="Product 1 Image"> 
                         </div>
                         <h3>9 Volts Battery Snap Connector</h3>
                         <button class="price-btn">₱250.00 | BEST SELLER</button>
@@ -266,7 +266,7 @@
                 
                     <div class="product-item">
                         <div class="product-card">
-                            <img src="./img/ledlight.png" alt="Product 1 Image">  
+                            <img src="../public//img/ledlight.png" alt="Product 1 Image">  
                         </div>
                         <h3>Led Lights</h3>
                         <button class="price-btn">₱250.00 | BEST SELLER</button>
