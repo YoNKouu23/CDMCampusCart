@@ -15,24 +15,24 @@
         </div>
         <div class="top-bar">
             <div class="custom-dropdown">
-                <button class="dropdown-button" onclick="window.location.href='product.html'">
+                <button class="dropdown-button" onclick="window.location.href='./views/department.view.php'">
                     Department Section<span class="caret">^</span>
                 </button>                
             </div>
             <div class="navbar-links">
-                <a href="organization.html">Products</a>
+                <a href="./views/products.view.php">Products</a>
                 <a href="#">About</a>
                 <a href="#">Contact Us</a>
             </div>
         </div>
         <div class="button-container">
-            <a href="cart.html">
+            <a href="./views/cart.view.php">
             <button class="cart-button">
                 <i class="fas fa-shopping-cart"></i>
             </button>
             </a>
 
-            <a href="profile.html">
+            <a href="./views/profile.view.php">
             <button class="profile-button">
                 <i class="fas fa-user"></i>
             </button>
@@ -42,7 +42,7 @@
 
     <main>
         <div class="main-content">
-            <img src="../public//img/logo1.png" alt="Logo" class="logo">
+            <img src="../public/img/logo1.png" alt="Logo" class="logo">
             <div class="search-bar">
                 <input type="text" placeholder="Search for products...">
                 <button><i class="fas fa-search"></i></button>
@@ -59,7 +59,7 @@
         <div class="cart-items">    
             <div class="cart-item" data-id="1" data-price="30">
                 <div class="image-box">
-                    <img src="../public//img/jumper.png" alt="Product Image">
+                    <img src="../public/img/jumper.png" alt="Product Image">
                 </div>
                 <div class="item-details">
                     <p><strong>Product Name</strong></p>
@@ -77,7 +77,7 @@
 
             <div class="cart-item" data-id="2" data-price="60">
                 <div class="image-box">
-                    <img src="../public//img/esp32.png" alt="Product Image">
+                    <img src="../publi/img/esp32.png" alt="Product Image">
                 </div>
                 <div class="item-details">
                     <p><strong>Product Name</strong></p>
@@ -142,14 +142,14 @@
         <div id="payment-section" class="section hidden">
             <h2>PAYMENT</h2>
             <div class="just-logo">
-                <img src="../public//img/logo1.png" alt="Logo" class="logo">
+                <img src="../public/img/logo1.png" alt="Logo" class="logo">
                 <h3>CDM CAMPUS CART</h3>
             </div>
         
             <form>
                 <div class="gcash-qr-section">
                     <h4>Scan the QR Code to Pay</h4>
-                    <img src="./img/qr.jpg" alt="GCash QR Code" class="gcash-qr-img">
+                    <img src="./public/img/qr.jpg" alt="GCash QR Code" class="gcash-qr-img">
                     <p>Cdm Campus Cart</p>
         
                     <!-- Total amount inside the same box as QR code -->
@@ -175,7 +175,7 @@
         
             <form>
                 <div class="thankyou-section">
-                    <img src="../public//img/checkk.png" alt="check" class="check-img">
+                    <img src="../public/img/checkk.png" alt="check" class="check-img">
                     <h4>Thank You!</h4>
                     <p>Your payment has been sucessfully processed.</p>
                     <p>___________________________________________</p>

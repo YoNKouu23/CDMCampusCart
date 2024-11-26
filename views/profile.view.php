@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="../public/styles/profile.css">
+    <link rel="stylesheet" href="profile.css">
 </head>
 <body>
     <header>
@@ -16,23 +16,23 @@
         </div>
         <div class="top-bar">
             <div class="custom-dropdown">
-                <button class="dropdown-button" onclick="window.location.href='product.html'">
+                <button class="dropdown-button" onclick="window.location.href='./views/department.view.php'">
                     Department Section<span class="caret">^</span>
                 </button>                
             </div>
             <div class="navbar-links">
-                <a href="organization.html">Products</a>
+                <a href="./views/products.view.php">Products</a>
                 <a href="#">About</a>
                 <a href="#">Contact Us</a>
             </div>
         </div>
         <div class="button-container">
-            <a href="cart.html">
+            <a href="./views/cart.view.php">
                 <button class="cart-button">
                     <i class="fas fa-shopping-cart"></i>
                 </button>
             </a>
-            <a href="profile.html">
+            <a href="./views/profile.view.php">
                 <button class="profile-button">
                     <i class="fas fa-user"></i>
                 </button>
@@ -42,7 +42,7 @@
 
     <main>
         <div class="main-content">
-            <img src="../public//img/logo1.png" alt="Logo" class="logo">
+            <img src="../public/img/logo1.png" alt="Logo" class="logo">
             <h5>CDM CAMPUS CART</h5>
             <div class="search-bar">
                 <input type="text" placeholder="Search for products...">
@@ -50,9 +50,8 @@
             </div>
         </div>
     
-        <!-- Flex container for profile and details sections -->
+       
         <div class="profile-details-container">
-            <!-- Details section -->
             <div id="details-section" class="details-section">
                 <h2>MY <span>PROFILE</span></h2>
                 <h5>MANAGE AND PROTECT YOUR ACCOUNT</h5>
@@ -60,20 +59,18 @@
                 <form id="details-form">
                     <div class="form-group">
                         <h4>USERNAME</h4>
-                        <input type="text" id="name" name="name" placeholder="TESTUSER"required>
+                        <input type="text" id="username" name="username" placeholder="TESTUSER" required>
                     </div>
     
                     <div class="form-group">
                         <h4>NAME</h4>
-                        <input type="text" id="address" name="address" placeholder="HANNI"required>
+                        <input type="text" id="name" name="name" placeholder="HANNI" required>
                     </div>
     
                     <div class="form-group">
                         <h4>EMAIL</h4>
-                        <h4 id="current-email">hann****@gmail.com</h4> <!-- Display current email -->
+                        <h4 id="current-email" required>hann****@gmail.com</h4> 
                         <button id="change-email-btn" onclick="editEmail()">Change Email</button>
-                    
-                        <!-- Edit Email Form (hidden by default) -->
                         <div id="edit-email-form" style="display: none;">
                             <input type="email" id="new-email" placeholder="Enter new email">
                             <button onclick="saveEmail()">Save</button>
@@ -83,7 +80,7 @@
     
                     <div class="form-group">
                         <h4>PHONE NUMBER</h4>
-                        <input type="text" id="phone" name="phone" placeholder="09774817003"required>
+                        <input type="text" id="phone" name="phone" placeholder="09774817003" required>
                     </div>
     
                     <div class="form-group">
@@ -134,23 +131,23 @@
                         </div>
                     </div>
     
-    
                     <button type="button" id="save-button" class="saved-button">Save</button>
                 </form>
             </div>
+
+            
            
             <div id="purchase-history" class="purchase-history" style="display:none;">
                 <h2>MY <span>PURCHASES</span></h2>
                 <h5>MANAGE AND PROTECT YOUR ACCOUNT</h5>
                 <hr class="line">
                 
-                <!-- Purchase History List -->
              
     <div class="product-container">
-        <!-- Product 1 -->
+      
         <div class="product-item">
             <div class="purchase-box">
-                <img src="../public//img/organization1.png" alt="Product 1">
+                <img src="../public/img/organization1.png" alt="Product 1">
             </div>
             <div class="product-details">
                 <h4>ICS Batch Shirt</h4>
@@ -167,10 +164,9 @@
         </div>
         <hr class="line">
         
-        <!-- Product 2 -->
         <div class="product-item">
             <div class="purchase-box">
-                <img src="../public//img/organization1.png" alt="Product 1">
+                <img src="../public/img/organization1.png" alt="Product 1">
             </div>
             <div class="product-details">
                 <h4>ICS Batch Shirt</h4>
@@ -188,10 +184,10 @@
         <hr class="line">
         
         
-        <!-- Product 3 -->
+    
         <div class="product-item">
             <div class="purchase-box">
-                <img src="../public//img/organization1.png" alt="Product 1">
+                <img src="../public/img/organization1.png" alt="Product 1">
             </div>
             <div class="product-details">
                 <h4>ICS Batch Shirt</h4>
@@ -208,10 +204,9 @@
         </div>
         <hr class="line">
         
-        <!-- Product 4 -->
         <div class="product-item">
             <div class="purchase-box">
-                <img src="../public//img/organization1.png" alt="Product 1">
+                <img src="../public/img/organization1.png" alt="Product 1">
             </div>
             <div class="product-details">
                 <h4>ICS Batch Shirt</h4>
@@ -231,37 +226,116 @@
     </div>
 
   </div>
-            
-    
-           <!-- Right side profile section -->
-             <div class="profile-container">
-                 <h3>My Account</h3>
-                 <div class="profile">
-                  <img src="../public//img/profile.png" alt="Profile Picture">
-                  <p>Hanni@gmail.com</p>
-                  </div>
-                 <div class="profile-links">
-                 <!-- Profile Link with Icon -->
+               
+               <div id="status-section" class="status-section" style="display:none;">
+                <h2>MY <span>STATUS</span></h2>
+                <h5>SEE YOUR ORDER AND ACCOUNT UPDATES</h5>
+                <hr class="line">
+               
+                <div class="product-item">
+                    <div class="purchase-box">
+                        <img src="../public/img/organization1.png" alt="Product 1">
+                    </div>
+                    <div class="product-details">
+                        <h4>ICS Batch Shirt</h4>
+                        <p><span>Size:</span> Medium</p>
+                        <p><span>Color:</span> Red</p>
+                        <h3>₱250.00</h3>
+                    </div>
+                    <div class="status-item">
+                        <div class="status-box">
+                            <i class="fas fa-credit-card"></i>
+                        </div>
+                        <div class="status-details">
+                           
+                            <p>Status: <span class="status-text pay">To Pay</span></p>
+                            <p>Estimated Delivery: <span>Nov 30, 2024</span></p>
+                        </div>
+                    </div>
+                </div>
+                <hr class="line">
+                
+                <div class="product-item">
+                    <div class="purchase-box">
+                        <img src="../public/img/organization1.png" alt="Product 1">
+                    </div>
+                    <div class="product-details">
+                        <h4>ICS Batch Shirt</h4>
+                        <p><span>Size:</span> Medium</p>
+                        <p><span>Color:</span> Red</p>
+                        <h3>₱250.00</h3>
+                    </div>
+                    <div class="status-item">
+                        <div class="status-box">
+                            <i class="fas fa-truck"></i>
+                        </div>
+                        <div class="status-details">
+                           
+                            <p>Status: <span class="status-text">Shipped</span></p>
+                            <p>Estimated Delivery: <span>Nov 25, 2024</span></p>
+                        </div>
+                    </div>
+                </div>
+                <hr class="line">
+                <div class="product-item">
+                    <div class="purchase-box">
+                        <img src="../public/img/organization1.png" alt="Product 1">
+                    </div>
+                    <div class="product-details">
+                        <h4>ICS Batch Shirt</h4>
+                        <p><span>Size:</span> Medium</p>
+                        <p><span>Color:</span> Red</p>
+                        <h3>₱250.00</h3>
+                    </div>
+                    <div class="status-item">
+                        <div class="status-box">
+                            <i class="fas fa-gift"></i>
+                        </div>
+                        <div class="status-details">
+                           
+                            <p>Status: <span class="status-text receive">To Receive</span></p>
+                            <p>Estimated Delivery: <span>Nov 22, 2024</span></p>
+                        </div>
+                    </div>
+                </div>
+                <hr class="line">
+            </div>
+            <div class="profile-container">
+                <h3>My Account</h3>
+                <div class="profile">
+                    <div class="profile-image-container">
+                        <img src="../public/img/profile.png" alt="Profile Picture" id="profile-img">
+                        <i class="fas fa-pencil-alt" id="edit-icon" onclick="document.getElementById('file-input').click()"></i>
+                        <input type="file" id="file-input" style="display:none;" accept="image/*" onchange="previewImage()">
+                    </div>
+                    <h2 id="profile-username">Hanni Meow</h2>
+                    <h3 id="profile-name">Hanni</h3>
+                    <p>Hanni@gmail.com</p>
+                </div>
+                <div class="profile-links">
                      <a href="#" onclick="hidePurchases()">
                          <i class="fas fa-user"></i> Profile
                          </a>
-                     <!-- My Purchases Link with Icon -->
+                    
                      <a href="#" onclick="showPurchases()">
                          <i class="fas fa-box"></i> My Purchases
                      </a>
-                    <!-- Logout Link with Icon -->
+                     <a href="#" onclick="showStatus()">
+                        <i class="fas fa-box"></i> Status
+                    </a>
+                  
                     <a href="#" onclick="logout()">
                         <i class="fas fa-sign-out-alt"></i> Logout
                     </a>
-                    <!-- Confirmation Modal -->
+                   
                     <div id="logoutModal" class="modal">
                        <div class="modal-content">
                            <span class="close" onclick="closeLogoutModal()">&times;</span>
-                             <!-- Image inside the modal -->
+                          
                              <p>Are you sure you want to log out?</p>
                           <button id="logout-btn" onclick="confirmLogout()">Yes</button>
                         <button id="logout-btn" onclick="closeLogoutModal()">No</button>
-                        <img src="../public//img/outimg.png" alt="Image" class="no-button-img">
+                        <img src="../public/img/outimg.png" alt="Image" class="no-button-img">
                       
                       </div>
                    </div>
@@ -274,39 +348,69 @@
     </main>
 
     <script>
-        // Show purchase history
         function showPurchases() {
             document.getElementById('details-section').style.display = 'none'; 
             document.getElementById('purchase-history').style.display = 'block'; 
+            document.getElementById('status-section').style.display = 'none';
         }
 
-        // Hide purchase history and go back to profile
         function hidePurchases() {
             document.getElementById('details-section').style.display = 'block'; 
             document.getElementById('purchase-history').style.display = 'none'; 
+            document.getElementById('status-section').style.display = 'none';
         }
 
-      // Function to show the edit email form
+        function showStatus() {
+            document.getElementById('details-section').style.display = 'none';
+            document.getElementById('purchase-history').style.display = 'none';
+            document.getElementById('status-section').style.display = 'block';
+        }
+
 function editEmail() {
-    // Show the input field for editing the email
     document.getElementById('edit-email-form').style.display = 'block';
-    // Hide the current email and the "Change Email" button
     document.getElementById('current-email').style.display = 'none';
     document.getElementById('change-email-btn').style.display = 'none';
 }
 
-// Function to save the new email
+document.getElementById('save-button').addEventListener('click', function() {
+            const newUsername = document.getElementById('username').value;
+            const newName =document.getElementById('name').value;
+            if (newUsername) {
+                document.getElementById('profile-username').textContent = newUsername;
+            }
+            else {
+                alert('Please enter a username.');
+            }
+
+            if (newName) {
+        document.getElementById('profile-name').textContent = newName;
+            }
+
+            document.getElementById('username').value = '';
+            document.getElementById('name').value = '';
+            document.getElementById('address').value = '';
+            document.getElementById('phone').value = '';
+
+            const genderRadios = document.getElementsByName('gender');
+            genderRadios.forEach(radio => radio.checked = false);
+
+            document.getElementById('day').selectedIndex = 0;
+            document.getElementById('month').selectedIndex = 0;
+            document.getElementById('year').selectedIndex = 0;
+
+            document.getElementById('current-email').textContent = 'hann****@gmail.com';
+            document.getElementById('edit-email-form').style.display = 'none';
+            document.getElementById('current-email').style.display = 'block';
+            document.getElementById('change-email-btn').style.display = 'block';
+        });
+
+
 function saveEmail() {
     var newEmail = document.getElementById('new-email').value;
     if (newEmail) {
-        // Update the current email in the details section
         document.getElementById('current-email').textContent = newEmail;
-        
-        // Also update the email in the profile container (to the right)
         document.querySelector('.profile p').textContent = newEmail;
-
-        // Hide the edit email form and show the current email and "Change Email" button
-        document.getElementById('edit-email-form').style.display = 'none';
+    document.getElementById('edit-email-form').style.display = 'none';
         document.getElementById('current-email').style.display = 'block';
         document.getElementById('change-email-btn').style.display = 'block';
     } else {
@@ -314,75 +418,76 @@ function saveEmail() {
     }
 }
 
-// Function to cancel the email edit
 function cancelEdit() {
-    // Hide the edit email form and show the current email and "Change Email" button
+
     document.getElementById('edit-email-form').style.display = 'none';
     document.getElementById('current-email').style.display = 'block';
     document.getElementById('change-email-btn').style.display = 'block';
 }
 
-
-// Select all buttons with the class 'buy-again-btn'
 const buyButtons = document.querySelectorAll('.buy-again-btn');
 
-// Loop through each button and add the event listener
 buyButtons.forEach(function(button) {
     button.addEventListener('click', function() {
         window.location.href = "buy.html"; 
     });
 });
 
-// Function to handle Save button click and clear the form
 document.getElementById('save-button').addEventListener('click', function() {
-    // Clear text inputs
+
     document.getElementById('name').value = '';
     document.getElementById('address').value = '';
     document.getElementById('phone').value = '';
 
-    // Reset gender radio buttons
+
     const genderRadios = document.getElementsByName('gender');
     genderRadios.forEach(radio => radio.checked = false);
 
-    // Reset date of birth dropdowns
     document.getElementById('day').selectedIndex = 0; 
     document.getElementById('month').selectedIndex = 0; 
     document.getElementById('year').selectedIndex = 0; 
 
-    // Reset the email input field and hide the email edit form if it's open
     document.getElementById('current-email').textContent = 'hann****@gmail.com'; 
     document.getElementById('edit-email-form').style.display = 'none'; 
     document.getElementById('current-email').style.display = 'block'; 
 
-    // Reset email change button
     document.getElementById('change-email-btn').style.display = 'block';
 });
+function previewImage() {
+    const fileInput = document.getElementById('file-input');
+    const profileImage = document.getElementById('profile-img');
 
-    // Show the logout confirmation modal
+    const file = fileInput.files[0];
+    if (file) {
+        const reader = new FileReader();
+
+        reader.onload = function(e) {
+            profileImage.src = e.target.result;  
+        }
+
+        reader.readAsDataURL(file);  
+    }
+}
+
 function showLogoutModal() {
     document.getElementById('logoutModal').style.display = 'block';
 }
 
-// Close the logout confirmation modal
 function closeLogoutModal() {
     document.getElementById('logoutModal').style.display = 'none';
 }
 
-// Confirm logout action
 function confirmLogout() {
-    // Clear session data and cookies
+
     localStorage.removeItem('user');
     sessionStorage.removeItem('user');
     document.cookie = 'userSession=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
 
-    // Show a logout message
     alert('You have been logged out.');
 
-    // Redirect to login page
-    window.location.href = 'index.html';
+    window.location.href = './views/login.view.php';
 }
 
-// Attach the logout function to the logout link
 function logout() {
     showLogoutModal();
 }
@@ -390,4 +495,3 @@ function logout() {
     </script>
 </body>
 </html>
-
