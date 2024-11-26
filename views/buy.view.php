@@ -15,24 +15,24 @@
         </div>
         <div class="top-bar">
             <div class="custom-dropdown">
-                <button class="dropdown-button" onclick="window.location.href='product.html'">
+                <button class="dropdown-button" onclick="window.location.href='./views/department.view.php'">
                     Department Section<span class="caret">^</span>
                 </button>                
             </div>
             <div class="navbar-links">
-                <a href="organization.html">Products</a>
+                <a href="./views/products.view.php">Products</a>
                 <a href="#">About</a>
                 <a href="#">Contact Us</a>
             </div>
         </div>
         <div class="button-container">
-            <a href="cart.html">
+            <a href="./views/cart.view.php">
             <button class="cart-button">
                 <i class="fas fa-shopping-cart"></i>
             </button>
             </a>
 
-            <a href="profile.html">
+            <a href="./views/profile.view.php">
             <button class="profile-button">
                 <i class="fas fa-user"></i>
             </button>
