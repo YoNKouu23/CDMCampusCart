@@ -14,7 +14,7 @@
         <div class="form-container sign-in-container" id="signInContainer">
             <form id="signInForm" action="#">
                 <div class="form-header">
-                    <img src="../public//img/logo1.png" alt="Logo" class="logo">
+                    <img src="../public/img/logo1.png" alt="Logo" class="logo">
                     <h2>CDM CAMPUS CART</h2>
                 </div>
                 <input type="email" placeholder="Email" required>
@@ -41,7 +41,7 @@
         <div class="form-container sign-up-container" id="signUpContainer">
             <form id="signUpForm" action="#">
                 <div class="form-header">
-                    <img src="../public//img/logo1.png" alt="Logo" class="logo">
+                    <img src="../public/img/logo1.png" alt="Logo" class="logo">
                     <h2>CDM CAMPUS CART</h2>
                 </div>
                 <input type="text" placeholder="Enter your Name" required>
@@ -57,7 +57,7 @@
                         <hr class="line">
                     </div>
                     <button type="button" class="social-btn google">
-                        <img src="../public//img/google-icon.png" alt="Google Icon" class="google-icon"> 
+                        <img src="../public/img/google-icon.png" alt="Google Icon" class="google-icon"> 
                         Sign in with Google
                     </button>
                     
@@ -70,7 +70,7 @@
             <div class="overlay">
                 <div class="overlay-panel overlay-left">
                     <h3>Everything you need, <b>right on campus.</b></h3>
-                    <img src="../public//img/lo.png" alt="Pic" class="pic">
+                    <img src="../public/img/lo.png" alt="Pic" class="pic">
                     <div class="third-circle"></div>
                 </div>
                 <div class="overlay-panel overlay-right">

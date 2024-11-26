@@ -42,7 +42,7 @@
     
     <main>
         <div class="main-content">
-            <img src="../public//img/logo1.png" alt="Logo" class="logo">
+            <img src="../public/img/logo1.png" alt="Logo" class="logo">
             <div class="search-bar">
                 <input type="text" placeholder="Search for products...">
                 <button><i class="fas fa-search"></i></button>
@@ -83,14 +83,14 @@
         <div id="payment-section" class="section hidden">
             <h2>PAYMENT</h2>
             <div class="just-logo">
-                <img src="../public//img/logo1.png" alt="Logo" class="logo">
+                <img src="../public/img/logo1.png" alt="Logo" class="logo">
                 <h3>CDM CAMPUS CART</h3>
             </div>
         
             <form>
                 <div class="gcash-qr-section">
                     <h4>Scan the QR Code to Pay</h4>
-                    <img src="../public//img/qr.jpg" alt="GCash QR Code" class="gcash-qr-img">
+                    <img src="../public/img/qr.jpg" alt="GCash QR Code" class="gcash-qr-img">
                     <p>Cdm Campus Cart</p>
 
                     <button type="button" class="proceed-button" onclick="showThankYouSection()">Complete Purchase</button>
@@ -103,13 +103,13 @@
         <div id="thankyou-section" class="section hidden">
             <h2>PAYMENT</h2>
             <div class="just-logo">
-                <img src="../public//img/logo1.png" alt="Logo" class="logo">
+                <img src="../public/img/logo1.png" alt="Logo" class="logo">
                 <h3>CDM CAMPUS CART</h3>
             </div>
         
             <form>
                 <div class="thankyou-section">
-                    <img src="./img/checkk.png" alt="check" class="check-img">
+                    <img src="./public/img/checkk.png" alt="check" class="check-img">
                     <h4>Thank You!</h4>
                     <p>Your payment has been sucessfully processed.</p>
                     <p>___________________________________________</p>
