@@ -1,0 +1,648 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9; 
+    
+}
+html {
+    scroll-behavior: smooth;
+}
+
+/* Header Styles */
+header {
+    background-color: #0A6D03;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+}
+
+.logo h3 {
+    margin: 0;
+    color: white; 
+}
+
+/* Navigation Styles */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px; 
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s; 
+}
+
+nav ul li a:hover {
+    color: #0A6D03; 
+}
+
+/* Top Bar Section Styles */
+.top-bar {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    color: white;
+    padding: 0 40px; 
+    
+}
+
+.custom-dropdown {
+    position: relative;
+    width: 160px; 
+    margin-right: 150px;
+}
+
+.dropdown-button {
+    background-color: #0A6D03;
+    color: WHITE;
+    padding: 10px ;
+    width: 150%; 
+    text-align: center; 
+    border: 1px solid #0A6D03;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    white-space: nowrap; 
+    
+}
+.dropdown-button:hover{
+    background-color: #2C8E2F;
+    border-color: white;
+}
+
+/* Caret styling */
+.caret {
+    font-size: 18px;
+    margin-right: 5px; 
+    transform: rotate(0deg); 
+    transition: transform 0.3s ease; 
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 150%;
+    background-color: white;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #0A6D03;
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+.dropdown-menu li {
+    padding: 10px;
+    cursor: pointer;
+    color: #111;
+    text-align: center;
+    
+}
+
+.dropdown-menu li:hover {
+    background-color: #FCFE01;
+    color: #0A6D03;
+}
+
+/* Show the menu when the button is hovered or clicked */
+.custom-dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Rotate caret when menu is open */
+.custom-dropdown:hover .caret {
+    transform: rotate(180deg); 
+}
+
+.dropdown-button:hover {
+    background-color: #2C8E2F; 
+    border-color: white;
+}
+
+/* Navbar Styles */
+.navbar-links {
+    display: flex; 
+    justify-content: flex-start; 
+    align-items: center; 
+    padding: 0; 
+    margin: 0; 
+}
+
+.navbar-links a {
+    text-decoration: none;
+    color: WHITE;
+    font-size: 18px; 
+    transition: color 0.3s ease;
+    margin-right: 80px; 
+}
+
+.navbar-links a:hover {
+    color: #FCFE01; 
+}
+
+/* Ensure the navbar stays in one line and does not wrap */
+.navbar-links {
+    white-space: nowrap; 
+}
+
+.navbar-links a:last-child {
+    margin-right: 0; 
+}
+
+/* Cart and Profile Button Styles */
+.button-container {
+    display: flex;
+    gap: 15px; 
+    align-items: center;
+}
+
+.cart-button, .profile-button {
+    font-size: 18px;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    color: WHITE;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    margin-right: 30px;
+}
+
+.cart-button:hover, .profile-button:hover {
+    
+    color: #FCFE01; 
+}
+
+/* Search Bar Styles */
+.search-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -20px;
+    width: 100%;
+}
+
+.search-bar input {
+    padding: 10px 15px;
+    font-size: 18px;
+    width: 70%;
+    border: 1px solid #180808;
+    border-radius: 10px;
+    box-sizing: border-box; 
+}
+
+.search-bar button {
+    padding: 10px 20px; 
+    font-size: 18px; 
+    border: none;
+    background-color: #0A6D03;
+    color: white;
+    border-radius: 10px; 
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-left: 5px;
+}
+
+.search-bar button:hover {
+    background-color: #0A6D03; 
+}
+img {
+    width: 100px;
+    height: 100px;
+    margin-left: 100px;  
+    margin-bottom: 15px;
+    
+
+
+}
+
+/* Banner Styles */
+.banner {
+    background-color: #0A6D03;
+    color: white;
+    padding: 40px;
+    text-align: center;
+}
+
+.banner h2 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+.banner p {
+    font-size: 1.2em;
+}
+
+.explore-btn {
+    padding: 10px 20px;
+    background-color: white;
+    color: #0A6D03;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.explore-btn:hover {
+    background-color: #f1f1f1;
+}
+
+/* Product Section Styles */
+.product-section {
+    padding: 5px;
+}
+
+.product-section h2 {
+    text-align: center;
+    margin-right: 65%;
+    margin-bottom: 20px;
+    color: #0A6D03;
+    font-size: 3rem;
+    text-shadow: 
+        1px 1px 0 #111, 
+        -1px -1px 0 #111, 
+        1px -1px 0 #111, 
+        -1px 1px 0 #111
+    
+}
+.product-section span{
+    color: #FCFE01;
+    font-size: 3rem;
+    
+   
+   
+}
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 0;  
+    justify-items: center;  
+    margin: 20px;
+}
+
+/* Specific Background Colors for IOB and ITE sections */
+.product-section.iob-section {
+    background-color: #fcfcdc;  
+    padding: 20px;
+}
+
+.product-section.ite-section {
+    background-color: #dcebf5;  
+    padding: 20px;
+}
+
+
+
+
+.product-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%; 
+    margin-bottom: 20px; 
+    
+}
+
+.product-card {
+    position: relative;
+    border: 1px solid #ccc;
+    border-top-left-radius: 20%; 
+    border-bottom-right-radius: 20%;
+    padding: 15px;
+    background: linear-gradient(to bottom, #fdfda2, #55e04b);
+    transition: transform 0.3s;
+    width: 250px;  
+    min-height: 350px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); 
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;     
+    
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+/* Styling the image inside the product card */
+.product-card img {
+    width: 100%;           
+    height: auto;         
+    max-width: 250px;      
+    border-radius: 10px;   
+    margin-bottom: 5px;   
+    display: block;        
+    margin-left: auto;     
+    margin-right: auto;    
+    
+}
+
+/* Product Title and Price Styles */
+.product-item h3 {
+    font-size: 18px;
+    color: #111;
+    margin-bottom: 5px;
+}
+
+.product-card p {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Responsive Styles for Product Cards */
+@media (max-width: 768px) {
+    .product-grid {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px; 
+    }
+
+    .product-card {
+        width: 80%;  
+    }
+
+    .product-card img {
+        max-width: 90%;  
+    }
+}
+
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #f5f5f5;
+    margin-top: 20px;
+}
+
+button {
+    margin: 15px 0;
+    border-radius: 15px;
+    border: 1px solid #0A6D03;
+    background-color: white;
+    color: red;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 15px 50px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in;
+    margin-top: 10PX;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+button:focus {
+    outline: none;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul li {
+        margin-right: 10px;
+    }
+
+    .product-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .button-container {
+        margin-top: 10px;
+    }
+
+    /* Adjust Top Bar for Small Screens */
+    .top-bar {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+    }
+
+    .navbar-links {
+        width: 100%;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .navbar-links a {
+        margin-left: 15px;
+        font-size: 16px;
+    }
+
+    .top-bar-left {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+
+    .department-select {
+        width: 100%;
+        margin-left: 0;
+        padding: 8px 10px;
+    }
+}
+  #cart-message {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            display: none;
+            z-index: 9999;
+        }
+
+/* Style for the action dialog box */
+#action-dialog {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+    border: 2px solid #0A6D03;
+    text-align: center;
+    width: 300px; 
+}
+
+/* Style for the close button (X) at the top-right of the dialog */
+#close-dialog-btn {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    color: #333;
+    cursor: pointer;
+}
+
+#close-dialog-btn:hover {
+    color: #f44336; 
+}
+
+/* Dialog Content */
+.dialog-content {
+    padding: 5px;
+}
+
+.dialog-content button {
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 5px;
+
+}
+
+.dialog-content button:hover {
+    background-color: #45a049;
+}
+
+/* Optional: Add hover effect to the close button */
+#close-dialog-btn:hover {
+    color: #0A6D03;
+}
+
+
+/* Style for Payment Details Modal */
+.details-dialog {
+    position: fixed;
+    top: 20%;
+    left: 32%;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.details-dialog .dialog-content {
+    background-color: white;
+    border: 2px solid #0A6D03;
+    padding: 20px;
+    border-radius: 10px;
+    width: 500px;
+    height: 500px;
+    max-width: 100%;
+    text-align: center;
+}
+.dialog-content h3{
+    color: #0A6D03;
+    margin-right: 80%;
+    font-size: 30px;
+    margin-top: 10px;
+}
+.details-dialog input, .details-dialog textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px -10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+
+}
+.details-dialog input:focus{
+    border-color: #0A6D03; 
+    outline: none; 
+}
+.details-dialog button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 105%;
+    margin-left: -12px;
+}
+
+
+.details-dialog #close-details-dialog-btn {
+    position: absolute;
+    top: -5px;
+    right: 13%;
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: #333;
+    cursor: pointer;
+}
+.details-dialog #close-details-dialog-btn:hover{
+    color: #0A6D03;
+
+}
+
+
+/* Payment Method Selection Styles */
+#details-method {
+    width: 105%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    margin-bottom: 10px;
+    margin-left: -12px;
+    transition: border-color 0.3s ease;
+}
+
+/* Focus effect for the dropdown */
+#details-method:focus {
+    border-color: #0A6D03; 
+    outline: none; 
+}
+
+/* Label for payment method dropdown */
+label[for="payment-method"] {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 8px;
+    display: inline-block;
+    color: #333;
+}
+
+/* Optional: Add some spacing between form elements */
+form {
+    margin-top: 20px;
+}
+.hidden {
+    display: none;
+}

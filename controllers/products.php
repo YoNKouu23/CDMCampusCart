@@ -1,2 +1,2 @@
 <?php
-    require("../views/product.view.php");
+    require("../views/products.view.php");

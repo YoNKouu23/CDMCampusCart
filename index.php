@@ -17,11 +17,13 @@
                     <input id="searchInput" type="text" placeholder="What are you looking for?">
                     <img class="search-icon" src="./public/icons/search.png" alt="" onclick="focusInput()">
                 </div>
-                <button>LOG IN</button>
+                <a href="./controllers/login.php">
+                    <button>LOG IN</button>
+                </a>
 
             </div>
             <div class="ill">
-                <img class="illu" src="./public/images/illustration.png" alt="">
+                <img class="illu" src="./public/images/illustration1.png" alt="">
             </div>
         </div>
     </section>
@@ -32,28 +34,34 @@
             <div>
                 <h3>UNIFORMS</h3>
                 <div class="productbox"><img src="./public/images/uniform.png" alt=""></div>
-                <button>EXPLORE NOW</button>
+                <a href="./controllers/products.php">
+                    <button>EXPLORE NOW</button>
+                </a>
             </div>
             
             <div>
                 <h3>ORGANIZATION SHIRTS</h3>
                 <div class="productbox1"><img src="./public/images/p.e.png" alt=""></div>
-                <button>EXPLORE NOW</button>
+                <a href="./controllers/products.php">
+                    <button>EXPLORE NOW</button>
+                </a>
             </div>
             
             <div>
                 <h3>MERCHANDISE</h3>
                 <div class="productbox2"><img src="./public/images/pin.png" alt=""></div>
-                <button>EXPLORE NOW</button>
+                <a href="./controllers/products.php">
+                    <button>EXPLORE NOW</button>
+                </a>
             </div>
         </div>
     </section>
 
 
-    <section class="about">
+    <section class="about" id="about">
         <div class="about-sec">
             <div>
-                <h2><span>I</span>About Us</h2>
+                <h2><span>l</span> About Us</h2>
             </div>
             <div>
                 <pre>
@@ -86,7 +94,7 @@
                         —all designed to make campus life easier. Welcome to your all-in-one 
                         solution for uniforms, institute merchandise, and program essentials!
                     </pre>
-                    <button>Meet the Team</button>
+                    <a href="#meet"><button>Meet the Team</button></a>
                 </div>
         </div>
 
@@ -117,7 +125,7 @@
         </div>
 
         <div class="team-content">
-            <div>
+            <div id="meet">
                 <h1>Meet our <span>Team!</span></h1>
             </div>
 
@@ -139,66 +147,66 @@
                 </div>
 
                 <div class="team-card">
-                    <img src="./public/images/emman.jpg" alt="">
+                    <img src="./public/images/john.jpg" alt="">
                     <div class="team-info">
-                        <h3>Emmanuel Pornel</h3>
-                        <p>Project Manager</p>
+                        <h3>John Lee Teofilo</h3>
+                        <p>Full-stack Developer</p>
                     </div>   
                 </div>
 
                 <div class="team-card">
-                    <img src="./public/images/emman.jpg" alt="">
+                    <img src="./public/images/ella1.jpg" alt="">
                     <div class="team-info">
-                        <h3>Emmanuel Pornel</h3>
-                        <p>Project Manager</p>
+                        <h3>Ella Tebelin</h3>
+                        <p>UI Designer</p>
                     </div>   
                 </div>
 
                 <div class="team-card">
-                    <img src="./public/images/emman.jpg" alt="">
+                    <img src="./public/images/lim.jpg" alt="">
                     <div class="team-info">
-                        <h3>Emmanuel Pornel</h3>
-                        <p>Project Manager</p>
+                        <h3>Russel Lance Lim</h3>
+                        <p>UI Designer</p>
                     </div>   
                 </div>
 
                 <div class="team-card">
-                    <img src="./public/images/emman.jpg" alt="">
+                    <img src="./public/images/julie.jpg" alt="">
                     <div class="team-info">
-                        <h3>Emmanuel Pornel</h3>
-                        <p>Project Manager</p>
+                        <h3>Julie Ann Quilbio</h3>
+                        <p>Documentation</p>
                     </div>   
 
                 </div>
                 <div class="team-card">
-                    <img src="./public/images/emman.jpg" alt="">
+                    <img src="./public/images/lovely.jpg" alt="">
                     <div class="team-info">
-                        <h3>Emmanuel Pornel</h3>
-                        <p>Project Manager</p>
+                        <h3>Lovely Pantaleon</h3>
+                        <p>Documentation</p>
                     </div>   
                 </div>
 
                 <div class="team-card">
-                    <img src="./public/images/emman.jpg" alt="">
+                    <img src="./public/images/eric.jpg" alt="">
                     <div class="team-info">
-                        <h3>Emmanuel Pornel</h3>
-                        <p>Project Manager</p>
+                        <h3>Eric Arsolon</h3>
+                        <p>Documentation</p>
                     </div>   
                 </div>
 
                 <div class="team-card">
-                    <img src="./public/images/emman.jpg" alt="">
+                    <img src="./public/images/elton.jpg" alt="">
                     <div class="team-info">
-                        <h3>Emmanuel Pornel</h3>
-                        <p>Project Manager</p>
+                        <h3>Elton Jhon Polizon</h3>
+                        <p>Documentation</p>
                     </div>   
                 </div>
 
                 <div class="team-card">
-                    <img src="./public/images/emman.jpg" alt="">
+                    <img src="./public/images/aries.jpg" alt="">
                     <div class="team-info">
-                        <h3>Emmanuel Pornel</h3>
-                        <p>Project Manager</p>
+                        <h3>Aries Panganiban</h3>
+                        <p>Documentation</p>
                     </div>   
                 </div>
             </div>
@@ -209,7 +217,7 @@
 
 
     <section class="contact">
-        <div class="contactsec">
+        <div class="contactsec" id="contact">
                 <div class="contact-details">
                     <img src="./public/images/logo.png" alt="">
                     <h3>Get in touch <br><span>Hello, how can  we help?</span></h3>
@@ -239,7 +247,7 @@
                     </div>
 
                     <div class="illu-img">
-                        <img src="./public/images/contact.png" alt="">
+                        <img src="./public/images/contact1.png" alt="">
                     </div>
                  
                  
@@ -290,7 +298,7 @@
                 <img src="./public/icons/Frame 1.png" alt="">
                 <img src="./public/icons/Frame 2.png" alt="">
                 <img src="./public/icons/Frame 4.png" alt="">
-            </div>
+            </div>  
         </div>
 
 

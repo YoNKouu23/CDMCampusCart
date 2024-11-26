@@ -1,0 +1,470 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9; 
+    
+}
+html {
+    scroll-behavior: smooth;
+}
+
+/* Header Styles */
+header {
+    background-color: #0A6D03;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+}
+
+.logo h3 {
+    margin: 0;
+    color: white; 
+}
+
+/* Navigation Styles */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px; 
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s; 
+}
+
+nav ul li a:hover {
+    color: #0A6D03; 
+}
+
+/* Top Bar Section Styles */
+.top-bar {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    color: white;
+    padding: 0 40px; 
+    
+}
+
+.custom-dropdown {
+    position: relative;
+    width: 160px; 
+    margin-right: 150px;
+}
+
+.dropdown-button {
+    background-color: #0A6D03;
+    color: #111;
+    padding: 10px ;
+    width: 150%; 
+    text-align: center; 
+    border: 1px solid #0A6D03;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    white-space: nowrap; 
+    
+}
+.dropdown-button:hover{
+    color: #FCFE01;
+}
+
+/* Caret styling */
+.caret {
+    font-size: 18px;
+    margin-right: 5px; 
+    transform: rotate(0deg); 
+    transition: transform 0.3s ease; 
+}
+
+
+
+/* Navbar Styles */
+.navbar-links {
+    display: flex; 
+    justify-content: flex-start; 
+    align-items: center; 
+    padding: 0; 
+    margin: 0; 
+}
+
+.navbar-links a {
+    text-decoration: none;
+    color: #111;
+    font-size: 18px; 
+    transition: color 0.3s ease;
+    margin-right: 80px; 
+}
+
+.navbar-links a:hover {
+    color: #FCFE01; 
+}
+
+/* Ensure the navbar stays in one line and does not wrap */
+.navbar-links {
+    white-space: nowrap; 
+}
+
+.navbar-links a:last-child {
+    margin-right: 0; 
+}
+
+/* Cart and Profile Button Styles */
+.button-container {
+    display: flex;
+    gap: 15px; 
+    align-items: center;
+}
+
+.cart-button, .profile-button {
+    font-size: 18px;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    color: #111;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    margin-right: 30px;
+}
+
+.cart-button:hover, .profile-button:hover {
+    
+    color: #FCFE01; 
+}
+
+/* Search Bar Styles */
+.search-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -110px;
+    width: 100%;
+}
+
+.search-bar input {
+    padding: 10px 15px;
+    font-size: 18px;
+    width: 70%;
+    border: 1px solid #180808;
+    border-radius: 10px;
+    box-sizing: border-box; 
+}
+
+.search-bar button {
+    padding: 10px 20px; 
+    font-size: 18px; 
+    border: none;
+    background-color: #0A6D03;
+    color: white;
+    border-radius: 10px; 
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-left: 5px;
+}
+
+.search-bar button:hover {
+    background-color: #0A6D03; 
+}
+img {
+    width: 100px;
+    height: 100px;
+    margin-left: 100px;  
+    margin-bottom: 15px;
+    
+}
+
+button {
+    margin: 15px 0;
+    border-radius: 15px;
+    border: 1px solid #0A6D03;
+    background-color: white;
+    color: #111;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 15px 50px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in;
+    margin-top: 10px;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+button:focus {
+    outline: none;
+}
+
+/* General section styling */
+.section {
+    max-width: 1100px;
+    margin: 50px auto;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+
+/* Button styles */
+.proceed-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 1.2rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+.proceed-button:hover {
+    background-color: #45a049;
+}
+
+.back-button, .proceed-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    cursor: pointer;
+    border: none;
+    margin-top: 20px;
+}
+
+form label {
+    display: block;
+    margin-top: 10px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+}
+
+
+
+
+
+/* Payment Method Selection Styles */
+#payment-method {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    margin-bottom: 15px;
+    transition: border-color 0.3s ease;
+}
+
+/* Focus effect for the dropdown */
+#payment-method:focus {
+    border-color: #0A6D03; 
+    outline: none; 
+}
+
+/* Label for payment method dropdown */
+label[for="payment-method"] {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 8px;
+    display: inline-block;
+    color: #333;
+}
+
+/* Optional: Add some spacing between form elements */
+form {
+    margin-top: 20px;
+}
+
+
+#details-section h2,
+#payment-section h2 {
+    color: #0A6D03; 
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+.gcash-qr-section {
+    background-color: #f9f9f9; 
+    border: 1px solid #0A6D03;
+    border-radius: 10px; 
+    padding: 20px;
+    max-width: 500px; 
+    height: 500px;
+    margin: 0 auto; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    text-align: center; 
+
+}
+
+.just-logo {
+    display: flex; 
+    margin-left: 27%;
+    margin-bottom:  -20px; 
+    
+}
+.just-logo h3{
+    margin-top: 35px;
+}
+
+
+span{
+    color: #0A6D03;
+}
+h4 {
+    font-size: 18px;
+    margin: 20px 0;
+}
+
+.gcash-qr-img {
+    width: 250px;
+    height: 250px;
+    margin-bottom: 50px; 
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+p {
+    font-size: 16px;
+    color: #555;
+    margin-top: 0;
+}
+
+.gcash-qr-section .proceed-button{
+    width: 80%;
+    margin-bottom: 55%;
+}
+
+.payment-section .back-button{
+    margin-left: 50%;
+}
+
+
+.thankyou-section {
+    background-color: #f9f9f9;
+    border: 1px solid #0A6D03;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 500px; 
+    height: 500px;
+    margin: 0 auto; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    text-align: center; 
+
+}
+
+
+.thankyou-section h4 {
+    font-size: 18px;
+    margin: 10px 0; 
+    margin-bottom: 10px;
+}
+#thankyou-section h2{
+    font-size: 30px;
+    color: #0A6D03;
+    margin-top: 10px;
+}
+
+.check-img {
+    width: 250px; 
+    height: 250px;
+    margin-bottom: 50px; 
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+p {
+    font-size: 16px;
+    color: #555; 
+    margin-top: 0;
+}
+
+.thankyou-section .proceed-button{
+    width: 80%;
+    margin-bottom: 55%;
+}
+
+.thankyou-section .back-button{
+    margin-left: 50%;
+}
+
+span{
+    font-size: bold;
+    color: #0A6D03;
+}
+
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #f5f5f5;
+    margin-top: 20px;
+}
+.hidden {
+    display: none;
+}
+
+/* Button Styling */
+.thankyou-section button,
+input[type="submit"] {
+    width: 85%;
+    margin: 15px 0;
+    border-radius: 20px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 100px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in;
+    
+}
+
+button:active,
+input[type="submit"]:active {
+    transform: scale(0.95);
+}
+
+button:focus,
+input[type="submit"]:focus {
+    outline: none;
+}
+
+/* Responsive Styles for Product Cards */
+@media (max-width: 768px) {
+    .product-grid {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px; 
+    }
+
+    .product-card {
+        width: 80%;  
+    }
+
+    .product-card img {
+        max-width: 90%;  
+    }
+}

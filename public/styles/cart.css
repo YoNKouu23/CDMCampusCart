@@ -1,0 +1,690 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9; 
+    
+}
+html {
+    scroll-behavior: smooth;
+}
+
+/* Header Styles */
+header {
+    background-color: #0A6D03;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+}
+
+.logo h3 {
+    margin: 0;
+    color: white; 
+}
+
+/* Navigation Styles */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px; 
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s; 
+}
+
+nav ul li a:hover {
+    color: #0A6D03; 
+}
+
+/* Top Bar Section Styles */
+.top-bar {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    color: white;
+    padding: 0 40px; 
+    
+}
+
+.custom-dropdown {
+    position: relative;
+    width: 160px; /* Adjust width as needed */
+    margin-right: 150px;
+}
+
+.dropdown-button {
+    background-color: #0A6D03;
+    color: WHITE;
+    padding: 10px ;
+    width: 150%; /* Make button the full width of the container */
+    text-align: center; /* Align text to the left */
+    border: 1px solid #0A6D03;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+    display: flex;
+    justify-content: space-between; /* Ensures the caret is pushed to the right */
+    align-items: center;
+    white-space: nowrap; /* Ensures the text stays on one line */
+    
+    
+}
+.dropdown-button:hover{
+    background-color: #2C8E2F; /* Slightly darker green */
+    border-color: white;
+}
+
+/* Caret styling */
+.caret {
+    font-size: 18px;
+    margin-right: 5px; /* Small space between "Department" and caret */
+    transform: rotate(0deg); /* By default, caret is pointing up */
+    transition: transform 0.3s ease; /* Smooth transition for rotation */
+    color: WHITE;
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 150%;
+    background-color: white;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #0A6D03;
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+.dropdown-menu li {
+    padding: 10px;
+    cursor: pointer;
+    color: #111;
+    text-align: center;
+    
+}
+
+.dropdown-menu li:hover {
+    background-color: #FCFE01;
+    color: #0A6D03;
+}
+
+/* Show the menu when the button is hovered or clicked */
+.custom-dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-button:hover {
+    background-color: #2C8E2F; /* Slightly darker green */
+    border-color: white;
+}
+
+/* Navbar Styles */
+.navbar-links {
+    display: flex; 
+    justify-content: flex-start; 
+    align-items: center; 
+    padding: 0; 
+    margin: 0; 
+}
+
+.navbar-links a {
+    text-decoration: none;
+    color: WHITE;
+    font-size: 18px; 
+    transition: color 0.3s ease;
+    margin-right: 80px; 
+}
+
+.navbar-links a:hover {
+    color: #FCFE01; 
+}
+
+/* Ensure the navbar stays in one line and does not wrap */
+.navbar-links {
+    white-space: nowrap; 
+}
+
+.navbar-links a:last-child {
+    margin-right: 0; 
+}
+
+/* Cart and Profile Button Styles */
+.button-container {
+    display: flex;
+    gap: 15px; 
+    align-items: center;
+}
+
+.cart-button, .profile-button {
+    font-size: 18px;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    color: WHITE;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    margin-right: 30px;
+}
+
+.cart-button:hover, .profile-button:hover {
+    
+    color: #FCFE01; 
+}
+
+/* Search Bar Styles */
+.search-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -110px;
+    width: 100%;
+}
+
+.search-bar input {
+    padding: 10px 15px;
+    font-size: 18px;
+    width: 70%;
+    border: 1px solid #180808;
+    border-radius: 10px;
+    box-sizing: border-box; 
+}
+
+.search-bar button {
+    padding: 10px 20px; 
+    font-size: 18px; 
+    border: none;
+    background-color: #0A6D03;
+    color: white;
+    border-radius: 10px; 
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-left: 5px;
+}
+
+.search-bar button:hover {
+    background-color: #0A6D03; 
+}
+img {
+    width: 100px;
+    height: 100px;
+    margin-left: 100px;  
+    margin-bottom: 15px;
+    
+}
+
+button {
+    margin: 15px 0;
+    border-radius: 15px;
+    border: 1px solid #0A6D03;
+    background-color: white;
+    color: #111;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 15px 50px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in;
+    margin-top: 10px;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+button:focus {
+    outline: none;
+}
+
+/* General section styling */
+.section {
+    max-width: 1100px;
+    margin: 50px auto;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+.hidden { display: none; }
+
+/* Flex container for cart items and order summary */
+.cart-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+
+/* Cart items styling */
+.cart-items {
+    width: 60%;  
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.image-box {
+    width: 120px;
+    height: 120px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, #fdfda2, #55e04b);
+    margin-right: 20px;
+}
+
+.image-box img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    margin-left: 10%;
+}
+
+.item-details {
+    flex: 1; 
+    margin-left: 15px; 
+}
+
+.item-details p {
+    margin: 5px 0;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    margin-left: 100%;
+}
+
+.quantity-controls button {
+    padding: 5px 10px;
+    margin: 0 5px;
+    background-color: #ddd;
+    border: none;
+    cursor: pointer;
+}
+
+.quantity-controls input {
+    width: 40px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.remove-item {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #0A6D03; 
+    margin-bottom: 60px;
+    margin-left: 30px;
+    
+}
+
+.remove-item:hover {
+    color: #45a049
+}
+
+/* Order Summary styling (right side) */
+.order-summary {
+    width: 40%; 
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-left: 50px; 
+    margin-bottom: 10px;
+}
+
+.order-summary h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #0A6D03 !important; 
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.summary-item p {
+    font-size: 15px;
+    color: #333;
+    margin: 0;
+}
+
+.summary-item.total {
+    font-weight: bold;
+    font-size: 1.2rem;
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+}
+
+hr {
+    margin: 20px 0;
+}
+
+/* Total price styling */
+.total-price {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+    border-top: 2px solid #ddd;
+    font-weight: bold;
+}
+
+/* Button styles */
+.proceed-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 1.2rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+.proceed-button:hover {
+    background-color: #45a049;
+}
+
+.back-button, .proceed-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    cursor: pointer;
+    border: none;
+    margin-top: 20px;
+}
+
+form label {
+    display: block;
+    margin-top: 10px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+}
+
+#cart-section h2 {
+    text-align: center;
+    margin: 0;  
+    margin-left: 0;
+    margin-bottom: 20px;
+    color: #0A6D03;
+    font-size: 3rem;
+    text-shadow: 
+        1px 1px 0 #111, 
+        -1px -1px 0 #111, 
+        1px -1px 0 #111, 
+        -1px 1px 0 #111;
+    display: inline-block; 
+}
+
+#cart-section span {
+    color: #FCFE01;
+    font-size: 3rem;
+    font-weight: bold; 
+    margin-right: 10px;  
+}
+
+.order-summary {
+    width: 40%; 
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.order-summary h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.summary-item span {
+    font-size: 1.1rem;
+    
+}
+
+.summary-item.total {
+    font-weight: bold;
+    font-size: 1.2rem;
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+}
+
+hr {
+    margin: 20px 0;
+}
+
+/* Payment Method Selection Styles */
+#payment-method {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    margin-bottom: 15px;
+    transition: border-color 0.3s ease;
+}
+
+/* Focus effect for the dropdown */
+#payment-method:focus {
+    border-color: #0A6D03; 
+    outline: none;
+}
+
+/* Label for payment method dropdown */
+label[for="payment-method"] {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 8px;
+    display: inline-block;
+    color: #333;
+}
+
+/* Optional: Add some spacing between form elements */
+form {
+    margin-top: 20px;
+}
+
+
+#details-section h2,
+#payment-section h2 {
+    color: #0A6D03; 
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+.gcash-qr-section {
+    background-color: #f9f9f9; 
+    border: 1px solid #0A6D03;
+    border-radius: 10px; 
+    padding: 20px;
+    max-width: 500px; 
+    height: 550px;
+    margin: 0 auto; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    text-align: center; 
+
+}
+
+.just-logo {
+    display: flex; 
+    margin-left: 27%;
+    margin-bottom:  -20px;
+    
+}
+.just-logo h3{
+    margin-top: 35px;
+}
+
+
+.payment-summary {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+.payment-summary h3 {
+    font-size: 22px;
+    color: #333; 
+    margin-top: 20px;
+
+}
+span{
+    color: #0A6D03;
+}
+h4 {
+    font-size: 18px;
+    margin: 20px 0; 
+}
+
+.gcash-qr-img {
+    width: 250px; 
+    height: 250px;
+    margin-bottom: 50px; 
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+p {
+    font-size: 16px;
+    color: #555;
+    margin-top: 0;
+}
+
+.gcash-qr-section .proceed-button{
+    width: 80%;
+    margin-bottom: 55%;
+}
+
+.payment-section .back-button{
+    margin-left: 50%;
+}
+
+
+.thankyou-section {
+    background-color: #f9f9f9;
+    border: 1px solid #0A6D03;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 500px; 
+    height: 550px;
+    margin: 0 auto; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    text-align: center; 
+
+}
+
+.payment-summary {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+.payment-summary h3 {
+    font-size: 22px;
+    color: #333; 
+    margin-top: 20px;
+
+}
+
+.thankyou-section h4 {
+    font-size: 18px;
+    margin: 10px 0;
+    margin-TOP: 20px;
+}
+#thankyou-section h2{
+    font-size: 30px;
+    color: #0A6D03;
+    margin-top: 10px;
+}
+
+.check-img {
+    width: 250px; 
+    height: 250px;
+    margin-bottom: 30px; 
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+p {
+    font-size: 16px;
+    color: #555; 
+    margin-top: 0;
+}
+
+.thankyou-section .proceed-button{
+    width: 80%;
+    margin-bottom: 55%;
+}
+
+.thankyou-section .back-button{
+    margin-left: 50%;
+}
+
+span{
+    font-size: bold;
+    color: #0A6D03;
+}
+
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #f5f5f5;
+    margin-top: 20px;
+}
+
+
+/* Responsive Styles for Product Cards */
+@media (max-width: 768px) {
+    .product-grid {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px; 
+    }
+
+    .product-card {
+        width: 80%;  
+    }
+
+    .product-card img {
+        max-width: 90%;  
+    }
+}

@@ -5,15 +5,20 @@
     </a>
 
     <ul class="menu">
-        <li><a href="#">DEPARTMENT SECTION</a></li>
+        <li><a href="/controllers/department.php">DEPARTMENT SECTION</a></li>
         <li><a href="/controllers/products.php">PRODUCTS</a></li>
-        <li><a href="#">ABOUT</a></li>
-        <li><a href="#">CONTACT US</a></li>
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="#contact">CONTACT US</a></li>
     </ul>
 
     <div class="icons">
-        <img src="../public/icons/user.png" alt="">
-        <img src="../public/icons/cart.png" alt="">
+        <a href="/controllers/profile.php">
+            <img src="../public/icons/user.png" alt="">
+        </a>
+            
+        <a href="/controllers/cart.php">
+            <img src="../public/icons/cart.png" alt="">
+        </a>
     </div>
 
 </header>
