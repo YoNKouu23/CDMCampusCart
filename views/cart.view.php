@@ -42,7 +42,7 @@
 
     <main>
         <div class="main-content">
-            <img src="./img/logo1.png" alt="Logo" class="logo">
+            <img src="../public//img/logo1.png" alt="Logo" class="logo">
             <div class="search-bar">
                 <input type="text" placeholder="Search for products...">
                 <button><i class="fas fa-search"></i></button>
@@ -59,7 +59,7 @@
         <div class="cart-items">    
             <div class="cart-item" data-id="1" data-price="30">
                 <div class="image-box">
-                    <img src="./img/jumper.png" alt="Product Image">
+                    <img src="../public//img/jumper.png" alt="Product Image">
                 </div>
                 <div class="item-details">
                     <p><strong>Product Name</strong></p>
@@ -77,7 +77,7 @@
 
             <div class="cart-item" data-id="2" data-price="60">
                 <div class="image-box">
-                    <img src="./img/esp32.png" alt="Product Image">
+                    <img src="../public//img/esp32.png" alt="Product Image">
                 </div>
                 <div class="item-details">
                     <p><strong>Product Name</strong></p>
@@ -142,7 +142,7 @@
         <div id="payment-section" class="section hidden">
             <h2>PAYMENT</h2>
             <div class="just-logo">
-                <img src="./img/logo1.png" alt="Logo" class="logo">
+                <img src="../public//img/logo1.png" alt="Logo" class="logo">
                 <h3>CDM CAMPUS CART</h3>
             </div>
         
@@ -175,7 +175,7 @@
         
             <form>
                 <div class="thankyou-section">
-                    <img src="./img/checkk.png" alt="check" class="check-img">
+                    <img src="../public//img/checkk.png" alt="check" class="check-img">
                     <h4>Thank You!</h4>
                     <p>Your payment has been sucessfully processed.</p>
                     <p>___________________________________________</p>

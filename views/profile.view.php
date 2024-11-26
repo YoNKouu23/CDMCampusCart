@@ -42,7 +42,7 @@
 
     <main>
         <div class="main-content">
-            <img src="./img/logo1.png" alt="Logo" class="logo">
+            <img src="../public//img/logo1.png" alt="Logo" class="logo">
             <h5>CDM CAMPUS CART</h5>
             <div class="search-bar">
                 <input type="text" placeholder="Search for products...">
@@ -150,7 +150,7 @@
         <!-- Product 1 -->
         <div class="product-item">
             <div class="purchase-box">
-                <img src="./img/organization1.png" alt="Product 1">
+                <img src="../public//img/organization1.png" alt="Product 1">
             </div>
             <div class="product-details">
                 <h4>ICS Batch Shirt</h4>
@@ -170,7 +170,7 @@
         <!-- Product 2 -->
         <div class="product-item">
             <div class="purchase-box">
-                <img src="./img/organization1.png" alt="Product 1">
+                <img src="../public//img/organization1.png" alt="Product 1">
             </div>
             <div class="product-details">
                 <h4>ICS Batch Shirt</h4>
@@ -191,7 +191,7 @@
         <!-- Product 3 -->
         <div class="product-item">
             <div class="purchase-box">
-                <img src="./img/organization1.png" alt="Product 1">
+                <img src="../public//img/organization1.png" alt="Product 1">
             </div>
             <div class="product-details">
                 <h4>ICS Batch Shirt</h4>
@@ -211,7 +211,7 @@
         <!-- Product 4 -->
         <div class="product-item">
             <div class="purchase-box">
-                <img src="./img/organization1.png" alt="Product 1">
+                <img src="../public//img/organization1.png" alt="Product 1">
             </div>
             <div class="product-details">
                 <h4>ICS Batch Shirt</h4>
@@ -237,7 +237,7 @@
              <div class="profile-container">
                  <h3>My Account</h3>
                  <div class="profile">
-                  <img src="./img/profile.png" alt="Profile Picture">
+                  <img src="../public//img/profile.png" alt="Profile Picture">
                   <p>Hanni@gmail.com</p>
                   </div>
                  <div class="profile-links">
@@ -261,7 +261,7 @@
                              <p>Are you sure you want to log out?</p>
                           <button id="logout-btn" onclick="confirmLogout()">Yes</button>
                         <button id="logout-btn" onclick="closeLogoutModal()">No</button>
-                        <img src="./img/outimg.png" alt="Image" class="no-button-img">
+                        <img src="../public//img/outimg.png" alt="Image" class="no-button-img">
                       
                       </div>
                    </div>
