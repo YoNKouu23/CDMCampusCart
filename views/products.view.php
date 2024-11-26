@@ -40,7 +40,7 @@
                             <img src="../public/img/organization2.png" alt="Product 1 Image"> 
                         </div>
                         <h3>ITE POLO SHIRT</h3>
-                        <button class="price-btn">₱250.00 | BEST SELLER</button>>
+                        <button class="price-btn">₱250.00 | BEST SELLER</button>
                     </div>
                 
                     <div class="product-item">
@@ -66,7 +66,7 @@
                         <h3>ORGANIZATION SHIRT</h3>
                         <button class="price-btn">₱250.00 | BEST SELLER</button>
                     </div>
-                
+         
                     <div class="product-item">
                         <div class="product-card">
                             <img src="../public/img/ledlight.png" alt="Product 1 Image">  
@@ -307,7 +307,7 @@
    
     // Handle "Buy Now" button click (opens payment form)
     buyNowButton.addEventListener('click', function() {
-        window.location.href = "./views/buy.view.php.";
+        window.location.href = "../controllers/buy.php";
             
     });
     

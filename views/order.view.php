@@ -21,27 +21,27 @@
             </div>
 
             <div class="sidebar">
-                <a href="./views/dashboard.view.php">
+                <a href="./dashboard.view.php">
                     <span class="material-symbols-sharp">grid_view</span>
                     <h3>Dashboard</h3>
                 </a>
 
-                <a href="./views/customer.view.php">
+                <a href="./customer.view.php">
                     <span class="material-symbols-sharp">person_outline</span>
                     <h3>Customers</h3>
                 </a>
 
-                <a href="./views/order.view.php">
+                <a href="./order.view.php">
                     <span class="material-symbols-sharp">shopping_cart</span>
                     <h3>Order</h3>
                 </a>
 
-                <a href="./views/stock.view.php">
+                <a href="./stock.view.php">
                     <span class="material-symbols-sharp">receipt_long</span>
                     <h3>Products</h3>
                 </a>
 
-                <a href="./views/add.view.php">
+                <a href="./add.view.php">
                     <span class="material-symbols-sharp">add</span>
                     <h3>Add Products</h3>
                 </a>
@@ -195,7 +195,7 @@ function confirmLogout() {
 
     alert('You have been logged out.');
 
-    window.location.href = './views/admin.view.php';
+    window.location.href = './admin.view.php';
 }
 
 function logout() {

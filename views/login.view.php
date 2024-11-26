@@ -148,7 +148,7 @@ signUpForm.addEventListener("submit", function(event) {
     localStorage.setItem("userEmail", emailInput.value);
 
     // Redirect to the homepage after successful sign-up
-    window.location.href = "./views/login.view.php"; 
+    window.location.href = "../controllers/login.php"; 
 });
 
 // Add event listener for the Sign In form submission
@@ -172,7 +172,7 @@ signInForm.addEventListener("submit", function(event) {
     }
 
     // Redirect to the homepage if validation passes
-    window.location.href = "../controllers/products.php"; 
+    window.location.href = "../index.php"; 
 });
 
 

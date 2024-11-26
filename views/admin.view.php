@@ -50,7 +50,7 @@
                 errorMessage.innerHTML = 'Incorrect username or password.';
             } else {
                 alert('Login successful!');
-                window.location.href = './views/dashboard.view.php';  
+                window.location.href = './dashboard.view.php';  
             }
         });
     </script>

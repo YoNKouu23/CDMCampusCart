@@ -1,7 +1,9 @@
 
 <header>
         <div class="logo">
-            <h3>CDM CAMPUS CART</h3>
+            <a href="../index.php" style="text-decoration: none;">
+                <h3>CDM CAMPUS CART</h3>
+            </a>
         </div>
         <div class="top-bar">
             <!-- Left Section: Department Dropdown -->
@@ -19,7 +21,7 @@
             <div class="navbar-links">
                 <a href="../controllers/products.php">Products</a>
                 <a href="/index.php#about">About</a>
-                <a href="/index.php     #contact">Contact Us</a>
+                <a href="/index.php#contact">Contact Us</a>
             </div>
         </div>
         
