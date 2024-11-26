@@ -172,7 +172,7 @@ signInForm.addEventListener("submit", function(event) {
     }
 
     // Redirect to the homepage if validation passes
-    window.location.href = "./views/department.view.php"; 
+    window.location.href = "../controllers/products.php"; 
 });
 
 

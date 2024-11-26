@@ -10,43 +10,8 @@
     <link rel="stylesheet" href="../public/styles/products.css">
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <h3>CDM CAMPUS CART</h3>
-        </div>
-        <div class="top-bar">
-            <!-- Left Section: Department Dropdown -->
-            <div class="custom-dropdown">
-                <button class="dropdown-button" onclick="window.location.href='./views/department.view.php'">
-                    Department Section<span class="caret">^</span>
-                </button>                
-            </div>
-            
-        
-            <!-- Right Section: Navigation Links -->
-            <div class="navbar-links">
-                <a href="./views/products.view.php">Products</a>
-                <a href="#">About</a>
-                <a href="#">Contact Us</a>
-            </div>
-        </div>
-        
-        <!-- Button container for Cart, Profile, and Search -->
-        <div class="button-container">
-            <a href="./views/cart.view.php">
-                <button class="cart-button">
-                    <i class="fas fa-shopping-cart"></i>
-                </button>
-            </a>
-            <a href="./views/profile.view.php">
-                <button class="profile-button">
-                    <i class="fas fa-user"></i>
-                </button>
-            </a>
-        </div>
-        
-    
-    </header>
+    <?php require("../components/navbar.php")?>
+
 
     <main>
        
