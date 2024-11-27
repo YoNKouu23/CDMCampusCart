@@ -9,11 +9,11 @@
     <link rel="stylesheet" href="../public/styles/cart.css">
 </head>
 <body>
-    <?php require("../components/navbar.php")?>
+<?php require("../components/navbar.php")?>
 
     <main>
         <div class="main-content">
-            <img src="../public/img/logo1.png" alt="Logo" class="logo">
+            <img src="./img/logo1.png" alt="Logo" class="logo">
             <div class="search-bar">
                 <input type="text" placeholder="Search for products...">
                 <button><i class="fas fa-search"></i></button>
@@ -48,11 +48,29 @@
 
             <div class="cart-item" data-id="2" data-price="60">
                 <div class="image-box">
-                    <img src="../publi/img/esp32.png" alt="Product Image">
+                    <img src="../public/img/esp32.png" alt="Product Image">
                 </div>
                 <div class="item-details">
                     <p><strong>Product Name</strong></p>
                     <p>₱60</p>
+                    <div class="quantity-controls">
+                        <button class="minus-btn">-</button>
+                        <input type="text" class="quantity-input" value="1">
+                        <button class="plus-btn">+</button>
+                    </div>
+                </div>
+                <button class="remove-item">
+                    <i class="fas fa-trash"></i>
+                </button>
+            </div>
+
+            <div class="cart-item" data-id="1" data-price="470">
+                <div class="image-box">
+                    <img src="../public/img/organization1.png" alt="Product Image">
+                </div>
+                <div class="item-details">
+                    <p><strong>Product Name</strong></p>
+                    <p>₱470</p>
                     <div class="quantity-controls">
                         <button class="minus-btn">-</button>
                         <input type="text" class="quantity-input" value="1">
@@ -97,20 +115,15 @@
 
             <label for="phone">Phone Number:</label>
             <input type="text" id="phone" name="phone" required>
-
-            <!-- Payment Method Selection -->
-            <label for="payment-method">Payment Method:</label>
-            <select id="payment-method" name="payment-method" required>
-             <option value="gcash">Gcash</option>
-            <option value="cod">Cash on Delivery (COD)</option>
-            </select>
             </form>
+           <button class="paypal-button" onclick="showPaypal()">Proceed to Paypal</button>
+           <button class="cod-button" onclick="showCod()">Proceed to Cod</button>
 
-           <button class="proceed-button" onclick="showPayment()">Proceed to Payment</button>
+
             <button class="back-button" onclick="showCart()">Back to Cart</button>
         </div>
-
-        <div id="payment-section" class="section hidden">
+        
+        <div id="cod-section" class="section hidden">
             <h2>PAYMENT</h2>
             <div class="just-logo">
                 <img src="../public/img/logo1.png" alt="Logo" class="logo">
@@ -118,14 +131,37 @@
             </div>
         
             <form>
-                <div class="gcash-qr-section">
-                    <h4>Scan the QR Code to Pay</h4>
-                    <img src="./public/img/qr.jpg" alt="GCash QR Code" class="gcash-qr-img">
-                    <p>Cdm Campus Cart</p>
-        
-                    <!-- Total amount inside the same box as QR code -->
+                <div class="cod-section" >
                     <div class="payment-summary">
                         <h3>Total: <span id="payment-total-amount">₱0</span></h3>
+                    </div>
+
+                    <button type="button" class="cod-btn" onclick="showThankYouSection()">Complete Purchase</button>
+                </div>
+                
+            </form>
+        
+            <button class="back-button" onclick="showDetails()">Back to Details</button>
+        </div>
+
+        <div id="paypal-section" class="section hidden">
+            <h2>PAYMENT</h2>
+            <div class="just-logo">
+                <img src="./img/logo1.png" alt="Logo" class="logo">
+                <h3>CDM CAMPUS CART</h3>
+            </div>
+        
+            <form>
+                <div class="paypal" >
+                    <h1>PayPal Payment Gateway</h1>
+                    <p>Click the button below to proceed with your payment.</p>
+            
+                    <!-- PayPal Button Container -->
+                    <div id="paypal-button-container"></div>
+
+                    <div class="payment-summary">
+                        
+                        <h3>Total: <span id="paypal-total-amount">₱0</span></h3>
                     </div>
 
                     <button type="button" class="proceed-button" onclick="showThankYouSection()">Complete Purchase</button>
@@ -135,6 +171,8 @@
         
             <button class="back-button" onclick="showDetails()">Back to Details</button>
         </div>
+        <script src="https://www.paypal.com/sdk/js?client-id=AXyT_-QU3jKtjMnCFLyKzWQ0fG4uTDWHVgQkYY2UiYR4kyAONQA9eo1ZoL-3zsfFrYjEVRNCAsR0G4oB"></script>
+
 
 
         <div id="thankyou-section" class="section hidden">
@@ -279,7 +317,7 @@ function updateOrderSummary() {
         `;
         summaryItemsContainer.appendChild(summaryItem);
 
-        totalAmount += total; // Add to the total amount
+        totalAmount += total;
     });
 
     // Update total price for the cart
@@ -290,36 +328,111 @@ function updateOrderSummary() {
          function showCart() {
             document.getElementById("cart-section").classList.remove("hidden");
             document.getElementById("details-section").classList.add("hidden");
-            document.getElementById("payment-section").classList.add("hidden");
+            document.getElementById("paypal-section").classList.add("hidden");
             document.getElementById("thankyou-section").classList.add("hidden");
+            document.getElementById("cod-section").classList.add("hidden");
         }
 
         function showDetails() {
             document.getElementById("cart-section").classList.add("hidden");
             document.getElementById("details-section").classList.remove("hidden");
-            document.getElementById("payment-section").classList.add("hidden");
+            document.getElementById("paypal-section").classList.add("hidden");
             document.getElementById("thankyou-section").classList.add("hidden");
+            document.getElementById("cod-section").classList.add("hidden");
         }
 
-        function showPayment() {
+        function showPaypal() {
+    document.getElementById("cart-section").classList.add("hidden");
+    document.getElementById("details-section").classList.add("hidden");
+    document.getElementById("paypal-section").classList.remove("hidden");
+    document.getElementById("thankyou-section").classList.add("hidden");
+    document.getElementById("cod-section").classList.add("hidden");
+
+    updateOrderSummary(true);  
+    const totalAmount = document.getElementById('payment-total-amount').textContent;
+    document.getElementById('paypal-total-amount').textContent = totalAmount;
+
+    paypal.Buttons({
+        createOrder: function(data, actions) {
+         
+            return actions.order.create({
+                purchase_units: [{
+                    amount: {
+                        value: totalAmount.replace('₱', '').trim()
+                    }
+                }]
+            });
+        },
+        onApprove: function(data, actions) {
+            return actions.order.capture().then(function(details) {
+                alert('Transaction completed by ' + details.payer.name.given_name);
+                showThankYouSection();
+            });
+        },
+        onError: function(err) {
+            console.error('PayPal Error: ', err);
+            alert('An error occurred with the PayPal payment.');
+        }
+    }).render('#paypal-button-container');  
+}
+
+function updateOrderSummary(isPayment = false) {
+    const summaryItemsContainer = isPayment
+        ? document.querySelector('.payment-summary')
+        : document.querySelector('.summary-items');
+    const cartItems = document.querySelectorAll('.cart-item');
+    let totalAmount = 0;
+
+    if (!isPayment) {
+        summaryItemsContainer.innerHTML = ''; 
+    }
+
+    cartItems.forEach(function(item) {
+        const price = parseFloat(item.getAttribute('data-price')); 
+        const quantity = parseInt(item.querySelector('.quantity-input').value);
+        const total = price * quantity;
+
+        if (!isPayment) {
+            const summaryItem = document.createElement('div');
+            summaryItem.classList.add('summary-item');
+            summaryItem.innerHTML = `
+                <p><strong>Product:</strong> ₱${price} x ${quantity} = ₱${total}</p>
+            `;
+            summaryItemsContainer.appendChild(summaryItem);
+        }
+
+        totalAmount += total; 
+    });
+
+    if (isPayment) {
+        document.getElementById('payment-total-amount').textContent = `₱${totalAmount.toFixed(2)}`;
+    } else {
+        document.getElementById('total-amount').textContent = `₱${totalAmount.toFixed(2)}`;
+    }
+}
+
+
+        function showCod() {
             document.getElementById("cart-section").classList.add("hidden");
             document.getElementById("details-section").classList.add("hidden");
-            document.getElementById("payment-section").classList.remove("hidden");
+            document.getElementById("cod-section").classList.remove("hidden");
+            document.getElementById("paypal-section").classList.add("hidden");
             document.getElementById("thankyou-section").classList.add("hidden");
             updateOrderSummary(true);
         }
+
 
         function showThankYouSection() {
             document.getElementById("cart-section").classList.add("hidden");
             document.getElementById("details-section").classList.add("hidden");
-            document.getElementById("payment-section").classList.add("hidden");
+            document.getElementById("paypal-section").classList.add("hidden");
             document.getElementById("thankyou-section").classList.remove("hidden");
+            document.getElementById("cod-section").classList.add("hidden");
+
             updateOrderSummary(true);
 
-             // Get the total amount from the payment section
              const totalAmount = document.getElementById('payment-total-amount').textContent;
 
-            // Update the total amount in the thank-you section
              document.getElementById('thankyou-total-amount').textContent = totalAmount;
         }
     
@@ -353,45 +466,7 @@ function updateOrderSummary() {
             });
         });
     
-        // Update order summary based on current cart items
-        function updateOrderSummary(isPayment = false) {
-            const summaryItemsContainer = isPayment
-                ? document.querySelector('.payment-summary')
-                : document.querySelector('.summary-items');
-            const cartItems = document.querySelectorAll('.cart-item');
-            let totalAmount = 0;
-            
-            if (!isPayment) {
-                summaryItemsContainer.innerHTML = ''; 
-            }
-    
-            cartItems.forEach(function(item) {
-                // Retrieve price and quantity
-                const price = parseFloat(item.getAttribute('data-price')); 
-                const quantity = parseInt(item.querySelector('.quantity-input').value);
-                const total = price * quantity;
-    
-                if (!isPayment) {
-                    // Add to the summary section for the cart
-                    const summaryItem = document.createElement('div');
-                    summaryItem.classList.add('summary-item');
-                    summaryItem.innerHTML = `
-                        <p><strong>Product:</strong> ₱${price} x ${quantity} = ₱${total}</p>
-                    `;
-                    summaryItemsContainer.appendChild(summaryItem);
-                }
-    
-                totalAmount += total; 
-            });
-    
-            // Update total price for both sections (cart and payment)
-            if (isPayment) {
-                document.getElementById('payment-total-amount').textContent = `₱${totalAmount.toFixed(2)}`;
-            } else {
-                document.getElementById('total-amount').textContent = `₱${totalAmount.toFixed(2)}`;
-            }
-        }
-    
+      
         // Update the quantity inputs after loading the page to ensure they are interactive
         function initializeCart() {
             document.querySelectorAll('.quantity-input').forEach(function(input) {
@@ -401,7 +476,6 @@ function updateOrderSummary() {
             });
         }
     
-        // Initial update of the order summary and setting up event listeners for quantity inputs
         initializeCart();
         updateOrderSummary();
         
@@ -419,7 +493,7 @@ function updateCart() {
     cartItemsList.innerHTML = ''; 
     let totalPrice = 0;
 
-    // Loop through cart and display items
+  
     cart.forEach(item => {
         const listItem = document.createElement('li');
         listItem.textContent = `${item.name} - ₱${item.price.toFixed(2)}`;
@@ -427,12 +501,10 @@ function updateCart() {
         totalPrice += item.price;
     });
 
-    // Update the total price
+   
     totalPriceElement.textContent = `₱${totalPrice.toFixed(2)}`;
 }
 
-
-    
     </script>
     
 </body>
