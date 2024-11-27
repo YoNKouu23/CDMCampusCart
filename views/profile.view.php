@@ -11,7 +11,7 @@
 </head>
 <body>
    
-<?php require("../components/navbar.php")?>
+    <?php require("../components/navbar.php")?>
     <main>
         <div class="main-content">
             <img src="../public/img/logo1.png" alt="Logo" class="logo">

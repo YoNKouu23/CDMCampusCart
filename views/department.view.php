@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../public/styles/department.css">
+
 </head>
 <body>
 <?php require("../components/navbar.php")?>
@@ -203,7 +204,6 @@
                     <div class="product-item">
                         <div class="product-card">  
                             <img src="../public/img/cartolina.png" alt="Product 1 Image"> 
-                            <img src="../public/img/battery.png" alt="Product 1 Image"> 
                         </div>
                         <h3>CARTOLINA PAPER</h3>
                         <button class="price-btn" data-price="250.00">₱250.00 | BEST SELLER</button>
@@ -225,62 +225,6 @@
 
         </div>
 
-
-        <section class="product-section ite-section" id="ite">
-            <h2><span>ITE</span> DEPARTMENT</h2>
-            <div class="product-grid">
-                <div class="product-item">
-                    <div class="product-card">
-                        <img src="../public/img/nameplate.png" alt="Product 1 Image"> 
-                    </div>
-                    <h3>NAMEPLATE</h3>
-                    <button class="price-btn" data-price="250.00">₱250.00 | BEST SELLER</button>
-                </div>
-            
-                <div class="product-item">
-                    <div class="product-card">
-                        <img src="../public/img/bondpaper.png" alt="Product 1 Image"> 
-                    </div>
-                    <h3>BONDPAPER</h3>
-                    <button class="price-btn" data-price="200.00">₱200.00 | BEST SELLER</button>
-                </div>
-            
-                <div class="product-item">
-                    <div class="product-card">
-                        <img src="../public/img/iteojt.png" alt="Product 1 Image"> 
-                    </div>
-                    <h3>OJT UNIFORM</h3>
-                    <button class="price-btn" data-price="230.00">₱230.00 | BEST SELLER</button>
-                </div>
-            
-                <div class="product-item">
-                    <div class="product-card">
-                        <img src="../public/img/binder.png" alt="Product 1 Image"> 
-                    </div>
-                    <h3>BINDER NOTEBOOK</h3>
-                    <button class="price-btn" data-price="250.00">₱250.00 | BEST SELLER</button>
-                </div>
-            
-                <div class="product-item">
-                    <div class="product-card">
-                        <img src="../public/img/cartolina.png" alt="Product 1 Image"> 
-                    </div>
-                    <h3>CARTOLINA PAPER</h3>
-                    <button class="price-btn" data-price="250.00">₱250.00 | BEST SELLER</button>
-                </div>
-            
-                <div class="product-item">
-                    <div class="product-card">
-                        <img src="../public/img/marker.png" alt="Product 1 Image">  
-                    </div>
-                    <h3>COLORED MARKER</h3>
-                    <button class="price-btn" data-price="250.00">₱250.00 | BEST SELLER</button>
-                </div>
-
-          
-            </div>
-            
-        </section>
 
         
      

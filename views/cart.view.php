@@ -7,9 +7,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../public/styles/cart.css">
+    
+
+    
 </head>
 <body>
-<?php require("../components/navbar.php")?>
+    <?php require("../components/navbar.php")?>
 
     <main>
         <div class="main-content">
