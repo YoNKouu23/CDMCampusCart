@@ -10,6 +10,7 @@
 </head>
 <body>
 <?php require("../components/navbar.php")?>
+
     <main>
        
         <div class="main-content">
