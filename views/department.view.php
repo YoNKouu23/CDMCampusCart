@@ -201,8 +201,9 @@
                     </div>
                 
                     <div class="product-item">
-                        <div class="product-card">
+                        <div class="product-card">  
                             <img src="../public/img/cartolina.png" alt="Product 1 Image"> 
+                            <img src="../public/img/battery.png" alt="Product 1 Image"> 
                         </div>
                         <h3>CARTOLINA PAPER</h3>
                         <button class="price-btn" data-price="250.00">₱250.00 | BEST SELLER</button>
@@ -512,6 +513,24 @@ closeDialogButton.addEventListener('click', function() {
     const dialog = document.getElementById('action-dialog');
     dialog.style.display = 'none';
 });
+
+
+        // Handle "Close" button click on action dialog
+        closeDialogButton.addEventListener('click', function() {
+            actionDialog.style.display = 'none'; 
+        });
+    
+    
+    
+        // DOM elements for payment dialo
+        const submitPaymentButton = document.getElementById('submit-payment');
+        const closeDetailsDialogButton = document.getElementById('close-details-dialog-btn');
+       
+        // Handle "Buy Now" button click (opens payment form)
+        buyNowButton.addEventListener('click', function() {
+            window.location.href = "../controllers/buy.php";
+            
+        });
 
     
         // Handle closing the payment dialog
