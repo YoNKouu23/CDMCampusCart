@@ -267,13 +267,12 @@ img {
     padding: 5px;
 }
 
-.product-section h2 {
+.product-section_ics-section h2 {
     text-align: center;
-    margin-left: 50px;
+    margin-right: 50%;
     margin-bottom: 20px;
     color: #0A6D03;
     font-size: 3rem;
-    display: inline;
     text-shadow: 
         1px 1px 0 #111, 
         -1px -1px 0 #111, 
@@ -281,11 +280,43 @@ img {
         -1px 1px 0 #111
     
 }
-.product-section span{
+.product-section_ics-section span{
     color: #FCFE01;
     font-size: 3rem;
-   
-   
+}
+.product-section_iob-section h2 {
+    text-align: center;
+    margin-right: 60%;
+    margin-bottom: 20px;
+    color: #0A6D03;
+    font-size: 3rem;
+    text-shadow: 
+        1px 1px 0 #111, 
+        -1px -1px 0 #111, 
+        1px -1px 0 #111, 
+        -1px 1px 0 #111
+    
+}
+.product-section_iob-section span{
+    color: #FCFE01;
+    font-size: 3rem;
+}
+.product-section_ite-section h2 {
+    text-align: center;
+    margin-right: 50%;
+    margin-bottom: 20px;
+    color: #0A6D03;
+    font-size: 3rem;
+    text-shadow: 
+        1px 1px 0 #111, 
+        -1px -1px 0 #111, 
+        1px -1px 0 #111, 
+        -1px 1px 0 #111
+    
+}
+.product-section_ite-section span{
+    color: #FCFE01;
+    font-size: 3rem;
 }
 .product-grid {
     display: grid;
@@ -296,17 +327,15 @@ img {
 }
 
 /* Specific Background Colors for IOB and ITE sections */
-.product-section.iob-section {
+.product-section_iob-section {
     background-color: #fcfcdc;  
     padding: 20px;
 }
 
-.product-section.ite-section {
+.product-section_ite-section {
     background-color: #dcebf5;  
     padding: 20px;
 }
-
-
 
 
 .product-item {
@@ -336,6 +365,8 @@ img {
     
 }
 
+
+
 .product-card:hover {
     transform: scale(1.05);
 }
@@ -344,6 +375,18 @@ img {
 .product-card img {
     width: 100%;           
     height: auto;         
+    max-width: 250px;      
+    border-radius: 10px;   
+    margin-bottom: 5px;   
+    display: block;        
+    margin-left: auto;     
+    margin-right: auto;    
+    
+}
+
+.product-card img.lace {
+    width: 100%;           
+    height: 350px;         
     max-width: 250px;      
     border-radius: 10px;   
     margin-bottom: 5px;   
@@ -466,19 +509,20 @@ button:focus {
         padding: 8px 10px;
     }
 }
-  #cart-message {
-            position: fixed;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-size: 16px;
-            display: none;
-            z-index: 9999;
-        }
+ /* Cart message style */
+#cart-message {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    display: none;
+    z-index: 1;
+}
 
 /* Style for the action dialog box */
 #action-dialog {
@@ -491,10 +535,10 @@ button:focus {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    z-index: 9999;
+    z-index: 9996;
     border: 2px solid #0A6D03;
     text-align: center;
-    width: 300px; 
+    width: 300px;
 }
 
 /* Style for the close button (X) at the top-right of the dialog */
@@ -510,7 +554,7 @@ button:focus {
 }
 
 #close-dialog-btn:hover {
-    color: #f44336; 
+    color: #f44336;
 }
 
 /* Dialog Content */
@@ -526,122 +570,224 @@ button:focus {
     border-radius: 8px;
     cursor: pointer;
     margin: 5px;
-   
-    
 }
 
 .dialog-content button:hover {
     background-color: #45a049;
 }
 
-/* Optional: Add hover effect to the close button */
 #close-dialog-btn:hover {
     color: #0A6D03;
 }
 
-
-/* Style for Payment Details Modal */
-.details-dialog {
-    position: fixed;
-    top: 20%;
-    left: 32%;
-    width: 100%;
-    height: 100%;
-    display: none;
-    justify-content: center;
-    align-items: center;
-}
-
-.details-dialog .dialog-content {
+/* Details section */
+#details-section {
     background-color: white;
     border: 2px solid #0A6D03;
     padding: 20px;
     border-radius: 10px;
     width: 500px;
-    height: 500px;
+    height: 550px;
     max-width: 100%;
     text-align: center;
+    z-index: 9997; 
+    position: fixed; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    
 }
-.dialog-content h3{
-    color: #0A6D03;
-    margin-right: 80%;
-    font-size: 30px;
-    margin-top: 10px;
-}
-.details-dialog input, .details-dialog textarea {
-    width: 100%;
-    padding: 10px;
-    margin: 10px -10px;
-    border: 1px solid #ccc;
+/* Details section */
+#paypal-section {
+    background-color: white;
+    border: 2px solid #0A6D03;
+    padding: 20px;
     border-radius: 10px;
-
-}
-.details-dialog input:focus{
-    border-color: #0A6D03; 
-    outline: none; 
-}
-.details-dialog button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    width: 105%;
-    margin-left: -12px;
+    width: 500px;
+    height: 550px;
+    max-width: 100%;
+    text-align: center;
+    z-index: 9998; 
+    position: fixed; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    
 }
 
-
-.details-dialog #close-details-dialog-btn {
-    position: absolute;
-    top: -5px;
-    right: 13%;
-    background: none;
-    border: none;
-    font-size: 20px;
-    color: #333;
-    cursor: pointer;
-}
-.details-dialog #close-details-dialog-btn:hover{
-    color: #0A6D03;
-
-}
-
-
-/* Payment Method Selection Styles */
-#details-method {
-    width: 105%;
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 10px;
-    border: 1px solid #ccc;
-    background-color: #f9f9f9;
-    margin-bottom: 10px;
-    margin-left: -12px;
-    transition: border-color 0.3s ease;
-}
-
-/* Focus effect for the dropdown */
-#details-method:focus {
-    border-color: #0A6D03; 
-    outline: none; 
-}
-
-/* Label for payment method dropdown */
-label[for="payment-method"] {
-    font-weight: bold;
-    font-size: 16px;
-    margin-bottom: 8px;
-    display: inline-block;
-    color: #333;
-}
-
-/* Optional: Add some spacing between form elements */
-form {
-    margin-top: 20px;
-}
 .hidden {
     display: none;
 }
 
+/* Optional: Style the message */
+#thankyou-message {
+    position: fixed;
+    top: 11%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    z-index: 1000;
+    width: 20% ;
+    height: 5px;
+}
+#thankyou-message h3{
+    margin-top: -8px;
+    font-size: 17px;
+    margin-left: 35px;
+}
+#cod-section {
+    background-color: white;
+    border: 2px solid #0A6D03;
+    padding: 20px;
+    border-radius: 10px;
+    width: 500px;
+    height: 200px;
+    max-width: 100%;
+    text-align: center;
+    z-index: 9998; 
+    position: fixed; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    
+}
+
+#paypal-section h1{
+    color: #0A6D03;
+    font-size: 30px;
+    margin-top: 40px;
+   
+}
+
+.paypal {
+    text-align: center;
+    padding: 20px;
+    background-color: #eee;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    display: absolute;
+    margin-left: 6%;
+  }
+  
+  .paypal h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+  
+  .paypal p {
+    margin-bottom: 20px;
+    font-size: 16px;
+  }
+  
+  #paypal-button-container {
+    margin-top: 30px;
+  }
+
+
+#cod-section h1{
+    color: #0A6D03;
+    font-size: 30px;
+    margin-bottom: 20px;
+    
+}
+
+#details-section .back-button {
+    margin-top: 20px;
+    background-color: #f44336;
+    color: white;
+}
+
+#details-section h2{
+    color: #0A6D03;
+    margin-right: -5px;
+    font-size: 30px;
+    margin-top: 10px;
+}
+#details-form input{
+    background-color: #f9f9f9;
+    border: 1px solid #0A6D03;
+    border-radius: 10px;
+    padding: 10px;
+    width: 95%; 
+    height: 20px;
+    margin: 0 auto; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    text-align: center; 
+    margin-bottom: 15px;
+
+}
+#details-form input:focus{
+    border-color: #0A6D03; 
+    outline: none; 
+}
+#details-form label {
+    display: block; 
+    margin-bottom: 5px; 
+    font-weight: bold;
+    color: #333; 
+}
+.thankyou-button, .details-button{
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 48%;
+}
+
+#details-section .back-button {
+    background-color: #f44336;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 50%;
+    margin-top: 10px;
+}
+
+
+#details-section .button-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px; 
+    margin-top: 20px; 
+}
+
+#paypal-section .button {
+    display: flex; 
+    justify-content: space-between; 
+    gap: 10px; 
+    margin-top: 20px; 
+}
+
+#cod-section .button{
+    display: flex; 
+    justify-content: space-between;
+    gap: 10px; 
+    margin-top: 20px; 
+}
+
+.paypal-button, .cod-button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 48%;
+}
+
+.paypal-button:hover, .cod-button:hover {
+    background-color: #45a049;
+}
+
+.hidden {
+    display: none;
+}
 

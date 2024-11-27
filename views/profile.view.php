@@ -10,9 +10,8 @@
     <link rel="stylesheet" href="../public/styles/profile.css">
 </head>
 <body>
-    <?php require("../components/navbar.php")?>
-    
-
+   
+<?php require("../components/navbar.php")?>
     <main>
         <div class="main-content">
             <img src="../public/img/logo1.png" alt="Logo" class="logo">
@@ -32,12 +31,12 @@
                 <form id="details-form">
                     <div class="form-group">
                         <h4>USERNAME</h4>
-                        <input type="text" id="username" name="username" placeholder="TESTUSER" required>
+                        <input type="text" id="username" name="username" placeholder="HANNI MEOW" required>
                     </div>
     
                     <div class="form-group">
                         <h4>NAME</h4>
-                        <input type="text" id="name" name="name" placeholder="HANNI" required>
+                        <input type="text" id="name" name="name" placeholder="Hanni" required>
                     </div>
     
                     <div class="form-group">
@@ -402,7 +401,7 @@ const buyButtons = document.querySelectorAll('.buy-again-btn');
 
 buyButtons.forEach(function(button) {
     button.addEventListener('click', function() {
-        window.location.href = "buy.html"; 
+        window.location.href = "../views/buy.view.php"; 
     });
 });
 
@@ -458,7 +457,7 @@ function confirmLogout() {
 
     alert('You have been logged out.');
 
-    window.location.href = './views/login.view.php';
+    window.location.href = '../views/login.view.php';
 }
 
 function logout() {

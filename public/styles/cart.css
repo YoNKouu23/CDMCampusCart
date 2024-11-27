@@ -410,6 +410,23 @@ hr {
 .proceed-button:hover {
     background-color: #45a049;
 }
+.paypal-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    margin-top: 30px;
+}
+
+.paypal-button:hover {
+    background-color: #45a049;
+}
+
+
 
 .back-button, .proceed-button {
     background-color: #4CAF50;
@@ -426,7 +443,7 @@ form label {
 }
 
 input {
-    width: 100%;
+    width: 98%;
     padding: 10px;
     margin-top: 5px;
     border: 1px solid #ddd;
@@ -524,24 +541,11 @@ form {
 }
 
 
-#details-section h2,
-#payment-section h2 {
+#details-section h2{
     color: #0A6D03; 
     font-size: 30px;
     font-weight: bold;
     margin-top: 10px;
-}
-.gcash-qr-section {
-    background-color: #f9f9f9; 
-    border: 1px solid #0A6D03;
-    border-radius: 10px; 
-    padding: 20px;
-    max-width: 500px; 
-    height: 550px;
-    margin: 0 auto; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-    text-align: center; 
-
 }
 
 .just-logo {
@@ -560,13 +564,15 @@ form {
     font-size: 18px;
     font-weight: bold;
 }
-.payment-summary h3 {
+.cod-section h3 {
     font-size: 22px;
     color: #333; 
-    margin-top: 20px;
+    
+    margin-bottom: 10px;
+    margin-left: -20px;
 
 }
-span{
+.cod-section span{
     color: #0A6D03;
 }
 h4 {
@@ -574,29 +580,50 @@ h4 {
     margin: 20px 0; 
 }
 
-.gcash-qr-img {
-    width: 250px; 
-    height: 250px;
-    margin-bottom: 50px; 
-    margin-top: 10px;
-    margin-left: 10px;
+.cod-section {
+    background-color: #f9f9f9;
+    border: 1px solid #0A6D03;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 450px; 
+    height: 150px;
+    margin: 0 auto; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    text-align: center; 
+
 }
 
-p {
-    font-size: 16px;
-    color: #555;
-    margin-top: 0;
-}
 
-.gcash-qr-section .proceed-button{
+.cod-btn {
     width: 80%;
-    margin-bottom: 55%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    margin-top: 50px;
 }
 
-.payment-section .back-button{
-    margin-left: 50%;
+.cod-btn:hover {
+    background-color: #45a049;
+}
+ .cod-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    margin-top: -5px;
 }
 
+.cod-button:hover {
+    background-color: #45a049;
+}
 
 .thankyou-section {
     background-color: #f9f9f9;
@@ -671,6 +698,32 @@ footer {
     margin-top: 20px;
 }
 
+
+.paypal {
+    text-align: center;
+    padding: 20px;
+    background-color: #eee;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    display: absolute;
+    margin-left: 30%;
+  }
+  
+  .paypal h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+  
+  .paypal p {
+    margin-bottom: 20px;
+    font-size: 16px;
+  }
+  
+  #paypal-button-container {
+    margin-top: 30px;
+  }
 
 /* Responsive Styles for Product Cards */
 @media (max-width: 768px) {

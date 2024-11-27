@@ -58,7 +58,7 @@
                           <p>Are you sure you want to log out?</p>
                        <button id="logout-btn" onclick="confirmLogout()">Yes</button>
                      <button id="logout-btn" onclick="closeLogoutModal()">No</button>
-                     <img src="./img/outimg.png" alt="Image" class="no-button-img">
+                     <img src="../public/img/outimg.png" alt="Image" class="no-button-img">
                    
                    </div>
                 </div>
