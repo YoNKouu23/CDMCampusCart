@@ -83,7 +83,7 @@
         
             <form>
                 <div class="thankyou-section">
-                    <img src="./public/img/checkk.png" alt="check" class="check-img">
+                    <img src="../public/img/checkk.png" alt="check" class="check-img">
                     <h4>Thank You!</h4>
                     <p>Your payment has been sucessfully processed.</p>
                     <p>___________________________________________</p>

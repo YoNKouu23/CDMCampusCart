@@ -222,7 +222,7 @@
                 
                     <div class="product-item">
                         <div class="product-card">
-                            <img src="../public//img/battery.png" alt="Product 1 Image"> 
+                            <img src="../public/img/battery.png" alt="Product 1 Image"> 
                         </div>
                         <h3>9 Volts Battery Snap Connector</h3>
                         <button class="price-btn">₱250.00 | BEST SELLER</button>
@@ -334,7 +334,7 @@
        
         // Handle "Buy Now" button click (opens payment form)
         buyNowButton.addEventListener('click', function() {
-            window.location.href = "./views/buy.view.php";
+            window.location.href = "../controllers/buy.php";
             
         });
     
