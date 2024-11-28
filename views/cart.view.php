@@ -15,13 +15,7 @@
     <?php require("../components/navbar.php")?>
 
     <main>
-        <div class="main-content">
-            <img src="./img/logo1.png" alt="Logo" class="logo">
-            <div class="search-bar">
-                <input type="text" placeholder="Search for products...">
-                <button><i class="fas fa-search"></i></button>
-            </div>
-        </div>
+       
         
        
 <div id="cart-section" class="section">
@@ -150,7 +144,7 @@
         <div id="paypal-section" class="section hidden">
             <h2>PAYMENT</h2>
             <div class="just-logo">
-                <img src="./img/logo1.png" alt="Logo" class="logo">
+                <img src="../public/img/logo1.png" alt="Logo" class="logo">
                 <h3>CDM CAMPUS CART</h3>
             </div>
         
@@ -181,7 +175,7 @@
         <div id="thankyou-section" class="section hidden">
             <h2>PAYMENT</h2>
             <div class="just-logo">
-                <img src="./img/logo1.png" alt="Logo" class="logo">
+                <img src="../public/img/logo1.png" alt="Logo" class="logo">
                 <h3>CDM CAMPUS CART</h3>
             </div>
         

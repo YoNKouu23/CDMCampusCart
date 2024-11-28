@@ -13,14 +13,7 @@
    
     <?php require("../components/navbar.php")?>
     <main>
-        <div class="main-content">
-            <img src="../public/img/logo1.png" alt="Logo" class="logo">
-            <h5>CDM CAMPUS CART</h5>
-            <div class="search-bar">
-                <input type="text" placeholder="Search for products...">
-                <button><i class="fas fa-search"></i></button>
-            </div>
-        </div>
+       
     
        
         <div class="profile-details-container">
@@ -226,7 +219,6 @@
                     </div>
                 </div>
                 <hr class="line">
-                
                 <div class="product-item">
                     <div class="purchase-box">
                         <img src="../public/img/organization1.png" alt="Product 1">
@@ -239,12 +231,36 @@
                     </div>
                     <div class="status-item">
                         <div class="status-box">
-                            <i class="fas fa-truck"></i>
+                            <i class="fas fa-gift"></i>
                         </div>
                         <div class="status-details">
                            
-                            <p>Status: <span class="status-text">Shipped</span></p>
-                            <p>Estimated Delivery: <span>Nov 25, 2024</span></p>
+                            <p>Status: <span class="status-text receive">To Receive</span></p>
+                            <p>Estimated Delivery: <span>Nov 22, 2024</span></p>
+                        </div>
+                    </div>
+                </div>
+             
+                <hr class="line">
+
+                <div class="product-item">
+                    <div class="purchase-box">
+                        <img src="../public/img/organization1.png" alt="Product 1">
+                    </div>
+                    <div class="product-details">
+                        <h4>ICS Batch Shirt</h4>
+                        <p><span>Size:</span> Medium</p>
+                        <p><span>Color:</span> Red</p>
+                        <h3>₱250.00</h3>
+                    </div>
+                    <div class="status-item">
+                        <div class="status-box">
+                            <i class="fas fa-credit-card"></i>
+                        </div>
+                        <div class="status-details">
+                           
+                            <p>Status: <span class="status-text pay">To Pay</span></p>
+                            <p>Estimated Delivery: <span>Nov 30, 2024</span></p>
                         </div>
                     </div>
                 </div>

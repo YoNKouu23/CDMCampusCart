@@ -470,12 +470,7 @@ closeDialogButton.addEventListener('click', function() {
         const submitPaymentButton = document.getElementById('submit-payment');
         const closeDetailsDialogButton = document.getElementById('close-details-dialog-btn');
        
-        // Handle "Buy Now" button click (opens payment form)
-        buyNowButton.addEventListener('click', function() {
-            window.location.href = "../controllers/buy.php";
-            
-        });
-
+     
     
         // Handle closing the payment dialog
         closeDetailsDialogButton.addEventListener('click', function() {

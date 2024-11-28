@@ -64,30 +64,7 @@
                         <h3>ORGANIZATION SHIRT</h3>
                         <button class="price-btn">₱250.00 | BEST SELLER</button>
                     </div>
-                
-                    <div class="product-item">
-                        <div class="product-card">
-                            <img src="../public/img/ledlight.png" alt="Product 1 Image">  
-                        </div>
-                        <h3>Led Lights</h3>
-                        <button class="price-btn">₱250.00 | BEST SELLER</button>
-                    </div>
-
-                    <div class="product-item">
-                        <div class="product-card">
-                            <img src="../public/img/battery.png" alt="Product 1 Image"> 
-                        </div>
-                        <h3>9 Volts Battery Snap Connector</h3>
-                        <button class="price-btn">₱250.00 | BEST SELLER</button>
-                    </div>
-                
-                    <div class="product-item">
-                        <div class="product-card">
-                            <img src="../public/img/ledlight.png" alt="Product 1 Image">  
-                        </div>
-                        <h3>Led Lights</h3>
-                        <button class="price-btn">₱250.00 | BEST SELLER</button>
-                    </div>
+  
                 </div>
                 
             </section>
@@ -134,30 +111,6 @@
                         <h3>P.E PANTS</h3>
                         <button class="price-btn">₱250.00 | BEST SELLER</button>
                     </div>
-                
-                    <div class="product-item">
-                        <div class="product-card">
-                            <img src="../public/img/ledlight.png" alt="Product 1 Image">  
-                        </div>
-                        <h3>Led Lights</h3>
-                        <button class="price-btn">₱250.00 | BEST SELLER</button>
-                    </div>
-
-                    <div class="product-item">
-                        <div class="product-card">
-                            <img src="../public/img/battery.png" alt="Product 1 Image"> 
-                        </div>
-                        <h3>9 Volts Battery Snap Connector</h3>
-                        <button class="price-btn">₱250.00 | BEST SELLER</button>
-                    </div>
-                
-                    <div class="product-item">
-                        <div class="product-card">
-                            <img src="../public/img/ledlight.png" alt="Product 1 Image">  
-                        </div>
-                        <h3>Led Lights</h3>
-                        <button class="price-btn">₱250.00 | BEST SELLER</button>
-                    </div>
                 </div>
                 
             </section>
@@ -180,54 +133,7 @@
                         <h3>IOB PIN</h3>
                         <button class="price-btn">₱250.00 | BEST SELLER</button>
                     </div>
-                
-                    <div class="product-item">
-                        <div class="product-card">
-                            <img src="../public/img/jumperff.png" alt="Product 1 Image"> 
-                        </div>
-                        <h3>Jumper Wire (F to F)</h3>
-                        <button class="price-btn">₱250.00 | BEST SELLER</button>
-                    </div>
-                
-                    <div class="product-item">
-                        <div class="product-card">
-                            <img src="../public/img/jumperfm.png" alt="Product 1 Image"> 
-                        </div>
-                        <h3>Jumper Wire (F to M)</h3>
-                        <button class="price-btn">₱250.00 | BEST SELLER</button>
-                    </div>
-                
-                    <div class="product-item">
-                        <div class="product-card">
-                            <img src="../public/img/battery.png" alt="Product 1 Image"> 
-                        </div>
-                        <h3>9 Volts Battery Snap Connector</h3>
-                        <button class="price-btn">₱250.00 | BEST SELLER</button>
-                    </div>
-                
-                    <div class="product-item">
-                        <div class="product-card">
-                            <img src="../public/img/ledlight.png" alt="Product 1 Image">  
-                        </div>
-                        <h3>Led Lights</h3>
-                        <button class="price-btn">₱250.00 | BEST SELLER</button>
-                    </div>
-
-                    <div class="product-item">
-                        <div class="product-card">
-                            <img src="../public/img/battery.png" alt="Product 1 Image"> 
-                        </div>
-                        <h3>9 Volts Battery Snap Connector</h3>
-                        <button class="price-btn">₱250.00 | BEST SELLER</button>
-                    </div>
-                
-                    <div class="product-item">
-                        <div class="product-card">
-                            <img src="../public/img/ledlight.png" alt="Product 1 Image">  
-                        </div>
-                        <h3>Led Lights</h3>
-                        <button class="price-btn">₱250.00 | BEST SELLER</button>
-                    </div>
+    
                 </div>
                 
             </section>
