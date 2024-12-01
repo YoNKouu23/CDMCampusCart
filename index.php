@@ -56,8 +56,7 @@
             </div>
         </div>
     </section>
-
-
+    
     <section class="about" id="about">
         <div class="about-sec">
             <div>
@@ -354,6 +353,9 @@
             <p>Cdmcampuscart © 2024, All Rights Reserved</p>
         </div>
     </footer>
+
+
+        
 </body>
 
 
@@ -361,6 +363,13 @@
     function focusInput() {
         document.getElementById("searchInput").focus();
     }
+
+
+    function toggleMenu() {
+        const mobileMenu = document.querySelector('.mobile-menu');
+        mobileMenu.style.display = mobileMenu.style.display === 'flex' ? 'none' : 'flex';
+    }
+
 </script>
 
 </html>

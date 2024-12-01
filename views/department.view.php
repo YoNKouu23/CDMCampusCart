@@ -254,7 +254,7 @@
         <form>
             <div class="cod-section">
                 <div class="payment-summary">
-                    <h3>Total: <span id="payment-total-amount">₱0</span></h3>
+                    <h3>Total: <span id="cod-total-amount">₱0</span></h3>
                 </div>
                 <button class="thankyou-button" id="thankyou-btn-cod">Thankyou</button>
             </div>
@@ -336,6 +336,7 @@ const detailsSection = document.getElementById("details-section");
 const PaypalButton = document.getElementById('paypal-btn');
 const CodButton = document.getElementById("cod-btn");
 
+
      document.getElementById('thankyou-btn-paypal').addEventListener('click', function(event) {
         event.preventDefault(); 
         document.getElementById('thankyou-message').classList.remove('hidden');  
@@ -345,7 +346,7 @@ const CodButton = document.getElementById("cod-btn");
                 thanksMessage.style.display = 'none';
             }, 2000); 
     });
-
+    
     document.getElementById('thankyou-btn-cod').addEventListener('click', function(event) {
         event.preventDefault();  
         document.getElementById('thankyou-message').classList.remove('hidden');  
@@ -357,6 +358,8 @@ const CodButton = document.getElementById("cod-btn");
 
 let currentProductName = '';
 let currentProductPrice = 0;
+
+
 
 function showDetailsForm() {
     detailsSection.classList.remove("hidden");
@@ -398,7 +401,16 @@ function showPaypal() {
 
 PaypalButton.addEventListener("click", showPaypal);
 CodButton.addEventListener("click", showCod);
- 
+function updateTotalAmount(price) {
+    // Update both the COD and PayPal section totals
+    const CodTotal = document.getElementById('cod-total-amount');
+    const PaypalTotal = document.getElementById('paypal-total-amount');
+
+    // Use backticks for template literals
+    CodTotal.textContent = `₱${price}`;
+    PaypalTotal.textContent = `₱${price}`;
+}
+
 
 function showCod() {
     document.getElementById("details-section").classList.add("hidden");

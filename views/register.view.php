@@ -13,32 +13,6 @@
 
     <div class="container" id="container">
 
-        <!-- Sign In Form -->
-        <div class="form-container sign-in-container" id="signInContainer">
-            <form id="signInForm" action="#">
-                <div class="form-header">
-                    <img src="../public/img/logo1.png" alt="Logo" class="logo">
-                    <h2>CDM CAMPUS CART</h2>
-                </div>
-                <input type="email" placeholder="Email" required>
-                <input type="password" placeholder="Enter your Password" required>
-                <input type="submit" value="Sign In" class="sign-In-button">
-                <p>Don't have an account? <span class="switch-form" onclick="switchToRegister()">Register here!</span></p>
-
-                <div class="social-login">
-                    <div class="line-container">
-                        <hr class="line">
-                        <span>or continue with</span>
-                        <hr class="line">
-                    </div>
-                    <button type="button" class="social-btn google">
-                        <img src="../public//img/google-icon.png" alt="Google Icon" class="google-icon"> 
-                        Sign in with Google
-                    </button>
-                    
-                </div>
-            </form>
-        </div>
 
         <!-- Sign Up Form -->
         <div class="form-container sign-up-container" id="signUpContainer">
@@ -71,7 +45,7 @@
         <!-- Overlay for Form Transition -->
         <div class="overlay-container">
             <div class="overlay">
-                <div class="overlay-panel overlay-left">
+            <div class="overlay-panel overlay-left">
                     <h3>Everything you need, <b>right on campus.</b></h3>
                     <img src="../public/img/lo.png" alt="Pic" class="pic">
                     <div class="third-circle"></div>
@@ -154,29 +128,7 @@ signUpForm.addEventListener("submit", function(event) {
     window.location.href = "../controllers/login.php"; 
 });
 
-// Add event listener for the Sign In form submission
-const signInForm = document.getElementById('signInForm');
-signInForm.addEventListener("submit", function(event) {
-    event.preventDefault();
-    const emailInput = this.querySelector("input[type='email']");
-    const passwordInput = this.querySelector("input[type='password']");
-    const password = passwordInput.value;
 
-    // Password validation
-    const passwordRequirements = /^(?=.*\d)(?=.*[!@#$%_^&*])(?=.*[a-zA-Z]).{8,}$/;
-
-    // Check if email and password are filled
-    if (!emailInput.value || !passwordInput.value) {
-        showCustomAlert("Please enter both email and password.");
-        return;
-    } else if (!passwordRequirements.test(password)) {
-        showCustomAlert("Password must be at least 8 characters long, contain a number, and a special character.");
-        return;
-    }
-
-    // Redirect to the homepage if validation passes
-    window.location.href = "../index.php"; 
-});
 
 
 // Function to show the custom alert
@@ -197,11 +149,7 @@ function showCustomAlert(message) {
     });
 }
 
-// Function to switch to the Register form (Sign-Up)
-function switchToRegister() {
-    // Add the right-panel-active class to the container
-    document.getElementById('container').classList.add('right-panel-active');
-}
+
 
 
 

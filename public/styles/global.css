@@ -15,6 +15,7 @@ a {
     color: black;
 }
 
+/* Header styles (retain your original styles) */
 header {
     width: 100%;
     display: flex;
@@ -22,7 +23,12 @@ header {
     align-items: center;
     padding: 24px 64px;
     background-color: white;
+}
 
+.logosec {
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
 
 .logo {
@@ -32,14 +38,8 @@ header {
 
 .logoname {
     color: #0A6D03;
+    font-size: 18px;
 }
-
-.logosec {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
 
 .menu {
     display: flex;
@@ -50,18 +50,53 @@ header {
 .menu a {
     font-size: 16px;
     font-weight: 600;
+    text-decoration: none;
+    color: #333;
 }
 
 .icons {
     display: flex;
     gap: 12px;
-    align-items: center;
-
 }
 
-.icons img {
-    height: 24px;
+/* Hamburger menu styles */
+.hamburger {
+    display: none; /* Hide on larger screens */
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    margin-right: 16px; /* Space before the logo */
+}
+
+.hamburger span {
     width: 24px;
+    height: 3px;
+    background-color: #333;
+    border-radius: 2px;
+}
+
+/* Media query for mobile */
+@media (max-width: 768px) {
+    .menu {
+        display: none; /* Hide the menu on smaller screens */
+        flex-direction: column;
+        gap: 16px;
+        position: absolute;
+        top: 80px;
+        right: 0;
+        background: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        border-radius: 8px;
+    }
+
+    .menu.active {
+        display: flex; /* Show the menu when toggled */
+    }
+
+    .hamburger {
+        display: flex; /* Show hamburger menu on small screens */
+    }
 }
 
 
@@ -181,12 +216,21 @@ header {
 .productSec {
     background-color: white;
     display: flex;
+    flex-wrap: wrap;
     border-radius: 10px;
-    padding: 24px 64px;
+    padding: 24px 16px;
     align-items: center;
     justify-content: space-between;
+    
 }
 
+
+@media screen and (max-width: 768px) {
+    .productSec {
+        flex-direction: column;
+        padding: 16px;
+    }
+}
 .productSec h3 {
     color: #0A6D03;
     text-align: center;
@@ -210,13 +254,7 @@ header {
     border-bottom-right-radius: 50px;
 }
 
-.productbox1 {
-    background: linear-gradient(#FCFE01,#0A6D03); 
-    padding: 48px 20px;
-    margin: 20px;
-    border-top-left-radius: 100px;
-    border-bottom-right-radius: 50px;
-}
+
 
 .productbox2 {
     background: linear-gradient(#FCFE01,#0A6D03); 
@@ -241,6 +279,7 @@ header {
 
 
 .about-sec {
+    overflow-x: hidden;
     padding: 36px 0px;
     background: linear-gradient( to right, #FCFE01 30%, white 30%, white);
     display: flex;
@@ -602,4 +641,24 @@ header {
     background-color: black;
 }
 
+@media (min-width: 768px) and (max-width: 1024px) {
+    header {
+        background-color: red;
+    }
+}
 
+@media (max-width: 786px) {
+    header {
+        background-color: red;
+    }
+
+
+
+
+
+
+
+
+
+    
+}

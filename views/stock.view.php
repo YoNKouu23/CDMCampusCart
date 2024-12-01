@@ -40,10 +40,7 @@
                     <h3>Products</h3>
                 </a>
 
-                <a href="./add.view.php">
-                    <span class="material-symbols-sharp">add</span>
-                    <h3>Add Products</h3>
-                </a>
+              
 
                 <a href="#" onclick="logout()">
                     <span class="material-symbols-sharp">logout</span>
@@ -84,7 +81,7 @@
             </div>
 
             <div class="recent_order">
-                <h1>PRODUCT STOCK</h1>
+            <h1>PRODUCT STOCK <button id="add-product-btn" onclick="openAddProductModal()">Add Product</button></h1>
                 
                 <table>
                     <thead>
@@ -152,7 +149,32 @@
         </main>
     </div>
 
+  <!-- Add Product Modal -->
+  <div id="addProductModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeAddProductModal()">&times;</span>
+            <h3>Add New Product</h3>
+            <form id="addProductForm">
+                <label for="productName">Product Name:</label>
+                <input type="text" id="productName" name="productName" placeholder="Enter product name" required>
 
+                <label for="category">Category:</label>
+                <input type="text" id="category" name="category" placeholder="Enter category" required>
+
+                <label for="price">Price:</label>
+                <input type="number" id="price" name="price" placeholder="Enter price" required>
+
+                <label for="piece">Stock Quantity (Piece):</label>
+                <input type="number" id="piece" name="piece" placeholder="Enter stock quantity" required>
+
+                <!-- Image Selection Input -->
+                <label for="productImage">Product Image:</label>
+                <input type="file" id="productImage" name="productImage" accept="image/*" required>
+
+                <button type="submit">Add Product</button>
+            </form>
+        </div>
+    </div>
     <script>
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -233,6 +255,61 @@ function confirmLogout() {
 function logout() {
     showLogoutModal();
 }
+
+function openAddProductModal() {
+            document.getElementById('addProductModal').style.display = 'block';
+        }
+
+        function closeAddProductModal() {
+            document.getElementById('addProductModal').style.display = 'none';
+        }
+
+        // Add Product Form Submission
+        document.getElementById('addProductForm').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+
+            // Get the form values
+            const productName = document.getElementById('productName').value;
+            const category = document.getElementById('category').value;
+            const price = document.getElementById('price').value;
+            const piece = document.getElementById('piece').value;
+            const productImage = document.getElementById('productImage').files[0]; 
+
+            if (!productImage) {
+                alert('Please select an image.');
+                return;
+            }
+
+            const reader = new FileReader(); 
+
+            reader.onload = function(event) {
+                const imageURL = event.target.result; 
+                const table = document.querySelector('table tbody');
+                const newRow = document.createElement('tr');
+                newRow.innerHTML = `
+                    <td><img src="${imageURL}" alt="${productName}" class="product-image"></td>
+                    <td>${productName}</td>
+                    <td>${category}</td>
+                    <td>₱${price}</td>
+                    <td>${piece}</td>
+                    <td>
+                        <button class="edit-item"><i class="fas fa-pencil-alt"></i></button> |  
+                        <button class="remove-item"><i class="fas fa-trash"></i></button>
+                    </td>
+                `;
+
+                table.appendChild(newRow);
+
+                // Reset the form inputs
+                document.getElementById('addProductForm').reset();
+
+                // Close the modal
+                closeAddProductModal();
+            };
+
+            // Start reading the file as DataURL (base64)
+            reader.readAsDataURL(productImage);
+        });
     </script>
 
 </body>

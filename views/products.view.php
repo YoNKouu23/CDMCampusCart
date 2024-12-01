@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../public/styles/products.css">
 </head>
 <body>
-<?php require("../components/navbar.php")?>
+<?php require("../components/productbar.php")?>
 
     <main>
        
