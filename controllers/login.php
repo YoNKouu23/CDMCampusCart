@@ -1,6 +1,13 @@
 <?php
 session_start();
 
+// Redirect to homepage if already logged in
+if (isset($_SESSION['user'])) {
+    // User is logged in, redirect to homepage or dashboard
+    header("Location: ../index.php");  // Redirect to homepage or another page
+    exit;
+}
+
 require_once '../configs/mongodb.php';
 
 // Handle form submission
@@ -26,14 +33,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 'name' => $user->name,
                 'username' => $user->username,
                 'email' => $user->email,
-                'name' => $user->name,
                 'gender' => $user->gender,
                 'birthdate' => $user->birthdate,
                 // Add any other data you'd like to store
             ];
 
-            // Redirect to home page or dashboard after successful login
-            header("Location: ../index.php");
+            // Redirect to the page you want after successful login
+            header("Location: ../index.php"); // Redirect to homepage or user dashboard
             exit;
         } else {
             // Invalid password

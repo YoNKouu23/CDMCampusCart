@@ -7,9 +7,10 @@ if (isset($_SESSION['login_success']) && $_SESSION['login_success'] === true) {
     $user = $_SESSION['user'];  // This holds the user's session data like username, email, etc.
 } else {
     // Redirect to login page if not logged in
-    header("Location: ../views/login.view.php");
+    header("Location: login.php");
     exit;
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -27,98 +28,89 @@ if (isset($_SESSION['login_success']) && $_SESSION['login_success'] === true) {
    
     <?php require("../components/navbar.php")?>
     <main>
-       
-            <h1>Welcome to Your Profile</h1>
+   
 
-        <div>
-            <h2>User Information</h2>
-            <p><strong>Name:</strong> <?php echo htmlspecialchars($user['name']); ?></p>
-            <p><strong>Email:</strong> <?php echo htmlspecialchars($user['email']); ?></p>
-            <p><strong>Username:</strong> <?php echo htmlspecialchars($user['username']); ?></p>
-            <p><strong>Gender:</strong> <?php echo htmlspecialchars($user['gender']); ?></p>
-            <p><strong>Birthday:</strong> <?php echo htmlspecialchars($user['birthdate']); ?></p>
-        </div>
-
-        <a href="../controllers/logout.php">Logout</a>
-
-
-
-
-       
         <div class="profile-details-container">
             <div id="details-section" class="details-section">
                 <h2>MY <span>PROFILE</span></h2>
                 <h5>MANAGE AND PROTECT YOUR ACCOUNT</h5>
                 <hr class="line">
                 <form id="details-form">
-                    <div class="form-group">
-                        <h4>USERNAME</h4>
-                        <input type="text" id="username" name="username" placeholder="HANNI MEOW" required>
+                   <div class="form-group">
+                    <h4>USERNAME</h4>
+                    <!-- Set the placeholder to the name value from session -->
+                    <input type="text" id="name" name="name" placeholder="<?php echo htmlspecialchars($_SESSION['user']['username']); ?>" required>
                     </div>
+
+
     
                     <div class="form-group">
-                        <h4>NAME</h4>
-                        <input type="text" id="name" name="name" placeholder="Hanni" required>
+                    <h4>NAME</h4>
+                    <!-- Set the placeholder to the name value from session -->
+                    <input type="text" id="name" name="name" placeholder="<?php echo htmlspecialchars($_SESSION['user']['name']); ?>" required>
                     </div>
+
+
+                    <div class="form-group">
+                    <h4>EMAIL</h4>
+                    <h4 id="current-email"><?php echo htmlspecialchars($_SESSION['user']['email']); ?></h4>
+                    </div>
+
     
                     <div class="form-group">
-                        <h4>EMAIL</h4>
-                        <h4 id="current-email" required>hann****@gmail.com</h4> 
-                        <button id="change-email-btn" onclick="editEmail()">Change Email</button>
-                        <div id="edit-email-form" style="display: none;">
-                            <input type="email" id="new-email" placeholder="Enter new email">
-                            <button onclick="saveEmail()">Save</button>
-                            <button onclick="cancelEdit()">Cancel</button>
-                        </div>
+                    <h4>GENDER</h4>
+                    <form id="gender" name="gender" required>
+                        <input type="radio" name="gender" value="male" <?php echo ($_SESSION['user']['gender'] === 'male') ? 'checked' : ''; ?>> Male
+                        <input type="radio" name="gender" value="female" <?php echo ($_SESSION['user']['gender'] === 'female') ? 'checked' : ''; ?>> Female
+                        <input type="radio" name="gender" value="other" <?php echo ($_SESSION['user']['gender'] === 'other') ? 'checked' : ''; ?>> Other
+                    </form>
                     </div>
-    
-                    <div class="form-group">
-                        <h4>GENDER</h4>
-                        <form id="gender" name="gender" required>
-                            <input type="radio" name="gender" value="male">Male
-                            <input type="radio" name="gender" value="female">Female
-                            <input type="radio" name="gender" value="other">Other
-                        </form>
-                    </div>
+
+                    <?php
+                    // Get the user's birthdate from the session (assuming the format is YYYY-MM-DD)
+                    $birthdate = $_SESSION['user']['birthdate'] ?? '';
+                    $birthdateParts = explode('-', $birthdate); // Split the birthdate into [year, month, day]
+
+                    $day = $birthdateParts[2] ?? '';
+                    $month = $birthdateParts[1] ?? '';
+                    $year = $birthdateParts[0] ?? '';
+                    ?>
+
                     <div class="form-group">
                         <h4>DATE OF BIRTH</h4>
                         <div class="dob-fields">
                             <select id="day" name="day" required>
-                                <option value="" disabled selected>Day</option>
-                                <script>
-                                    for (let i = 1; i <= 31; i++) {
-                                        document.write('<option value="' + i + '">' + i + '</option>');
-                                    }
-                                </script>
+                                <option value="" disabled <?php echo ($day === '') ? 'selected' : ''; ?>>Day</option>
+                                <?php for ($i = 1; $i <= 31; $i++) { ?>
+                                    <option value="<?php echo $i; ?>" <?php echo ($i == $day) ? 'selected' : ''; ?>><?php echo $i; ?></option>
+                                <?php } ?>
                             </select>
-    
+
                             <select id="month" name="month" required>
-                                <option value="" disabled selected>Month</option>
-                                <option value="1">January</option>
-                                <option value="2">February</option>
-                                <option value="3">March</option>
-                                <option value="4">April</option>
-                                <option value="5">May</option>
-                                <option value="6">June</option>
-                                <option value="7">July</option>
-                                <option value="8">August</option>
-                                <option value="9">September</option>
-                                <option value="10">October</option>
-                                <option value="11">November</option>
-                                <option value="12">December</option>
+                                <option value="" disabled <?php echo ($month === '') ? 'selected' : ''; ?>>Month</option>
+                                <?php
+                                $months = [
+                                    1 => 'January', 2 => 'February', 3 => 'March', 4 => 'April', 5 => 'May', 6 => 'June',
+                                    7 => 'July', 8 => 'August', 9 => 'September', 10 => 'October', 11 => 'November', 12 => 'December'
+                                ];
+                                foreach ($months as $key => $value) {
+                                    echo '<option value="' . $key . '" ' . (($key == $month) ? 'selected' : '') . '>' . $value . '</option>';
+                                }
+                                ?>
                             </select>
-    
+
                             <select id="year" name="year" required>
-                                <option value="" disabled selected>Year</option>
-                                <script>
-                                    const currentYear = new Date().getFullYear();
-                                    for (let i = currentYear; i >= 1900; i--) {
-                                        document.write('<option value="' + i + '">' + i + '</option>');
-                                    }
-                                </script>
+                                <option value="" disabled <?php echo ($year === '') ? 'selected' : ''; ?>>Year</option>
+                                <?php
+                                $currentYear = date('Y');
+                                for ($i = $currentYear; $i >= 1900; $i--) {
+                                    echo '<option value="' . $i . '" ' . (($i == $year) ? 'selected' : '') . '>' . $i . '</option>';
+                                }
+                                ?>
                             </select>
                         </div>
                     </div>
+
     
                     <button type="button" id="save-button" class="saved-button">Save</button>
                 </form>
@@ -312,18 +304,21 @@ if (isset($_SESSION['login_success']) && $_SESSION['login_success'] === true) {
                 </div>
                 <hr class="line">
             </div>
+            
             <div class="profile-container">
                 <h3>My Account</h3>
                 <div class="profile">
-                    <div class="profile-image-container">
-                        <img src="../public/img/profile.png" alt="Profile Picture" id="profile-img">
-                        <i class="fas fa-pencil-alt" id="edit-icon" onclick="document.getElementById('file-input').click()"></i>
-                        <input type="file" id="file-input" style="display:none;" accept="image/*" onchange="previewImage()">
-                    </div>
-                    <h2 id="profile-username">Hanni Meow</h2>
-                    <h3 id="profile-name">Hanni</h3>
-                    <p>Hanni@gmail.com</p>
-                </div>
+             <div class="profile-image-container">
+                <img src="../public/img/profile.png" alt="Profile Picture" id="profile-img">
+                <i class="fas fa-pencil-alt" id="edit-icon" onclick="document.getElementById('file-input').click()"></i>
+                <input type="file" id="file-input" style="display:none;" accept="image/*" onchange="previewImage()">
+            </div>
+            <h2 style="margin-right:auto" id="profile-username"><?php echo htmlspecialchars($_SESSION['user']['username']); ?></h2>
+            <h3 style="margin-left:30%" id="profile-name"><?php echo htmlspecialchars($_SESSION['user']['name']); ?></h3>
+            <p><?php echo htmlspecialchars($_SESSION['user']['email']); ?></p>
+          </div>
+
+
                 <div class="profile-links">
                      <a href="#" onclick="hidePurchases()">
                          <i class="fas fa-user"></i> Profile
@@ -501,8 +496,9 @@ function confirmLogout() {
 }
 
 function logout() {
-    showLogoutModal();
+    window.location.href = '../controllers/logout.php';  // Redirect to logout.php
 }
+
 
     </script>
 </body>

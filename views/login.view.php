@@ -24,7 +24,7 @@ unset($_SESSION['errors']); // Clear errors after displaying them
             <form id="signInForm" action="../controllers/login.php" method="POST">
                 <div class="form-header">
                     <img src="../public/img/logo1.png" alt="Logo" class="logo">
-                    <h2>CDM CAMPUS CART</h2>
+                    <a style="text-decoration:none" href="../index.php"><h2>CDM CAMPUS CART</h2></a>
                 </div>
 
                 <!-- Display error messages -->
@@ -56,7 +56,7 @@ unset($_SESSION['errors']); // Clear errors after displaying them
         </div>
 
         <!-- Overlay for Form Transition -->
-        <div class="overlay-container">
+        <div class="overlay-container">     
             <div class="overlay">
                 <div class="overlay-panel overlay-right">
                     <h3>Everything you need, <b>right on campus.</b></h3>
@@ -74,34 +74,38 @@ unset($_SESSION['errors']); // Clear errors after displaying them
             <button id="alertOkButton" class="alert-ok">OK</button>
         </div>
     </div>
-
     <script>
-        // Function to show the custom alert
-        function showCustomAlert(message) {
-            const alertMessage = document.getElementById("alertMessage");
-            const customAlert = document.getElementById("customAlert");
+function showCustomAlert(message, redirectUrl = null) {
+    const alertMessage = document.getElementById("alertMessage");
+    const customAlert = document.getElementById("customAlert");
 
-            // Set the alert message
-            alertMessage.textContent = message;
+    alertMessage.textContent = message;
+    customAlert.style.display = "flex";
 
-            // Show the custom alert
-            customAlert.style.display = "flex";
-
-            // Get the "OK" button and add a click event listener to close the modal
-            const okButton = document.getElementById("alertOkButton");
-            okButton.addEventListener("click", function() {
-                customAlert.style.display = "none"; 
-            });
+    const okButton = document.getElementById("alertOkButton");
+    okButton.addEventListener("click", function() {
+        customAlert.style.display = "none"; 
+        if (redirectUrl) {
+            window.location.href = redirectUrl;
         }
+    });
 
-        // Check if there is a success or error message passed from the PHP session and show custom alert
-        <?php if (isset($_SESSION['login_success'])): ?>
-            showCustomAlert("Login successful!");
-            <?php unset($_SESSION['login_success']); ?>
-        <?php elseif (isset($_SESSION['login_failed'])): ?>
-            showCustomAlert("Login failed: <?php echo $_SESSION['login_failed']; ?>");
-            <?php unset($_SESSION['login_failed']); ?>
-        <?php endif; ?>
-    </script>
+    if (redirectUrl) {
+        setTimeout(function() {
+            window.location.href = redirectUrl;
+        }, 3000); // 3-second delay before redirecting
+    }
+}
+
+// Check the query string for login success
+<?php if (isset($_GET['status']) && $_GET['status'] === 'success'): ?>
+    showCustomAlert("Login successful!", "../index.php");
+<?php elseif (isset($_SESSION['login_failed'])): ?>
+    showCustomAlert("Login failed: <?php echo addslashes($_SESSION['login_failed']); ?>");
+    <?php unset($_SESSION['login_failed']); ?>
+<?php endif; ?>
+</script>
+
+
 </body>
 </html>
