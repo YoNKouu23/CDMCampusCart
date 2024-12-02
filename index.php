@@ -9,6 +9,7 @@
 </head>
 <body>
     <?php require("./components/header.php")?>
+    
     <section class="hero">
         <div class="content">
             <div class="contentBlock">
@@ -27,7 +28,7 @@
             </div>
         </div>
     </section>
-
+  
     <section class="product">
              <h1 id="proname"><span>I</span> PRODUCTS</h1>
         <div class="productSec">
@@ -51,24 +52,24 @@
                 <h3>MERCHANDISE</h3>
                 <div class="productbox2"><img src="./public/images/pin.png" alt=""></div>
                 <a href="./controllers/products.php">
-                    <button>EXPLORE NOW</button>
+                    <button >EXPLORE NOW</button>
                 </a>
             </div>
         </div>
     </section>
-    
+
     <section class="about" id="about">
         <div class="about-sec">
             <div>
                 <h2><span>l</span> About Us</h2>
             </div>
             <div>
-                <pre>
+                <p>
                     Welcome to CDM Campus Cart, your go-to online destination for all things 
                                             related to student essentials! 
                 We’re here to make life easier for students by offering a comprehensive range of
                              products tailored to each institute's unique needs.
-                </pre>
+                </p>
             </div>
         </div>
 
@@ -82,7 +83,7 @@
 
                 <div class="content-story">
                     <h3>Our Story</h3>
-                    <pre>
+                    <p>
                         CDM Campus Cart is built by students, for students. 
                         Our diverse team has come together to create an intuitive, easy-to-use 
                         platform that meets the unique needs of campus life.
@@ -92,7 +93,7 @@
                         With CDM Campus Cart, you can expect quality, convenience, and support
                         —all designed to make campus life easier. Welcome to your all-in-one 
                         solution for uniforms, institute merchandise, and program essentials!
-                    </pre>
+                    </p>
                     <a href="#meet"><button>Meet the Team</button></a>
                 </div>
         </div>
@@ -215,6 +216,8 @@
     </section>
 
 
+
+
     <section class="contact">
         <div class="contactsec" id="contact">
                 <div class="contact-details">
@@ -279,6 +282,8 @@
                 </div>
         </div>
     </section>
+
+    
     
     <footer>
     <div class="footer-section">
@@ -353,6 +358,7 @@
             <p>Cdmcampuscart © 2024, All Rights Reserved</p>
         </div>
     </footer>
+
 
 
         

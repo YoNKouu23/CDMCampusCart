@@ -36,6 +36,20 @@ class MongoDBConnection {
         }
     }
 
+    public function findDocumentByEmail($collection, $email) {
+        $query = new MongoDB\Driver\Query(['email' => $email]);
+        try {
+            $cursor = $this->manager->executeQuery("{$this->dbName}.$collection", $query);
+            $result = iterator_to_array($cursor);
+            return $result ? $result[0] : null; // Return the first matching document
+        } catch (MongoDB\Driver\Exception\Exception $e) {
+            $this->log("Query Error: " . $e->getMessage());
+            return null;
+        }
+    }
+    
+    
+
     public function updateDocumentById($collection, $id, $newData) {
         $bulk = new MongoDB\Driver\BulkWrite;
         $bulk->update(

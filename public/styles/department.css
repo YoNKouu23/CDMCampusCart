@@ -67,7 +67,7 @@ nav ul li a:hover {
     background-color: #0A6D03;
     color: WHITE;
     padding: 10px ;
-    width: 150%; 
+    width: 150%;
     text-align: center; 
     border: 1px solid #0A6D03;
     border-radius: 5px;
@@ -78,9 +78,10 @@ nav ul li a:hover {
     align-items: center;
     white-space: nowrap; 
     
+    
 }
 .dropdown-button:hover{
-    background-color: #2C8E2F;
+    background-color: #2C8E2F; 
     border-color: white;
 }
 
@@ -126,13 +127,9 @@ nav ul li a:hover {
     display: block;
 }
 
-/* Rotate caret when menu is open */
-.custom-dropdown:hover .caret {
-    transform: rotate(180deg); 
-}
 
 .dropdown-button:hover {
-    background-color: #2C8E2F; 
+    background-color: #2C8E2F;
     border-color: white;
 }
 
@@ -270,9 +267,9 @@ img {
     padding: 5px;
 }
 
-.product-section h2 {
+.product-section_ics-section h2 {
     text-align: center;
-    margin-right: 65%;
+    margin-right: 50%;
     margin-bottom: 20px;
     color: #0A6D03;
     font-size: 3rem;
@@ -283,12 +280,43 @@ img {
         -1px 1px 0 #111
     
 }
-.product-section span{
+.product-section_ics-section span{
     color: #FCFE01;
     font-size: 3rem;
+}
+.product-section_iob-section h2 {
+    text-align: center;
+    margin-right: 60%;
+    margin-bottom: 20px;
+    color: #0A6D03;
+    font-size: 3rem;
+    text-shadow: 
+        1px 1px 0 #111, 
+        -1px -1px 0 #111, 
+        1px -1px 0 #111, 
+        -1px 1px 0 #111
     
-   
-   
+}
+.product-section_iob-section span{
+    color: #FCFE01;
+    font-size: 3rem;
+}
+.product-section_ite-section h2 {
+    text-align: center;
+    margin-right: 50%;
+    margin-bottom: 20px;
+    color: #0A6D03;
+    font-size: 3rem;
+    text-shadow: 
+        1px 1px 0 #111, 
+        -1px -1px 0 #111, 
+        1px -1px 0 #111, 
+        -1px 1px 0 #111
+    
+}
+.product-section_ite-section span{
+    color: #FCFE01;
+    font-size: 3rem;
 }
 .product-grid {
     display: grid;
@@ -299,28 +327,17 @@ img {
 }
 
 /* Specific Background Colors for IOB and ITE sections */
-.product-section.iob-section {
+.product-section_iob-section {
     background-color: #fcfcdc;  
     padding: 20px;
 }
 
-.product-section.ite-section {
+.product-section_ite-section {
     background-color: #dcebf5;  
     padding: 20px;
 }
 
-#thankyou-message {
-    margin-top: -60px;
-    width: 20%;;
-    height: 5px;
-    
-}
 
-#thankyou-message h3{
-    margin-top: -10px;
-    font-size: 17px;
-    margin-left: 35px;
-}
 .product-item {
     display: flex;
     flex-direction: column;
@@ -335,7 +352,6 @@ img {
     position: relative;
     border: 1px solid #ccc;
     border-top-left-radius: 20%; 
-    border-bottom-right-radius: 20%;
     padding: 15px;
     background: linear-gradient(to bottom, #fdfda2, #55e04b);
     transition: transform 0.3s;
@@ -349,6 +365,8 @@ img {
     
 }
 
+
+
 .product-card:hover {
     transform: scale(1.05);
 }
@@ -357,6 +375,18 @@ img {
 .product-card img {
     width: 100%;           
     height: auto;         
+    max-width: 250px;      
+    border-radius: 10px;   
+    margin-bottom: 5px;   
+    display: block;        
+    margin-left: auto;     
+    margin-right: auto;    
+    
+}
+
+.product-card img.lace {
+    width: 100%;           
+    height: 350px;         
     max-width: 250px;      
     border-radius: 10px;   
     margin-bottom: 5px;   
@@ -479,7 +509,7 @@ button:focus {
         padding: 8px 10px;
     }
 }
-  /* Cart message style */
+ /* Cart message style */
 #cart-message {
     position: fixed;
     top: 20px;
@@ -592,17 +622,22 @@ button:focus {
 /* Optional: Style the message */
 #thankyou-message {
     position: fixed;
-    top: 20%;
+    top: 11%;
     left: 50%;
     transform: translateX(-50%);
     background-color: #4CAF50;
     color: white;
     padding: 20px;
     border-radius: 5px;
-    font-size: 18px;
     z-index: 1000;
+    width: 20% ;
+    height: 5px;
 }
-
+#thankyou-message h3{
+    margin-top: -8px;
+    font-size: 17px;
+    margin-left: 35px;
+}
 #cod-section {
     background-color: white;
     border: 2px solid #0A6D03;

@@ -30,7 +30,7 @@
                             <img src="../public/img/organization1.png" alt="Product 1 Image"> 
                         </div>
                         <h3>ICS POLO SHIRT</h3>
-                        <button class="price-btn">₱250.00 | BEST SELLER</button>
+                        <button class="price-btn" data-price="250.00">₱250.00 | BEST SELLER</button>
                     </div>
                 
                     <div class="product-item">
@@ -38,7 +38,7 @@
                             <img src="../public/img/organization2.png" alt="Product 1 Image"> 
                         </div>
                         <h3>ITE POLO SHIRT</h3>
-                        <button class="price-btn">₱250.00 | BEST SELLER</button>
+                        <button class="price-btn" data-price="250.00">₱250.00 | BEST SELLER</button>
                     </div>
                 
                     <div class="product-item">
@@ -46,7 +46,7 @@
                             <img src="../public/img/organization3.png" alt="Product 1 Image"> 
                         </div>
                         <h3>CDM POLO SHIRT</h3>
-                        <button class="price-btn">₱250.00 | BEST SELLER</button>
+                        <button class="price-btn" data-price="250.00">₱250.00 | BEST SELLER</button>
                     </div>
                 
                     <div class="product-item">
@@ -54,7 +54,7 @@
                             <img src="../public/img/organization4.png" alt="Product 1 Image"> 
                         </div>
                         <h3>IOB POLO SHIRT</h3>
-                        <button class="price-btn">₱250.00 | BEST SELLER</button>
+                        <button class="price-btn" data-price="250.00">₱250.00 | BEST SELLER</button>
                     </div>
                 
                     <div class="product-item">
@@ -62,7 +62,7 @@
                             <img src="../public/img/organization5.png" alt="Product 1 Image"> 
                         </div>
                         <h3>ORGANIZATION SHIRT</h3>
-                        <button class="price-btn">₱250.00 | BEST SELLER</button>
+                        <button class="price-btn" data-price="250.00">₱250.00 | BEST SELLER</button>
                     </div>
   
                 </div>
@@ -77,7 +77,7 @@
                             <img src="../public/img/maleuniform.png" alt="Product 1 Image"> 
                         </div>
                         <h3>WHITE UNIFORM (MEN)</h3>
-                        <button class="price-btn">₱250.00 | BEST SELLER</button>
+                        <button class="price-btn" data-price="250.00">₱250.00 | BEST SELLER</button>
                     </div>
                 
                     <div class="product-item">
@@ -85,7 +85,7 @@
                             <img src="../public/img/uniform1.png" alt="Product 1 Image"> 
                         </div>
                         <h3>WHITE UNIFORM (WOMEN)</h3>
-                        <button class="price-btn">₱250.00 | BEST SELLER</button>
+                        <button class="price-btn" data-price="250.00">₱250.00 | BEST SELLER</button>
                     </div>
                 
                     <div class="product-item">
@@ -93,7 +93,7 @@
                             <img src="../public/img/peuniform.png" alt="Product 1 Image"> 
                         </div>
                         <h3>P.E UNIFORM</h3>
-                        <button class="price-btn">₱250.00 | BEST SELLER</button>
+                        <button class="price-btn" data-price="250.00">₱250.00 | BEST SELLER</button>
                     </div>
                 
                     <div class="product-item">
@@ -101,7 +101,7 @@
                             <img src="../public/img/uniform2.png" alt="Product 1 Image"> 
                         </div>
                         <h3>GREEN PANTS</h3>
-                        <button class="price-btn">₱250.00 | BEST SELLER</button>
+                        <button class="price-btn" data-price="250.00">₱250.00 | BEST SELLER</button>
                     </div>
                 
                     <div class="product-item">
@@ -109,7 +109,7 @@
                             <img src="../public/img/pepants.png" alt="Product 1 Image"> 
                         </div>
                         <h3>P.E PANTS</h3>
-                        <button class="price-btn">₱250.00 | BEST SELLER</button>
+                        <button class="price-btn" data-price="250.00">₱250.00 | BEST SELLER</button>
                     </div>
                 </div>
                 
@@ -123,7 +123,7 @@
                             <img src="../public/img/lace.png" class="lace" alt="Product 1 Image"> 
                         </div>
                         <h3>ID LACE</h3>
-                        <button class="price-btn">₱250.00 | BEST SELLER</button>
+                        <button class="price-btn" data-price="250.00">₱250.00 | BEST SELLER</button>
                     </div>
                 
                     <div class="product-item">
@@ -131,7 +131,7 @@
                             <img src="../public/img/pin.png" alt="Product 1 Image"> 
                         </div>
                         <h3>IOB PIN</h3>
-                        <button class="price-btn">₱250.00 | BEST SELLER</button>
+                        <button class="price-btn" data-price="250.00">₱250.00 | BEST SELLER</button>
                     </div>
     
                 </div>
@@ -274,8 +274,7 @@ function showPaypal() {
     document.getElementById("paypal-section").classList.remove("hidden");
     document.getElementById("cod-section").classList.add("hidden");
 
-    const totalAmount = document.getElementById('payment-total-amount').textContent;
-    document.getElementById('paypal-total-amount').textContent = totalAmount;
+    updateTotal();
 
     paypal.Buttons({
         createOrder: function(data, actions) {
@@ -309,7 +308,7 @@ function showCod() {
     document.getElementById("paypal-section").classList.add("hidden");
     document.getElementById("cod-section").classList.remove("hidden");
     document.getElementById("thankyou-section").classList.add("hidden");
-   updateOrderSummary(true);
+    updateTotal();
 }
 
 function showDetails() {
@@ -369,10 +368,52 @@ buyNowButton.addEventListener("click", showDetailsForm);
         actionDialog.style.display = 'none'; 
     });
 
-     // Handle price button click (Add to Cart)
-     const priceButton = document.querySelectorAll('.price-btn');
+         // Get the search bar and product items
+const searchInput = document.querySelector('.search-bar input');
+const productItems = document.querySelectorAll('.product-item');
 
-         
+// Add event listener to the search input to listen for user input
+searchInput.addEventListener('input', function() {
+    const searchTerm = searchInput.value.toLowerCase();  // Get the input value and convert to lowercase
+
+    // Loop through all the product items and check if they match the search term
+    productItems.forEach(function(item) {
+        const productName = item.querySelector('h3').textContent.toLowerCase();  // Get the product name
+        if (productName.includes(searchTerm)) {
+            item.style.display = '';  // Show the item if it matches the search term
+        } else {
+            item.style.display = 'none';  // Hide the item if it does not match
+        }
+    });
+});
+
+let totalAmount = 0;  // This will store the total price
+
+// Function to update the total display
+function updateTotal() {
+    // Update the total amount in PayPal section
+    document.getElementById('payment-total-amount').textContent = `₱${totalAmount.toFixed(2)}`;
+    document.getElementById('paypal-total-amount').textContent = `₱${totalAmount.toFixed(2)}`;
+}
+
+// Handle price button click to open action dialog and update the total
+priceButtons.forEach(button => {
+    button.addEventListener('click', function() {
+        currentProductName = this.closest('.product-item').querySelector('h3').textContent;
+        const productPrice = parseFloat(this.getAttribute('data-price'));  // Get the price of the selected product
+
+        // Update the total amount by adding the product price
+        totalAmount += productPrice;
+
+        // Update the total display
+        updateTotal();
+
+        actionDialog.style.display = 'block'; // Show action dialog
+    });
+});
+
+
+
      </script>
 </body>
 </html>

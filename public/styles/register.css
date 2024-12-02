@@ -31,7 +31,7 @@ body {
 /* Form Container Styling */
 .form-container {
     position: absolute;
-    top: 0;
+    top: -20px;
     height: 100%;
     transition: all 0.6s ease-in-out;
     display: flex;
@@ -43,28 +43,14 @@ body {
 }
 
 .sign-in-container {
-    left: 0;
+    right: 0;
     width: 50%;
-    z-index: 2;
-}
-
-.sign-up-container {
-    left: 50%;
-    width: 50%;
-    opacity: 0;
-    z-index: 1;
+    z-index: 999;
 }
 
 /* Active Form Styling */
 .container.right-panel-active .sign-in-container {
     transform: translateX(0);
-}
-
-.container.right-panel-active .sign-up-container {
-    transform: translateX(0);
-    opacity: 1;
-    z-index: 5;
-    animation: show 0.6s;
 }
 
 /* Keyframe for Show Animation */
@@ -83,7 +69,7 @@ body {
 .overlay-container {
     position: absolute;
     top: 0;
-    left: 50%;
+    right: 50%;
     width: 50%;
     height: 100%;
     overflow: hidden;
@@ -96,7 +82,7 @@ body {
 }
 
 .overlay {
-    background: linear-gradient(to right, #eee, #eee );
+    background:  #eee;
     color: white;
     position: relative;
     left: -100%;
@@ -124,58 +110,14 @@ body {
     transform: translateX(0);
     transition: transform 0.6s ease-in-out;
 }
-/* Left circle (big one) */
-.overlay-left::before {
-    content: '';
-    position: absolute;
-    top: -20px;
-    left: 28%;
-    transform: translateX(-50%);
-    width: 700px; /* Big circle */
-    height: 700px; /* Big circle */
-    opacity: 80%;
-    background: #48ca3e;
-    border-radius: 50%;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-}
 
-/* Left smaller circle */
-.overlay-left::after {
-    content: '';
-    position: absolute;
-    top: -5px; 
-    left: 15%;
-    transform: translateX(-50%);
-    width: 650px; 
-    height: 650px; 
-    background: #0A6D03;
-    opacity: 80%;
-    border-radius: 50%;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    z-index: 2; 
-}
-.overlay-left .third-circle{
-    content: '';
-    position: absolute;
-    top: -5px; 
-    left: -5%;
-    transform: translateX(-50%);
-    width: 650px; 
-    height: 650px; 
-    background: #1e6b19;
-    opacity: 80%;
-    border-radius: 50%;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    z-index: 2; 
-}
 
 /* Right circle (big one) */
 .overlay-right::before {
     content: '';
     position: absolute;
     top: -20px;
-    left: 73%;
+    left: 27%;
     transform: translateX(-50%);
     width: 700px; 
     height: 700px; 
@@ -191,7 +133,7 @@ body {
     content: '';
     position: absolute;
     top: -5px; 
-    left: 85%;
+    left: 18%;
     transform: translateX(-50%);
     width: 650px; 
     height: 650px; 
@@ -205,7 +147,7 @@ body {
     content: '';
     position: absolute;
     top: -5px; 
-    left: 105%;
+    left: 5%;
     transform: translateX(-50%);
     width: 650px; 
     height: 650px; 
@@ -240,38 +182,11 @@ body {
     height: 410px;
     object-fit: cover;
     border-radius: 10px;
-    margin-bottom: 30px;
+    margin-bottom: -190px;
+
     margin-right: 5px;
     z-index: 4;
     
-}
-.overlay-right h3 {
-    font-size: 25px; 
-    font-weight: bold; 
-    color: white; 
-    text-transform: uppercase; 
-    letter-spacing: 2px;
-    line-height: 1.4; 
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    z-index: 4; 
-    margin-bottom: 20px; 
-    padding: 0 10px;
-    text-align: left;
-    margin-left: 50px;
-}
-.overlay-left h3 {
-    font-size: 25px; 
-    font-weight: bold; 
-    color: white;
-    text-transform: uppercase; 
-    letter-spacing: 2px;
-    line-height: 1.4; 
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
-    z-index: 4; 
-    margin-bottom: 20px; 
-    padding: 0 10px; 
-    text-align: left;
-    margin-right: 50px;
 }
 
 /* Input Field Styling */
@@ -323,61 +238,8 @@ input[type="submit"]:focus {
     outline: none;
 }
 
-/* Social Buttons */
-.social-container {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    gap: 10px; 
-    flex-direction: column; 
-}
-
-/* Social Buttons - Individual Colors */
-.social-btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 40px; 
-    width: 100%;  
-    border-radius: 15px; 
-    background-color: #0A6D03; 
-    color: white;
-    font-size: 10px;  
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
-    margin: 10px 0; 
-}
-
-/* Individual Colors for Buttons */
-.social-btn.google {
-    color: #000000;
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 12px;
-    padding: 12px 20px; 
-    
-}
-
-.google-icon {
-    width: 20px; 
-    height: 20px;
-    margin-right: 15px; 
-    margin-top: 3px;
-    text-decoration: none;
-}
 
 
-/* Hover Effects */
-.social-btn:hover {
-    transform: scale(1.05); 
-}
-
-/* Remove underline from links */
-.social-container a {
-}
 
 /* Additional tweaks for small screens */
 @media screen and (max-width: 768px) {
@@ -432,7 +294,7 @@ h2 {
 .form-header {
     display: flex;
     align-items: center;
-    margin-bottom: 0px;
+    margin-bottom: -10px;
 }
 
 img {
@@ -463,6 +325,23 @@ img {
     font-size: 14px;
     font-weight: 100;
     color: #333;
+    
+}
+
+
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #0A6D03;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.login-btn:hover {
+    background-color: #0A6D03;
     
 }
 

@@ -1,3 +1,17 @@
+<?php
+session_start();
+
+// Check if the user is logged in
+if (isset($_SESSION['login_success']) && $_SESSION['login_success'] === true) {
+    // Access the session data
+    $user = $_SESSION['user'];  // This holds the user's session data like username, email, etc.
+} else {
+    // Redirect to login page if not logged in
+    header("Location: ../views/login.view.php");
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +28,22 @@
     <?php require("../components/navbar.php")?>
     <main>
        
-    
+            <h1>Welcome to Your Profile</h1>
+
+        <div>
+            <h2>User Information</h2>
+            <p><strong>Name:</strong> <?php echo htmlspecialchars($user['name']); ?></p>
+            <p><strong>Email:</strong> <?php echo htmlspecialchars($user['email']); ?></p>
+            <p><strong>Username:</strong> <?php echo htmlspecialchars($user['username']); ?></p>
+            <p><strong>Gender:</strong> <?php echo htmlspecialchars($user['gender']); ?></p>
+            <p><strong>Birthday:</strong> <?php echo htmlspecialchars($user['birthdate']); ?></p>
+        </div>
+
+        <a href="../controllers/logout.php">Logout</a>
+
+
+
+
        
         <div class="profile-details-container">
             <div id="details-section" class="details-section">
@@ -41,11 +70,6 @@
                             <button onclick="saveEmail()">Save</button>
                             <button onclick="cancelEdit()">Cancel</button>
                         </div>
-                    </div>
-    
-                    <div class="form-group">
-                        <h4>PHONE NUMBER</h4>
-                        <input type="text" id="phone" name="phone" placeholder="09774817003" required>
                     </div>
     
                     <div class="form-group">
