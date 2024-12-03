@@ -36,6 +36,7 @@ class MongoDBConnection {
         }
     }
 
+    
     public function findDocumentByEmail($collection, $email) {
         $query = new MongoDB\Driver\Query(['email' => $email]);
         try {
@@ -47,7 +48,34 @@ class MongoDBConnection {
             return null;
         }
     }
+
+
     
+    public function updateDocumentByEmail($collection, $email, $newData) {
+        $bulk = new MongoDB\Driver\BulkWrite;
+    
+        // Add the update operation to the bulk write
+        $bulk->update(
+            ['email' => $email], // Filter: Match the email
+            ['$set' => $newData], // Update: Set new fields
+            ['multi' => false, 'upsert' => false] // Options: Single update, no upsert
+        );
+    
+        try {
+            // Execute the bulk write operation
+            $result = $this->manager->executeBulkWrite("{$this->dbName}.$collection", $bulk);
+    
+            // Log the number of modified documents
+            $modifiedCount = $result->getModifiedCount();
+            $this->log(sprintf("Updated %d document(s).", $modifiedCount));
+    
+            return $modifiedCount > 0; // Return true if a document was modified
+        } catch (MongoDB\Driver\Exception\Exception $e) {
+            // Log the exception message for debugging
+            $this->log("Update Error: " . $e->getMessage());
+            return false; // Return false on error
+        }
+    }
     
 
     public function updateDocumentById($collection, $id, $newData) {
@@ -110,4 +138,7 @@ class MongoDBConnection {
             $this->log("Delete Error: " . $e->getMessage());
         }
     }
+
+    
 }
+

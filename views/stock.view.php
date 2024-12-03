@@ -157,9 +157,15 @@
             <form id="addProductForm">
                 <label for="productName">Product Name:</label>
                 <input type="text" id="productName" name="productName" placeholder="Enter product name" required>
-
                 <label for="category">Category:</label>
-                <input type="text" id="category" name="category" placeholder="Enter category" required>
+                <select style="color: #0A6D03; font-weight: bold" id="category" name="category" required>
+                    <option value="Uniform">Uniform</option>
+                    <option value="Organization">Organization</option>
+                    <option value="Merchandise">Merchandise</option>
+                    <option value="ICS">ICS</option>
+                    <option value="IOB">IOB</option>
+                    <option value="ITE">ITE</option>
+                </select>
 
                 <label for="price">Price:</label>
                 <input type="number" id="price" name="price" placeholder="Enter price" required>
@@ -172,42 +178,42 @@
                 <input type="file" id="productImage" name="productImage" accept="image/*" required>
 
                 <button type="submit">Add Product</button>
-            </form>
+        </form>
+
         </div>
     </div>
-    <script>
+            <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sidebarLinks = document.querySelectorAll('.aside .sidebar a');
+            sidebarLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    sidebarLinks.forEach(item => item.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
 
-document.addEventListener('DOMContentLoaded', () => {
-    const sidebarLinks = document.querySelectorAll('.aside .sidebar a');
-    sidebarLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            sidebarLinks.forEach(item => item.classList.remove('active'));
-            this.classList.add('active');
+            const currentPage = window.location.pathname.split("/").pop();
+
+            sidebarLinks.forEach(link => {
+                const linkHref = link.getAttribute("href");
+                if (linkHref === currentPage) {
+                    link.classList.add('active');
+                }
+            });
         });
-    });
 
-    const currentPage = window.location.pathname.split("/").pop();
-
-    sidebarLinks.forEach(link => {
-        const linkHref = link.getAttribute("href");
-        if (linkHref === currentPage) {
-            link.classList.add('active');
-        }
-    });
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-    const removeButtons = document.querySelectorAll('.remove-item');
-    
-    removeButtons.forEach(button => {
-        button.addEventListener('click', function(event) {
-            const row = event.target.closest('tr');  
-            if (row) {
-                row.remove(); 
-            }
+        document.addEventListener('DOMContentLoaded', () => {
+            const removeButtons = document.querySelectorAll('.remove-item');
+            
+            removeButtons.forEach(button => {
+                button.addEventListener('click', function(event) {
+                    const row = event.target.closest('tr');  
+                    if (row) {
+                        row.remove(); 
+                    }
+                });
+            });
         });
-    });
-});
 
         const editButtons = document.querySelectorAll('.edit-item');
         editButtons.forEach(button => {
@@ -233,30 +239,30 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
         });
+
         function showLogoutModal() {
-    document.getElementById('logoutModal').style.display = 'block';
-}
+            document.getElementById('logoutModal').style.display = 'block';
+        }
 
-function closeLogoutModal() {
-    document.getElementById('logoutModal').style.display = 'none';
-}
+        function closeLogoutModal() {
+            document.getElementById('logoutModal').style.display = 'none';
+        }
 
-function confirmLogout() {
+        function confirmLogout() {
+            localStorage.removeItem('user');
+            sessionStorage.removeItem('user');
+            document.cookie = 'userSession=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
 
-    localStorage.removeItem('user');
-    sessionStorage.removeItem('user');
-    document.cookie = 'userSession=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+            alert('You have been logged out.');
 
-    alert('You have been logged out.');
+            window.location.href = './admin.view.php';
+        }
 
-    window.location.href = './admin.view.php';
-}
+        function logout() {
+            showLogoutModal();
+        }
 
-function logout() {
-    showLogoutModal();
-}
-
-function openAddProductModal() {
+        function openAddProductModal() {
             document.getElementById('addProductModal').style.display = 'block';
         }
 
@@ -264,7 +270,7 @@ function openAddProductModal() {
             document.getElementById('addProductModal').style.display = 'none';
         }
 
-        // Add Product Form Submission
+        // Add Product Form Submission (combined event listener)
         document.getElementById('addProductForm').addEventListener('submit', function(event) {
             event.preventDefault(); 
 
@@ -305,11 +311,66 @@ function openAddProductModal() {
 
                 // Close the modal
                 closeAddProductModal();
+
+                // Show success alert
+                showCustomAlert("Product added successfully!", 'success');
             };
 
             // Start reading the file as DataURL (base64)
             reader.readAsDataURL(productImage);
+
+            // After reading, send the data to the server (optional, if needed)
+            const formData = new FormData(this);
+
+            fetch('../controllers/stock.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // Show success alert with message from server
+                    showCustomAlert(data.message || 'Product added successfully!', 'success');
+                    // Optionally, you can refresh the product list or add the new product to the table
+                } else {
+                    // Show error alert with message from server
+                    showCustomAlert(data.message || 'Failed to add product.', 'error');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                showCustomAlert('An error occurred while adding the product.', 'error');
+            });
         });
+
+        // Function to show custom alert
+        function showCustomAlert(message, type) {
+            // Create the alert container
+            const alert = document.createElement("div");
+            alert.classList.add("custom-alert"); // Add the base class for the alert container
+
+            // Add different styles based on the alert type
+            if (type === 'success') {
+                alert.classList.add('alert-success'); // Add the success class
+                alert.textContent = message || "Product added successfully!";
+            } else if (type === 'error') {
+                alert.classList.add('alert-error'); // Add the error class
+                alert.textContent = message || "Something went wrong!";
+            }
+
+            // Append the alert to the body
+            document.body.appendChild(alert);
+
+            // Remove the alert after a few seconds
+            setTimeout(() => {
+                alert.remove();
+            }, 3000); // Alert will disappear after 3 seconds
+        }
+
+        
+
+
+ 
     </script>
 
 </body>

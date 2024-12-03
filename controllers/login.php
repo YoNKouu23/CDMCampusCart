@@ -35,6 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 'email' => $user->email,
                 'gender' => $user->gender,
                 'birthdate' => $user->birthdate,
+                'profile_image' => $user->profile_image
                 // Add any other data you'd like to store
             ];
 

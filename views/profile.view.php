@@ -31,89 +31,45 @@ if (isset($_SESSION['login_success']) && $_SESSION['login_success'] === true) {
    
 
         <div class="profile-details-container">
-            <div id="details-section" class="details-section">
+            <div id="details-section" class="details-section">      
                 <h2>MY <span>PROFILE</span></h2>
                 <h5>MANAGE AND PROTECT YOUR ACCOUNT</h5>
                 <hr class="line">
-                <form id="details-form">
-                   <div class="form-group">
+               <form id="details-form" method="POST" action="../controllers/profile.php" enctype="multipart/form-data">
+                <div class="form-group">
                     <h4>USERNAME</h4>
-                    <!-- Set the placeholder to the name value from session -->
-                    <input type="text" id="name" name="name" placeholder="<?php echo htmlspecialchars($_SESSION['user']['username']); ?>" required>
-                    </div>
+                    <input type="text" id="username" name="username" value="<?php echo htmlspecialchars($_SESSION['user']['username']); ?>" required>
+                </div>
 
-
-    
-                    <div class="form-group">
+                <div class="form-group">
                     <h4>NAME</h4>
-                    <!-- Set the placeholder to the name value from session -->
-                    <input type="text" id="name" name="name" placeholder="<?php echo htmlspecialchars($_SESSION['user']['name']); ?>" required>
-                    </div>
+                    <input type="text" id="name" name="name" value="<?php echo htmlspecialchars($_SESSION['user']['name']); ?>" required>
+                </div>
 
-
-                    <div class="form-group">
+                <div class="form-group">
                     <h4>EMAIL</h4>
                     <h4 id="current-email"><?php echo htmlspecialchars($_SESSION['user']['email']); ?></h4>
-                    </div>
+                </div>
 
-    
-                    <div class="form-group">
+                <div class="form-group">
                     <h4>GENDER</h4>
-                    <form id="gender" name="gender" required>
-                        <input type="radio" name="gender" value="male" <?php echo ($_SESSION['user']['gender'] === 'male') ? 'checked' : ''; ?>> Male
-                        <input type="radio" name="gender" value="female" <?php echo ($_SESSION['user']['gender'] === 'female') ? 'checked' : ''; ?>> Female
-                        <input type="radio" name="gender" value="other" <?php echo ($_SESSION['user']['gender'] === 'other') ? 'checked' : ''; ?>> Other
-                    </form>
-                    </div>
+                    <input type="radio" name="gender" value="male" <?php echo ($_SESSION['user']['gender'] === 'male') ? 'checked' : ''; ?>> Male
+                    <input type="radio" name="gender" value="female" <?php echo ($_SESSION['user']['gender'] === 'female') ? 'checked' : ''; ?>> Female
+                    <input type="radio" name="gender" value="other" <?php echo ($_SESSION['user']['gender'] === 'other') ? 'checked' : ''; ?>> Other
+                </div>
 
-                    <?php
-                    // Get the user's birthdate from the session (assuming the format is YYYY-MM-DD)
-                    $birthdate = $_SESSION['user']['birthdate'] ?? '';
-                    $birthdateParts = explode('-', $birthdate); // Split the birthdate into [year, month, day]
+                <div class="form-group">
+                    <h4>DATE OF BIRTH</h4>
+                    <input type="date" id="birthdate" name="birthdate" value="<?php echo htmlspecialchars($_SESSION['user']['birthdate']); ?>" required>
+                </div>
 
-                    $day = $birthdateParts[2] ?? '';
-                    $month = $birthdateParts[1] ?? '';
-                    $year = $birthdateParts[0] ?? '';
-                    ?>
+                <div class="form-group">
+                    <h4>PROFILE PICTURE</h4>
+                    <input type="file" id="file-input" name="profile_image" accept="image/*" onchange="previewImage()">
+                </div>
 
-                    <div class="form-group">
-                        <h4>DATE OF BIRTH</h4>
-                        <div class="dob-fields">
-                            <select id="day" name="day" required>
-                                <option value="" disabled <?php echo ($day === '') ? 'selected' : ''; ?>>Day</option>
-                                <?php for ($i = 1; $i <= 31; $i++) { ?>
-                                    <option value="<?php echo $i; ?>" <?php echo ($i == $day) ? 'selected' : ''; ?>><?php echo $i; ?></option>
-                                <?php } ?>
-                            </select>
-
-                            <select id="month" name="month" required>
-                                <option value="" disabled <?php echo ($month === '') ? 'selected' : ''; ?>>Month</option>
-                                <?php
-                                $months = [
-                                    1 => 'January', 2 => 'February', 3 => 'March', 4 => 'April', 5 => 'May', 6 => 'June',
-                                    7 => 'July', 8 => 'August', 9 => 'September', 10 => 'October', 11 => 'November', 12 => 'December'
-                                ];
-                                foreach ($months as $key => $value) {
-                                    echo '<option value="' . $key . '" ' . (($key == $month) ? 'selected' : '') . '>' . $value . '</option>';
-                                }
-                                ?>
-                            </select>
-
-                            <select id="year" name="year" required>
-                                <option value="" disabled <?php echo ($year === '') ? 'selected' : ''; ?>>Year</option>
-                                <?php
-                                $currentYear = date('Y');
-                                for ($i = $currentYear; $i >= 1900; $i--) {
-                                    echo '<option value="' . $i . '" ' . (($i == $year) ? 'selected' : '') . '>' . $i . '</option>';
-                                }
-                                ?>
-                            </select>
-                        </div>
-                    </div>
-
-    
-                    <button type="button" id="save-button" class="saved-button">Save</button>
-                </form>
+                <button type="submit" id="save-button" class="saved-button">Save</button>
+            </form>
             </div>
 
             
@@ -124,7 +80,7 @@ if (isset($_SESSION['login_success']) && $_SESSION['login_success'] === true) {
                 <hr class="line">
                 
              
-    <div class="product-container">
+     <div class="product-container">
       
         <div class="product-item">
             <div class="purchase-box">
@@ -308,15 +264,19 @@ if (isset($_SESSION['login_success']) && $_SESSION['login_success'] === true) {
             <div class="profile-container">
                 <h3>My Account</h3>
                 <div class="profile">
-             <div class="profile-image-container">
-                <img src="../public/img/profile.png" alt="Profile Picture" id="profile-img">
-                <i class="fas fa-pencil-alt" id="edit-icon" onclick="document.getElementById('file-input').click()"></i>
-                <input type="file" id="file-input" style="display:none;" accept="image/*" onchange="previewImage()">
-            </div>
-            <h2 style="margin-right:auto" id="profile-username"><?php echo htmlspecialchars($_SESSION['user']['username']); ?></h2>
-            <h3 style="margin-left:30%" id="profile-name"><?php echo htmlspecialchars($_SESSION['user']['name']); ?></h3>
-            <p><?php echo htmlspecialchars($_SESSION['user']['email']); ?></p>
-          </div>
+                <div class="profile-image-container">
+                    <!-- Display profile image if it exists, else show the default image -->
+                    <img src="<?php echo isset($_SESSION['user']['profile_image']) && $_SESSION['user']['profile_image'] ? '/uploads/' . htmlspecialchars($_SESSION['user']['profile_image']) : '../public/img/profile.png'; ?>" alt="Profile Picture" id="profile-img">
+
+                    <i class="fas fa-pencil-alt" id="edit-icon" onclick="document.getElementById('file-input').click()"></i>
+                    <input type="file" id="file-input" style="display:none;" accept="image/*" onchange="previewImage()">
+                </div>
+
+                    <h2 style="margin-right:auto" id="profile-username"><?php echo htmlspecialchars($_SESSION['user']['username']); ?></h2>
+                    <h3 style="margin-left:30%" id="profile-name"><?php echo htmlspecialchars($_SESSION['user']['name']); ?></h3>
+                    <p><?php echo htmlspecialchars($_SESSION['user']['email']); ?></p>
+                </div>
+    
 
 
                 <div class="profile-links">
@@ -354,152 +314,115 @@ if (isset($_SESSION['login_success']) && $_SESSION['login_success'] === true) {
        
     </main>
 
-    <script>
-        function showPurchases() {
-            document.getElementById('details-section').style.display = 'none'; 
-            document.getElementById('purchase-history').style.display = 'block'; 
-            document.getElementById('status-section').style.display = 'none';
-        }
+<script>
+    function showPurchases() {
+        document.getElementById('details-section').style.display = 'none'; 
+        document.getElementById('purchase-history').style.display = 'block'; 
+        document.getElementById('status-section').style.display = 'none';
+    }
 
-        function hidePurchases() {
-            document.getElementById('details-section').style.display = 'block'; 
-            document.getElementById('purchase-history').style.display = 'none'; 
-            document.getElementById('status-section').style.display = 'none';
-        }
+    function hidePurchases() {
+        document.getElementById('details-section').style.display = 'block'; 
+        document.getElementById('purchase-history').style.display = 'none'; 
+        document.getElementById('status-section').style.display = 'none';
+    }
 
-        function showStatus() {
-            document.getElementById('details-section').style.display = 'none';
-            document.getElementById('purchase-history').style.display = 'none';
-            document.getElementById('status-section').style.display = 'block';
-        }
+    function showStatus() {
+        document.getElementById('details-section').style.display = 'none';
+        document.getElementById('purchase-history').style.display = 'none';
+        document.getElementById('status-section').style.display = 'block';
+    }
 
-function editEmail() {
-    document.getElementById('edit-email-form').style.display = 'block';
-    document.getElementById('current-email').style.display = 'none';
-    document.getElementById('change-email-btn').style.display = 'none';
-}
+    function saveProfileData() {
+        const newUsername = document.getElementById('username').value;
+        const newName = document.getElementById('name').value;
+        const newGender = document.querySelector('input[name="gender"]:checked')?.value;
+        const newDOB = document.getElementById('day').value + '-' + document.getElementById('month').value + '-' + document.getElementById('year').value;
 
-document.getElementById('save-button').addEventListener('click', function() {
-            const newUsername = document.getElementById('username').value;
-            const newName =document.getElementById('name').value;
-            if (newUsername) {
-                document.getElementById('profile-username').textContent = newUsername;
-            }
-            else {
-                alert('Please enter a username.');
-            }
+        if (newUsername && newName && newGender && newDOB) {
+            // Update displayed data
+            document.getElementById('profile-username').textContent = newUsername;
+            document.getElementById('profile-name').textContent = newName;
+            document.getElementById('profile-gender').textContent = newGender;
+            document.getElementById('profile-dob').textContent = newDOB;
 
-            if (newName) {
-        document.getElementById('profile-name').textContent = newName;
-            }
-
+            // Clear form inputs after saving
             document.getElementById('username').value = '';
             document.getElementById('name').value = '';
-            document.getElementById('address').value = '';
-            document.getElementById('phone').value = '';
-
             const genderRadios = document.getElementsByName('gender');
             genderRadios.forEach(radio => radio.checked = false);
-
             document.getElementById('day').selectedIndex = 0;
             document.getElementById('month').selectedIndex = 0;
             document.getElementById('year').selectedIndex = 0;
 
-            document.getElementById('current-email').textContent = 'hann****@gmail.com';
-            document.getElementById('edit-email-form').style.display = 'none';
-            document.getElementById('current-email').style.display = 'block';
-            document.getElementById('change-email-btn').style.display = 'block';
-        });
+            // Send data to MongoDB via API
+            fetch('/updateProfile', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    username: newUsername,
+                    name: newName,
+                    gender: newGender,
+                    dob: newDOB
+                }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('Profile updated successfully!');
+                } else {
+                    alert('There was an error updating the profile.');
+                }
+            })
+            .catch(error => {
+                console.error('Error updating profile:', error);
+            });
 
-
-function saveEmail() {
-    var newEmail = document.getElementById('new-email').value;
-    if (newEmail) {
-        document.getElementById('current-email').textContent = newEmail;
-        document.querySelector('.profile p').textContent = newEmail;
-    document.getElementById('edit-email-form').style.display = 'none';
-        document.getElementById('current-email').style.display = 'block';
-        document.getElementById('change-email-btn').style.display = 'block';
-    } else {
-        alert('Please enter a valid email address.');
-    }
-}
-
-function cancelEdit() {
-
-    document.getElementById('edit-email-form').style.display = 'none';
-    document.getElementById('current-email').style.display = 'block';
-    document.getElementById('change-email-btn').style.display = 'block';
-}
-
-const buyButtons = document.querySelectorAll('.buy-again-btn');
-
-buyButtons.forEach(function(button) {
-    button.addEventListener('click', function() {
-        window.location.href = "../views/buy.view.php"; 
-    });
-});
-
-document.getElementById('save-button').addEventListener('click', function() {
-
-    document.getElementById('name').value = '';
-    document.getElementById('address').value = '';
-    document.getElementById('phone').value = '';
-
-
-    const genderRadios = document.getElementsByName('gender');
-    genderRadios.forEach(radio => radio.checked = false);
-
-    document.getElementById('day').selectedIndex = 0; 
-    document.getElementById('month').selectedIndex = 0; 
-    document.getElementById('year').selectedIndex = 0; 
-
-    document.getElementById('current-email').textContent = 'hann****@gmail.com'; 
-    document.getElementById('edit-email-form').style.display = 'none'; 
-    document.getElementById('current-email').style.display = 'block'; 
-
-    document.getElementById('change-email-btn').style.display = 'block';
-});
-function previewImage() {
-    const fileInput = document.getElementById('file-input');
-    const profileImage = document.getElementById('profile-img');
-
-    const file = fileInput.files[0];
-    if (file) {
-        const reader = new FileReader();
-
-        reader.onload = function(e) {
-            profileImage.src = e.target.result;  
+        } else {
+            alert('Please fill out all fields.');
         }
-
-        reader.readAsDataURL(file);  
     }
-}
 
-function showLogoutModal() {
-    document.getElementById('logoutModal').style.display = 'block';
-}
+    // Listen for the save button click
+    document.getElementById('save-button').addEventListener('click', saveProfileData);
 
-function closeLogoutModal() {
-    document.getElementById('logoutModal').style.display = 'none';
-}
+        function previewImage() {
+        const fileInput = document.getElementById('file-input');
+        const profileImage = document.getElementById('profile-img');
+        const file = fileInput.files[0];
 
-function confirmLogout() {
-
-    localStorage.removeItem('user');
-    sessionStorage.removeItem('user');
-    document.cookie = 'userSession=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
-
-    alert('You have been logged out.');
-
-    window.location.href = '../views/login.view.php';
-}
-
-function logout() {
-    window.location.href = '../controllers/logout.php';  // Redirect to logout.php
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                profileImage.src = e.target.result;  // Update the profile image preview
+            };
+            reader.readAsDataURL(file);
+        }
 }
 
 
-    </script>
+    // Logout functions
+    function showLogoutModal() {
+        document.getElementById('logoutModal').style.display = 'block';
+    }
+
+    function closeLogoutModal() {
+        document.getElementById('logoutModal').style.display = 'none';
+    }
+
+    function confirmLogout() {
+        localStorage.removeItem('user');
+        sessionStorage.removeItem('user');
+        document.cookie = 'userSession=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+        alert('You have been logged out.');
+        window.location.href = '../views/login.view.php';
+    }
+
+    function logout() {
+        window.location.href = '../controllers/logout.php';  // Redirect to logout.php
+    }
+</script>
 </body>
 </html>
