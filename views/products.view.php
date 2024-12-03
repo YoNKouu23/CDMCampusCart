@@ -1,3 +1,11 @@
+<?php
+session_start();  // Make sure the session is started
+
+// Check if the user is logged in
+$isLoggedIn = isset($_SESSION['login_success']) && $_SESSION['login_success'] == 1;
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -210,207 +218,264 @@
       </div>
   
      <script>
-           // JavaScript code for handling the dropdown and smooth scrolling
-           const dropdownItems = document.querySelectorAll('.dropdown-menu li');
-    
-    dropdownItems.forEach(item => {
-        item.addEventListener('click', function() {
-            const departmentId = item.getAttribute('data-value');  
-            const targetSection = document.getElementById(departmentId);  
 
-            if (targetSection) {
-                targetSection.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
+    const isLoggedIn = <?php echo $isLoggedIn ? 'true' : 'false'; ?>;
+   
+    function handleBuyNow() {
+    const purchaseData = {
+        productName: currentProductName,
+        productPrice: currentProductPrice,
+        userEmail: <?php echo json_encode($_SESSION['user']['email']); ?>, // Send user's email
+        // Add any other relevant data here
+    };
+
+            fetch('../api/purchase.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(purchaseData),
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('Purchase successful!');
+                    // Optionally redirect or update the UI
+                } else {
+                    alert('Purchase failed: ' + data.message);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred while processing your purchase.');
+            });
+        }
+
+           
+
+
+
+
+
+
+            
+        // JavaScript code for handling the dropdown and smooth scrolling 
+            const dropdownItems = document.querySelectorAll('.dropdown-menu li');
+                
+            dropdownItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    const departmentId = item.getAttribute('data-value');  
+                    const targetSection = document.getElementById(departmentId);  
+
+                    if (targetSection) {
+                        targetSection.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+
+                    // DOM elements for the action dialog and cart message
+                const priceButtons = document.querySelectorAll('.price-btn');
+                const actionDialog = document.getElementById('action-dialog');
+                const addToCartButton = document.getElementById('add-to-cart-btn');
+                const buyNowButton = document.getElementById('buy-now-btn');
+                const closeDialogButton = document.getElementById('close-dialog-btn');
+                const cartMessage = document.getElementById('cart-message');
+                const thanksMessage = document.getElementById('thankyou-message')
+                const detailsSection = document.getElementById("details-section");
+                const PaypalButton = document.getElementById('paypal-btn');
+                const CodButton = document.getElementById("cod-btn");
+
+                document.getElementById('thankyou-btn-paypal').addEventListener('click', function(event) {
+                    event.preventDefault(); 
+                    document.getElementById('thankyou-message').classList.remove('hidden');  
+                    document.getElementById('paypal-section').classList.add('hidden');  
+
+                    setTimeout(() => {
+                            thanksMessage.style.display = 'none';
+                        }, 2000); 
+                });
+
+                document.getElementById('thankyou-btn-cod').addEventListener('click', function(event) {
+                    event.preventDefault();  
+                    document.getElementById('thankyou-message').classList.remove('hidden');  
+                    document.getElementById('cod-section').classList.add('hidden');  
+                    setTimeout(() => {
+                            thanksMessage.style.display = 'none';
+                        }, 2000); 
+                });
+
+            let currentProductName = '';
+            let currentProductPrice = 0;
+
+            function showDetailsForm() {
+                detailsSection.classList.remove("hidden");
+                detailsSection.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
                 });
             }
-        });
-    });
+            function showPaypal() {
+                document.getElementById("details-section").classList.add("hidden");
+                document.getElementById("paypal-section").classList.remove("hidden");
+                document.getElementById("cod-section").classList.add("hidden");
 
-     
-     // DOM elements for the action dialog and cart message
-const priceButtons = document.querySelectorAll('.price-btn');
-const actionDialog = document.getElementById('action-dialog');
-const addToCartButton = document.getElementById('add-to-cart-btn');
-const buyNowButton = document.getElementById('buy-now-btn');
-const closeDialogButton = document.getElementById('close-dialog-btn');
-const cartMessage = document.getElementById('cart-message');
-const thanksMessage = document.getElementById('thankyou-message')
-const detailsSection = document.getElementById("details-section");
-const PaypalButton = document.getElementById('paypal-btn');
-const CodButton = document.getElementById("cod-btn");
+                updateTotal();
 
-     document.getElementById('thankyou-btn-paypal').addEventListener('click', function(event) {
-        event.preventDefault(); 
-        document.getElementById('thankyou-message').classList.remove('hidden');  
-        document.getElementById('paypal-section').classList.add('hidden');  
-
-        setTimeout(() => {
-                thanksMessage.style.display = 'none';
-            }, 2000); 
-    });
-
-    document.getElementById('thankyou-btn-cod').addEventListener('click', function(event) {
-        event.preventDefault();  
-        document.getElementById('thankyou-message').classList.remove('hidden');  
-        document.getElementById('cod-section').classList.add('hidden');  
-        setTimeout(() => {
-                thanksMessage.style.display = 'none';
-            }, 2000); 
-    });
-
-let currentProductName = '';
-let currentProductPrice = 0;
-
-function showDetailsForm() {
-    detailsSection.classList.remove("hidden");
-    detailsSection.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-    });
-}
-function showPaypal() {
-    document.getElementById("details-section").classList.add("hidden");
-    document.getElementById("paypal-section").classList.remove("hidden");
-    document.getElementById("cod-section").classList.add("hidden");
-
-    updateTotal();
-
-    paypal.Buttons({
-        createOrder: function(data, actions) {
-            return actions.order.create({
-                purchase_units: [{
-                    amount: {
-                        value: totalAmount.replace('₱', '').trim()  
+                paypal.Buttons({
+                    createOrder: function(data, actions) {
+                        return actions.order.create({
+                            purchase_units: [{
+                                amount: {
+                                    value: totalAmount.replace('₱', '').trim()  
+                                }
+                            }]
+                        });
+                    },
+                    onApprove: function(data, actions) {
+                        return actions.order.capture().then(function(details) {
+                            alert('Transaction completed by ' + details.payer.name.given_name);
+                            showThankYouSection();  
+                        });
+                    },
+                    onError: function(err) {
+                        console.error('PayPal Error: ', err);
+                        alert('An error occurred with the PayPal payment.');
                     }
-                }]
+                }).render('#paypal-button-container');  
+            }
+
+            PaypalButton.addEventListener("click", showPaypal);
+            CodButton.addEventListener("click", showCod);
+            
+
+            function showCod() {
+                document.getElementById("details-section").classList.add("hidden");
+                document.getElementById("paypal-section").classList.add("hidden");
+                document.getElementById("cod-section").classList.remove("hidden");
+                document.getElementById("thankyou-section").classList.add("hidden");
+                updateTotal();
+            }
+
+            function showDetails() {
+                document.getElementById("details-section").classList.remove("hidden");
+                document.getElementById("paypal-section").classList.add("hidden");
+                document.getElementById("cod-section").classList.add("hidden");
+                document.getElementById("thankyou-section").classList.add("hidden"); 
+                updateOrderSummary(true);
+            }
+
+            function showDialog() {
+                document.getElementById("details-section").classList.add("hidden");
+                document.getElementById("paypal-section").classList.add("hidden");
+                document.getElementById("cod-section").classList.add("hidden");
+                document.getElementById("dialog-content").classList.remove("hidden");
+                document.getElementById("thankyou-section").classList.add("hidden");
+
+                updateOrderSummary(true);
+            }
+
+                      // Update the buyNowButton event listener
+            buyNowButton.addEventListener('click', function() {
+                if (!isLoggedIn) {
+                    alert('You must log in to proceed with the purchase!');
+                    window.location.href = 'login.php'; // Redirect to login page
+                    return;
+                }
+                handleBuyNow(); // Proceed to handle purchase
             });
-        },
-        onApprove: function(data, actions) {
-            return actions.order.capture().then(function(details) {
-                alert('Transaction completed by ' + details.payer.name.given_name);
-                showThankYouSection();  
+                
+
+                
+                        // Handle "Add to Cart" click
+                        addToCartButton.addEventListener('click', function() {
+                        if (!isLoggedIn) {
+                            alert('You must log in to add items to your cart!');
+                            window.location.href = 'login.php'; // Redirect to login page
+                            return;
+                        }
+                        showMessage(`${currentProductName} has been added to your cart!`);
+                        actionDialog.style.display = 'none';
+                    });
+
+            
+                    // Show confirmation message when an item is added to the cart
+                    function showMessage(message) {
+                        cartMessage.textContent = message;
+                        cartMessage.style.display = 'block';
+                        setTimeout(() => {
+                            cartMessage.style.display = 'none';
+                        }, 3000); 
+                    }
+                
+                    // Handle price button click to open action dialog
+                    priceButtons.forEach(button => {
+                        button.addEventListener('click', function() {
+                            currentProductName = this.closest('.product-item').querySelector('h3').textContent;
+                            currentProductPrice = parseFloat(this.getAttribute('data-price'));  
+                            actionDialog.style.display = 'block'; 
+                        });
+                    });
+
+                // Handle "Add to Cart" click
+                addToCartButton.addEventListener('click', function() {
+                    showMessage(`${currentProductName} has been added to your cart!`);
+                    actionDialog.style.display = 'none'; 
+                });
+
+            
+
+                // Handle "Close" button click
+                closeDialogButton.addEventListener('click', function() {
+                    actionDialog.style.display = 'none'; 
+                });
+
+                    // Get the search bar and product items
+            const searchInput = document.querySelector('.search-bar input');
+            const productItems = document.querySelectorAll('.product-item');
+
+            // Add event listener to the search input to listen for user input
+            searchInput.addEventListener('input', function() {
+                const searchTerm = searchInput.value.toLowerCase();  // Get the input value and convert to lowercase
+
+                // Loop through all the product items and check if they match the search term
+                productItems.forEach(function(item) {
+                    const productName = item.querySelector('h3').textContent.toLowerCase();  // Get the product name
+                    if (productName.includes(searchTerm)) {
+                        item.style.display = '';  // Show the item if it matches the search term
+                    } else {
+                        item.style.display = 'none';  // Hide the item if it does not match
+                    }
+                });
             });
-        },
-        onError: function(err) {
-            console.error('PayPal Error: ', err);
-            alert('An error occurred with the PayPal payment.');
-        }
-    }).render('#paypal-button-container');  
-}
 
-PaypalButton.addEventListener("click", showPaypal);
-CodButton.addEventListener("click", showCod);
- 
+            let totalAmount = 0;  // This will store the total price
 
-function showCod() {
-    document.getElementById("details-section").classList.add("hidden");
-    document.getElementById("paypal-section").classList.add("hidden");
-    document.getElementById("cod-section").classList.remove("hidden");
-    document.getElementById("thankyou-section").classList.add("hidden");
-    updateTotal();
-}
+            // Function to update the total display
+            function updateTotal() {
+                // Update the total amount in PayPal section
+                document.getElementById('payment-total-amount').textContent = `₱${totalAmount.toFixed(2)}`;
+                document.getElementById('paypal-total-amount').textContent = `₱${totalAmount.toFixed(2)}`;
+            }
 
-function showDetails() {
-    document.getElementById("details-section").classList.remove("hidden");
-    document.getElementById("paypal-section").classList.add("hidden");
-    document.getElementById("cod-section").classList.add("hidden");
-    document.getElementById("thankyou-section").classList.add("hidden"); 
-    updateOrderSummary(true);
-}
+            // Handle price button click to open action dialog and update the total
+            priceButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    currentProductName = this.closest('.product-item').querySelector('h3').textContent;
+                    const productPrice = parseFloat(this.getAttribute('data-price'));  // Get the price of the selected product
 
-function showDialog() {
-    document.getElementById("details-section").classList.add("hidden");
-    document.getElementById("paypal-section").classList.add("hidden");
-    document.getElementById("cod-section").classList.add("hidden");
-    document.getElementById("dialog-content").classList.remove("hidden");
-    document.getElementById("thankyou-section").classList.add("hidden");
+                    // Update the total amount by adding the product price
+                    totalAmount += productPrice;
 
-    updateOrderSummary(true);
-}
+                    // Update the total display
+                    updateTotal();
 
-buyNowButton.addEventListener("click", showDetailsForm);
-    
-    // Handle "Add to Cart" click
-    addToCartButton.addEventListener('click', function() {
-        showMessage(`${currentProductName} has been added to your cart!`);
-        actionDialog.style.display = 'none'; 
-    });
-  
-        // Show confirmation message when an item is added to the cart
-        function showMessage(message) {
-            cartMessage.textContent = message;
-            cartMessage.style.display = 'block';
-            setTimeout(() => {
-                cartMessage.style.display = 'none';
-            }, 3000); 
-        }
-       
-        // Handle price button click to open action dialog
-        priceButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                currentProductName = this.closest('.product-item').querySelector('h3').textContent;
-                currentProductPrice = parseFloat(this.getAttribute('data-price'));  
-                actionDialog.style.display = 'block'; 
+                    actionDialog.style.display = 'block'; // Show action dialog
+                });
             });
-        });
-
-    // Handle "Add to Cart" click
-    addToCartButton.addEventListener('click', function() {
-        showMessage(`${currentProductName} has been added to your cart!`);
-        actionDialog.style.display = 'none'; 
-    });
-
-   
-
-    // Handle "Close" button click
-    closeDialogButton.addEventListener('click', function() {
-        actionDialog.style.display = 'none'; 
-    });
-
-         // Get the search bar and product items
-const searchInput = document.querySelector('.search-bar input');
-const productItems = document.querySelectorAll('.product-item');
-
-// Add event listener to the search input to listen for user input
-searchInput.addEventListener('input', function() {
-    const searchTerm = searchInput.value.toLowerCase();  // Get the input value and convert to lowercase
-
-    // Loop through all the product items and check if they match the search term
-    productItems.forEach(function(item) {
-        const productName = item.querySelector('h3').textContent.toLowerCase();  // Get the product name
-        if (productName.includes(searchTerm)) {
-            item.style.display = '';  // Show the item if it matches the search term
-        } else {
-            item.style.display = 'none';  // Hide the item if it does not match
-        }
-    });
-});
-
-let totalAmount = 0;  // This will store the total price
-
-// Function to update the total display
-function updateTotal() {
-    // Update the total amount in PayPal section
-    document.getElementById('payment-total-amount').textContent = `₱${totalAmount.toFixed(2)}`;
-    document.getElementById('paypal-total-amount').textContent = `₱${totalAmount.toFixed(2)}`;
-}
-
-// Handle price button click to open action dialog and update the total
-priceButtons.forEach(button => {
-    button.addEventListener('click', function() {
-        currentProductName = this.closest('.product-item').querySelector('h3').textContent;
-        const productPrice = parseFloat(this.getAttribute('data-price'));  // Get the price of the selected product
-
-        // Update the total amount by adding the product price
-        totalAmount += productPrice;
-
-        // Update the total display
-        updateTotal();
-
-        actionDialog.style.display = 'block'; // Show action dialog
-    });
-});
 
 
 

@@ -1,3 +1,10 @@
+<?php
+session_start();  // Make sure the session is started
+
+// Check if the user is logged in
+$isLoggedIn = isset($_SESSION['login_success']) && $_SESSION['login_success'] == 1;
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -289,7 +296,8 @@
           </div>
       </div>
   
-     <script>
+     <script>   
+            const isLoggedIn = <?php echo $isLoggedIn ? 'true' : 'false'; ?>;
            // JavaScript code for handling the dropdown and smooth scrolling
            const dropdownItems = document.querySelectorAll('.dropdown-menu li');
     
@@ -409,14 +417,28 @@ function showDialog() {
     updateOrderSummary(true);
 }
 
-buyNowButton.addEventListener("click", showDetailsForm);
+        buyNowButton.addEventListener('click', function() {
+                if (!isLoggedIn) {
+                    alert('You must log in to proceed with the purchase!');
+                    window.location.href = 'login.php'; // Redirect to login page
+                    return;
+                }
+                showDetailsForm(); // Proceed to checkout form
+            });
+       
+
+        // Handle "Add to Cart" click
+        addToCartButton.addEventListener('click', function() {
+                if (!isLoggedIn) {
+                    alert('You must log in to add items to your cart!');
+                    window.location.href = 'login.php'; // Redirect to login page
+                    return;
+                }
+                showMessage(`${currentProductName} has been added to your cart!`);
+                actionDialog.style.display = 'none';
+            });
+
     
-    // Handle "Add to Cart" click
-    addToCartButton.addEventListener('click', function() {
-        showMessage(`${currentProductName} has been added to your cart!`);
-        actionDialog.style.display = 'none'; 
-    });
-  
         // Show confirmation message when an item is added to the cart
         function showMessage(message) {
             cartMessage.textContent = message;
